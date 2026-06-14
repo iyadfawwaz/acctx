@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name=”format-detection” content=”telephone=no”>
+      
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;500&display=swap" rel="stylesheet">
+     <link rel="stylesheet" media="screen" href="../../../main.css" >
+     <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notokufiarabic.css" />
+     <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notonaskharabic.css" />
+     <link rel="shortcut icon" href="../../../img/companylogo.png" type="image/x-icon">
+     <link rel="icon" href="../../../img/icon.ico" type="image/x-icon">
+     <link rel="stylesheet" href="../../../assets/css/bootstrap-select.css">
+     <link href="../../../assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+     <link rel="stylesheet" href="../../../css/chosen.css">   
+  
+    <!-- Custom styles for this template -->
+    <link href="../../../assets/css/style1.css?ver=213" rel="stylesheet"/>
+    <link href="../../../assets/css/style-responsive.css" rel="stylesheet"/>
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.4.0/css/bootstrap-rtl.css" rel="stylesheet"/>
+ 
+        <title>قيد جديد</title>
+ <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+ <script src="assets/js/tafkit.js"></script>
+  <script src="assets/js/zabuto_calendar.js"></script>
+   <script src="assets/js/sparkline-chart.js"></script>
+    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+         
+<style type="text/css" media="print">
+    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+    @page 
+    {
+        size:  A4;   /* auto is the initial value */
+        margin: 0mm;  /* this affects the margin in the printer settings */
+    }
+
+    html
+    {
+        
+        margin: 0px;  /* this affects the margin on the html before sending to printer */
+    }
+
+    body
+    {
+        border: solid 1px green ;
+        margin: 10mm 15mm 10mm 15mm; /* margin you want for the content */
+    }
+    
+     td
+    {
+        font-size: 12px;
+    }
+    
+     th
+    {
+        font-size: 12px;
+    }
+    
+    .hmz{
+        padding: 30px!important; width: 60%!important;    background: rgba(255, 255, 255, 0.2)!important;
+border-radius: 16px!important;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1)!important;
+backdrop-filter: blur(5px)!important;
+-webkit-backdrop-filter: blur(5px)!important;
+border: 1px solid rgba(255, 255, 255, 0.3)!important;
+    }
+    </style>
+
+  </head>
+
+  
+<body>
+  
+
+    <nav class="navbar navbar-default"style="margin-bottom: 0px"  >
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button  type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        <a style="color: #004b97" class="navbar-brand  " href="pl.m.html"><img id="smalllogo" class="smalllogo" style="width: 2.5vw" src="../../../img/companylogo.PNG"/>  </a>
+
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+      <ul class="nav navbar-nav">
+         
+      <li class="dropdown">
+          <a style="color: #004b97" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">   <i class="fa fa-bank"></i> المراكز  <span class="caret"></span></a>
+          <ul class="dropdown-menu"> 
+              <li><a  style="color: #004b97" href="centers"><i class="fa fa-users"></i>    جميع الصناديق</a></li>
+               
+                            <li><a style="color: #004b97" href="deletedcenters"><i class="fa fa-trash"></i>   سلة المحذوفات </a></li>
+          
+                   
+        
+            <li><a style="color: #004b97" href="bb"><i class="fa fa-line-chart"></i> عدد حوالات المراكز</a></li>
+             <li><a style="color: #004b97" href="centers_1"><i class="fa fa-cubes"></i> حركة الصناديق</a></li>
+           
+          </ul>
+        </li>
+                 
+           <li class="dropdown">
+          <a href="#" style="color: #004b97" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-credit-card"></i> العمليات <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a style="color: #004b97" href="addkayit.html"><i class="fa fa-exchange"></i> قيد من الى</a></li><li><a style="color: #004b97" href="addkayit_1.html"><i class="fa fa-arrows-alt"></i> قيد متقدم</a></li><li><a style="color: #004b97" href="open.html"><i class="fa fa-key"></i> قيد افتتاحي</a></li><li><a style="color: #004b97" href="addsnin.html"><i class="fa fa-arrow-right"></i>   سند قبض </a></li><li><a style="color: #004b97" href="addsnout.html"><i class="fa fa-arrow-left"></i> سند دفع</a></li>
+              <li><a style="color: #004b97" href="cut.html"><i class="fa fa-cut"></i>   سند قص</a></li><li><a style="color: #004b97" href="addkayit_cut.html"><i class="fa fa-cut"></i>   سند قص مع اغلاق</a></li><li role="separator" class="divider"></li><li><a style="color: #004b97" href="translive.html"><i class="fa fa-eye"></i>     مراقبة العمليات</a></li><li><a style="color: #004b97" href="dafatcheck.html"><i class="fa fa-check"></i>       تدقيق القيود</a></li>               </ul>
+        </li>
+         <li class="dropdown">
+          <a href="#" style="color: #004b97" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-retweet"></i> الحسابات <span class="caret"></span></a>
+          <ul class="dropdown-menu"><li><a style="color: #004b97" href="mizan.html"><i class="fa fa-balance-scale"></i> ميزان المراجعة</a></li>              <li><a style="color: #004b97" href="kartable.html"><i class="fa fa-area-chart"></i> مخطط الميزان والارباح</a></li>                            
+              <li><a style="color: #004b97" href="sanadik.html"><i class="fa fa-cubes"></i> الصناديق</a></li><li><a style="color: #004b97" href="cutcenters.html"><i class="fa fa-cut"></i> مراكز القطع</a></li><li><a style="color: #004b97" href="report.html"><i class="fa fa-area-chart"></i> تقارير</a></li><li role="separator" class="divider"></li><li><a style="color: #004b97" href="account.html"><i class="fa fa-balance-scale"></i> كشف حساب  </a></li><li><a style="color: #004b97" href="dafatsearch.html"><i class="fa fa-exchange"></i> جميع القيود</a></li><li><a style="color: #004b97" href="mutabaka.html"><i class="fa fa-check-circle"></i>   مطابقات</a></li>              
+          </ul>
+        </li>
+        
+        
+        
+       
+         <li class="dropdown">
+          <a style="color: #004b97" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-paper-plane"></i> الحوالات <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a style="color: #004b97" href="dafatsearch.html"><i class="fa fa-exchange"></i>   القيود</a></li><li><a style="color: #004b97" href="incomesearch.html"><i class="fa fa-clock-o"></i>   حوالات قيد التسليم - داخلي  </a></li><li><a style="color: #004b97" href="incomesearch_ext.html"><i class="fa fa-history"></i>   حوالات قيد التسليم - خارجي  </a></li><li><a style="color: #004b97" href="transactive_1.html"><i class="fa fa-check"></i>  تم تسليمها   </a></li><li role="separator" class="divider"></li><li><a style="color: #004b97" href="check.html"><i class="fa fa-mobile-phone"></i> جهاز الحوالة</a></li>          </ul>
+        </li>
+        
+        
+         
+         
+                  
+        
+          
+        
+        
+                         <li class="dropdown">
+          <a style="color: #1a4053" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-star"></i> الربط <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+               
+               <li><a style="color: #1a4053" href="api_comp.html"><i class="fa fa-star"></i> شركات الربط</a></li> 
+                
+               
+               
+          </ul>
+        </li>        
+        <li class="dropdown">
+          <a style="color: #004b97" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-gear"></i> الأدوات <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a style="color: #004b97" href="sarf.html"><i class="fa fa-cut"></i> أسعار القص</a></li><li><a style="color: #004b97" href="curs.html"><i class="fa fa-dollar"></i>   ادارة العملات</a></li><li><a style="color: #004b97" href="eventrecord.html">  <i class="fa fa-bell"></i> سجل   الأحداث</a></li>  
+              <li><a style="color: #004b97" href="logrecord.html">  <i class="fa fa-eye"></i> سجل تسجيل الدخول</a></li>
+               <li><a style="color: #004b97" href="changepass.html"><i class="fa fa-lock"></i>       تغيير كلمة المرور </a></li>
+          </ul>
+        </li>
+        
+         <li>
+              
+              <form  name="frmdelete" class="form-horizontal" action="transsearch" method="post" enctype="multipart/form-data"  >
+                  <input type="text" tabindex="-1" name="patern" placeholder="ابحث عن حوالة" class="form-control " style="margin-top:  0.5vw"/>
+              </form>   
+              </li>
+        
+      </ul>
+           <ul class="nav pull-left top-menu">
+                     
+                    <li><a id="logout"    class="logout" >  خروج</a></li>
+                   
+            	</ul>
+      
+          <ul class="nav pull-left top-menu">
+                     
+                  
+              <li> <a class="logout"    title="    تحديث" href="javascript:location.reload(true)">  <i style=" font-size: 16px" class="fa fa-refresh"></i>    </a></li>
+              <li> <a class="logout"   title="  الوضع الليلي  "  href="javascript:dark();">  <i id="darktoggle" style=" font-size: 16px" class="fa fa-moon-o"></i>    </a></li>
+              <li> <a class="logout"  style=" padding: 3px"  title="    صندوق الوارد" href="inbox">  <i style=" font-size: 16px;" class="fa fa-envelope"></i>  <span class="badge" style="background-color: red;margin: 0px;">1</span>  </a></li>
+            	</ul>
+                     
+                  
+            	 
+        
+       <div class="scrollo-left" style="  ">  <pre style="border: 0; background-color: transparent; font-family: tajawal;  white-space: nowrap; overflow: hidden;margin-top: 0vw;  "   >  مساء الخير 😊😊 يا فرع البردقلي  </pre></div>
+       
+      
+    
+      
+        
+        
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+       
+            
+         <ul class="ulx">
+       <center class="glass1">
+             <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="العملاء    "  class="ax" href="centers.html" >  <img class="imx"     src="../../../img/icons/idara/1.png"/></a></li>
+              <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="كشف حساب    "  class="ax" href="account.html" >  <img class="imx"     src="../../../img/icons/idara/2.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="الصناديق    "  class="ax" href="sanadik.html" >  <img class="imx"     src="../../../img/icons/idara/3.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="مراكز القطع    "  class="ax" href="cutcenters.html" >  <img class="imx"     src="../../../img/icons/idara/4.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="      قيد من الى"  class="ax" href="addkayit.html" >  <img class="imx"     src="../../../img/icons/idara/8.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="      سند قبض"  class="ax" href="addsnin.html" >  <img class="imx"     src="../../../img/icons/idara/17.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="      سند دقع"  class="ax" href="addsnout.html" >  <img class="imx"     src="../../../img/icons/idara/18.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="          سند قص"  class="ax" href="cut.html" >  <img class="imx"     src="../../../img/icons/idara/9.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="            قص مع اغلاق"  class="ax" href="addkayit_cut.html" >  <img class="imx"     src="../../../img/icons/idara/27.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="      القيود"  class="ax" href="dafatsearch.html" >  <img class="imx"     src="../../../img/icons/idara/11.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="      قيد التسليم"  class="ax" href="incomesearch.html" >  <img class="imx"     src="../../../img/icons/idara/19.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="      تم التسليم"  class="ax" href="transactive_1.html" >  <img class="imx"     src="../../../img/icons/idara/20.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="    اسعار القص"  class="ax" href="sarf.html" >  <img class="imx"     src="../../../img/icons/idara/13.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="     تقارير"  class="ax" href="report.html" >  <img class="imx"     src="../../../img/icons/idara/14.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="      قيد متقدم"  class="ax" href="addkayit_1.html" >  <img class="imx"     src="../../../img/icons/idara/15.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="  بحث متقدم    "  class="ax" href="advanced_search.html" >  <img class="imx"     src="../../../img/icons/idara/16.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="  مراقبة العمل"  class="ax" href="translive.html" >  <img class="imx"     src="../../../img/icons/idara/21.png"/></a></li>   
+        </center>
+      </ul>
+    <script>
+   var elz = document.createElement("img");
+elz.src = "../../../img/spin.gif";                    
+window.onbeforeunload = function(){
+    
+  document.getElementById('coverScreen').style.display = 'block';
+  
+
+};
+</script>
+<div id="coverScreen" style="display: none" class="LockOn">
+        <center>  <img  src="../../../img/spin.gif"/></center>
+</div>
+
+ <script>
+     
+         var $radios = $('input:radio');
+
+$radios.change(function () {
+    $radios.parent().parent().removeClass('checked');
+    $(this).parent().parent().addClass('checked');
+  $("html, body").animate({ scrollTop: document.body.scrollHeight }, "slow");
+
+}); 
+
+ function ACTG(){
+            var tt='side';
+                var a = $('#scalee');
+    			a.hasClass("ocult") ? a.animate({
+    				left: "0"
+    			}, 500) : a.animate({
+    				left: "-280px"
+    			}, 500), a.toggleClass("ocult")
+                
+                $.ajax({
+                        url: 'checkbalance', 
+                          data:{type:tt}, 
+                          type:'POST',
+                        success: function(result){
+                
+                           
+                          $(".amwidget").html(result);
+                          
+                          
+                        }
+                
+                });
+            
+          }
+          
+          
+          
+          
+function dark() {
+    
+    
+   
+    
+    
+    var all = document.getElementsByTagName("*");
+
+for (var i=0, max=all.length; i < max; i++) {
+     all[i].classList.toggle("dark-mode");
+}
+if(document.body.classList.contains("dark-mode")){
+  
+ 
+ mode="dark";
+ }
+ 
+ else {
+try{ document.getElementById("smalllogo").src="../../../img/companylogo.PNG";
+ document.getElementById("mainlogo").src="../../../img/companylogo.PNG";
+ } catch(ex){}
+  
+mode="light";
+ }
+ 
+ 
+    $.ajax({
+                                url:"checknot.php",
+				data:{mode:mode},
+				type:'POST',
+				success:function(response) {
+                                 
+                                   
+                               }
+				});
+}
+ 
+  function shownotes() {
+
+                document.getElementById("snote").classList.toggle("hideall");
+
+            }
+ 
+function savenote(id){
+    var val=document.getElementById(id).value;    
+     $.ajax({
+                            
+                        
+				url:"savenote.php",
+				data:{tok:id,value:val},
+				type:'POST',
+				success:function(response) {
+                                   
+				}
+			});
+}
+
+function mkdark() {
+   var all = document.getElementsByTagName("*");
+
+for (var i=0, max=all.length; i < max; i++) {
+     all[i].classList.add("dark-mode");
+}
+ try{
+ document.getElementById("smalllogo").src="../../../img/companylogodark.PNG";
+ document.getElementById("mainlogo").src="../../../img/companylogodark.PNG";
+ } catch(ex){}
+ 
+ 
+  
+  
+}
+
+
+ $(document).ready(function(){
+        $(".bbox").click(function() {
+            
+          mer=  $(this).html();
+            
+            $.ajax({ 
+				url:"gettest.php",
+				data:{mr_bx:mer},
+				type:"POST",
+				success:function(response) {
+                                document.getElementById("accshowxx").innerHTML =response;
+				  	 
+					 
+				}
+				 
+			});
+        });
+});
+ 
+ 
+ 
+          
+          </script>
+          
+          
+          
+     <div class="ft_theme_switcher theme_switcher_bod  "  style="background-color: #004b97;top:215px;">
+               <div style="background-color: #004b97" class="toggle" onclick="shownotes();"><i style="font-size: 33px; "class="fa fa-sticky-note-o"></i></div>
+           
+        </div>   
+<div class="snote hideall" id="snote">
+<ul>
+  <li>
+    <a  >
+        <h2 style="font-family: tajawal">ملاحظة 1</h2><hr />
+        <textarea id="note1" onblur="savenote('note1')" style="background-color:rgba(0, 0, 0, 0.0);  border: none; font-family: tajawal;width: 100%;height: 50%;font-size: 20px">المالية</textarea>
+    </a>
+  </li>
+    <li>
+    <a  >
+        <h2 style="font-family: tajawal">ملاحظة 2</h2><hr />
+      <textarea id="note2" onblur="savenote('note2')" style="background-color:rgba(0, 0, 0, 0.0);  border: none; font-family: tajawal;width: 100%;height: 50%;font-size: 20px">و الحوالات</textarea>
+    </a>
+  </li>
+    <li>
+    <a  >
+        <h2 style="font-family: tajawal">ملاحظة 3</h2><hr />
+      <textarea id="note3" onblur="savenote('note3')" style="background-color:rgba(0, 0, 0, 0.0);  border: none; font-family: tajawal;width: 100%;height: 50%;font-size: 20px">للصرافة</textarea>
+    </a>
+  </li>
+    <li>
+    <a  >
+        <h2 style="font-family: tajawal">ملاحظة 4</h2><hr />
+      <textarea id="note4" onblur="savenote('note4')" style="background-color:rgba(0, 0, 0, 0.0);  border: none; font-family: tajawal;width: 100%;height: 50%;font-size: 20px">شركة أميسا</textarea>
+    </a>
+  </li>
+  
+   <li>
+       <a style="height: 50em;width: 25em; overflow-y: scroll" >
+        <h2 style="font-family: tajawal">ملاحظات المراكز</h2><hr />
+      <p id="note5"  style="background-color:rgba(0, 0, 0, 0.0);  border: none; font-family: tajawal;  font-size: 16px">
+      <bre style="color:red">حوالات غير مسلمة - mut : </bre>حمزة<hr/>      
+      </p>
+    </a>
+  </li>
+   
+  
+  
+</ul>
+</div>
+          <div id="accshowxx" class="text-center" >	</div>		          
+    
+      
+    
+   
+<style>
+    
+    input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+</style>
+
+      
+                         
+          <section class="wrapper">
+             
+     
+               <div class="hmz  " style=" padding: 30px; width: 100%;    background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);" >
+                          
+              
+                  <h4>قيد جديد </h4>
+                    
+                 
+                   <script>
+                   function txt_onfocus(txt,color) {
+    txt.style.backgroundColor = color;
+} </script>
+                        
+                       
+                    
+                    
+                    
+                  <div class="row" style="font-size: 16px;" >
+                         <form  name="frm" id="frm" class="form-horizontal" action="#" onsubmit="return toggleStar()"  method="post" enctype="multipart/form-data"  >
+                                <div class="col-md-6" >
+                         
+                                 <div class="well   text-right  " style="background: rgb(27,92,84);
+background: radial-gradient(circle, rgba(27,92,84,0.31976540616246496) 0%, rgba(48,181,59,0.20211834733893552) 98%); border: solid 2px seagreen" > 
+                      <i style=" font-size: 24px; color :red" class="fa fa-comment" id="outputxx" onclick="checklimit('output')"   ></i>
+                      
+                                     <center><p  > من - لنا <span id="lana" style="color:red;font-size: 20px" > </span></p> </center>
+                         <br/>
+                         
+                         
+                         
+                         
+                          <div class="form-group"  >
+                        
+                          <div   class="col-md-3 col-xs-3  text-right  "   > 
+                         <label class=" control-label" >المركز المرسل :</label>
+                          </div>
+                              <div   class="col-md-9 col-xs-9  text-right  "   >                                   
+                                  <select onfocus="txt_onfocus(this,'yellow');" onblur="txt_onfocus(this,'white');" onchange="outname();" tabindex="1" name="output" id="output" style="max-width: 100%; width: 80%;" class="chosen-select"    data-placeholder="اختر المركز"    > 
+                       
+			<option></option>  
+     
+                       
+			 </select>
+    <div   style="font-size: 20px;font-weight: bold; color: red"   id="outnametxt"  ></div>
+                              </div>
+                        </div> 
+                         
+                         
+                         
+                         
+                         
+                         <div class="form-group"  >
+                        <div   class="col-md-3 col-xs-3  text-right  "   > 
+                         <label class=" control-label">العملة :</label>
+                        </div>
+                             <div   class="col-md-9 col-xs-9  text-right  "   > 
+                                 <select onfocus="txt_onfocus(this,'yellow');" onblur="txt_onfocus(this,'white');" tabindex="2" class="form-control" name ="currencyfrom" id ="currencyfrom" style="font-size: 18px" >
+                             
+    
+                                     
+                           </select>
+                          
+                             </div>
+                        </div> 
+                         
+                         
+                          <div class="form-group"  >
+                        <div   class="col-md-3 col-xs-3  text-right  "   > 
+                         <label class=" control-label">المبلغ :</label>
+                        </div>
+                              <div   class="col-md-9 col-xs-9  text-right  "   > 
+                         <input onfocus="txt_onfocus(this,'yellow');" onblur="txt_onfocus(this,'white');" tabindex="3" width="10" size="20" class="text-primary form-control"   type="number" id="accfrom" step="any" name="accfrom" min="0" style="font-size: 20px"  onchange="function2();"/>
+                         <div id="taf" class="alert alert-info" style="background-color: yellow" ></div>
+                           <input  type="hidden" name="sonkar" id="sonkar" />
+                              </div>
+                       
+                    </div>  
+                         
+                          <div class="form-group"  >
+                        <div   class="col-md-3 col-xs-3  text-right  "   > 
+                            <label class=" control-label">أجور تصدير   :  <i id="taxfromratio" style="color:red" ></i></label>
+                        
+                        </div>
+                              <div   class="col-md-9 col-xs-9  text-right  "   > 
+                            <input onfocus="txt_onfocus(this,'yellow');" onblur="txt_onfocus(this,'white');" tabindex="4" size="20" class="text-primary form-control" type="number" name="taxfrom" step=".0001"  id="taxfrom"  style="font-size: 20px"    onchange="function2();"/>
+                            
+                              </div>
+                      
+                       
+                    </div>  
+                         
+                         <div class="form-group"     >
+                          <div   class="col-md-3 col-xs-3  text-right  "   > 
+                          <label class="control-label">المستفيد :</label>
+                          </div>
+                           <div   class="col-md-9 col-xs-9  text-right  "   >    
+                          <input onfocus="txt_onfocus(this,'yellow');" onblur="txt_onfocus(this,'white');"  type="text" class="text-primary form-control " id="benif"  name="benif"  /> 
+                           </div>
+                            
+                        
+                       
+                    </div>      
+                          <div class="form-group"  >
+                        <div   class="col-md-3 col-xs-3  text-right  "   > 
+                            <label class=" control-label">ملاحظات :   </label>
+                        </div>
+                            <div   class="col-md-9 col-xs-9  text-right  "   > 
+                                <input type="text"  onfocus="txt_onfocus(this,'yellow');" onblur="txt_onfocus(this,'white');" onchange="document.getElementById('notein').value=this.value;" tabindex="5" class="text-primary form-control"  name="note"  id="note"  />
+                            </div>
+                            
+                        
+                       
+                    </div>       
+                           <div class="form-group"  >
+                        <div   class="col-md-3 col-xs-3  text-right  "   > 
+                         <label class=" control-label">  القص   :</label>
+                        </div>
+                               <div   class="col-md-5 col-xs-5  text-right  "   > 
+                         <input onfocus="txt_onfocus(this,'yellow');" onblur="txt_onfocus(this,'white');" size="20" class="text-primary form-control" type="number" name="cut" value="1"  step="any" id="cut" min="0"   onchange="function2();"/>
+                         
+                               </div>
+                      <select    id="op" name="op" class="col-xs-3 form-control" onchange="function2();" >
+			<option value='*'>ضرب</option>
+                        <option value='/'>قسمة</option>
+                         
+                           </select> 
+                       
+                    </div>  
+                         
+                        
+                       
+                    </div>   
+                                </div>
+                     
+                            <div class="col-md-6" >
+                      <div class="well   text-right  " style="background: rgb(27,92,84);
+background: radial-gradient(circle, rgba(27,92,84,0.10127801120448177) 0%, rgba(181,48,48,0.20211834733893552) 98%); border: solid 2px red" > 
+                      <i style=" font-size: 24px; color :red" class="fa fa-comment" id="inputxx" onclick="checklimit('input')"   ></i>
+                          <center><p>الى - علينا <span id="alyna" style="color:blue; font-size: 20px"  > </span>  - ربح  <span id="kar" style="color:green;  "  > </span></p></center>
+                       
+                        <br/>
+                          <div class="form-group"  >
+                        <div   class="col-md-3 col-xs-3  text-right  "   > 
+                          <label class=" control-label">المركز المستلم :</label>
+                        </div>
+                           <div   class="col-md-9 col-xs-9  text-right  "   >                                                             
+                               <select onfocus="txt_onfocus(this,'yellow');" onblur="txt_onfocus(this,'white');" onchange="inname();" tabindex="6" name="input" id="input" style="max-width: 100%; width: 80%;"     data-placeholder="اختر المركز" class="chosen-select"   > 
+                       
+			<option style="cursor: none !important; width: 80%;"></option>
+     
+                       
+			</select>
+                          <div   style="font-size: 20px;font-weight: bold; color: red"   id="innametxt"  ></div>
+                           </div>      
+                        </div> 
+                         
+                         <div class="form-group"  >
+                        <div   class="col-md-3 col-xs-3  text-right  "   > 
+                         <label class=" control-label">العملة :</label>
+                        </div>
+                             <div   class="col-md-9 col-xs-9  text-right  "   > 
+                                 <select onfocus="txt_onfocus(this,'yellow');" onblur="txt_onfocus(this,'white');"   class="form-control" name ="currencyto" id ="currencyto"  style="font-size: 18px"  >
+                                        
+                                
+                           </select>
+                             </div>
+                        
+                        </div> 
+                         
+                         
+                          <div class="form-group"  >
+                        <div   class="col-md-3 col-xs-3  text-right  "   > 
+                         <label  class=" control-label">المبلغ :</label>
+                        </div>
+                              <div   class="col-md-9 col-xs-9  text-right  "   > 
+                                  <input onfocus="txt_onfocus(this,'yellow');" onblur="txt_onfocus(this,'white');"   size="20" class="text-primary form-control"   type="number"   step="any" id="accto" name="accto" min="0"  style="font-size: 20px"  onchange="function2(4);"  />
+                             <div id="taf1" class="alert alert-danger" style="background-color: yellow"></div>
+                              </div>
+                       
+                    </div>  
+                        
+                         <div class="form-group"  >
+                        <div   class="col-md-3 col-xs-3  text-right  "   > 
+                         <label class=" control-label">أجور تسليم   :  <i id="taxtoratio" style="color:red" ></i></label>
+                        </div>
+                             <div   class="col-md-9 col-xs-9  text-right  "   > 
+                            <input onfocus="txt_onfocus(this,'yellow');" onblur="txt_onfocus(this,'white');" tabindex="7" size="20" class="text-primary form-control" type="number" name="taxto" step=".0001"  id="taxto"   style="font-size: 20px"   onchange="function2();"/>
+                             
+                             </div>
+                      
+                       
+                    </div>  
+                        <div class="form-group"  >
+                        <div   class="col-md-3 col-xs-3  text-right  "   > 
+                          <label class=" control-label">ملاحظات :</label>
+                        </div>
+                            <div   class="col-md-9 col-xs-9  text-right  "   > 
+                            <input type="text" onfocus="txt_onfocus(this,'yellow');" onblur="txt_onfocus(this,'white');" class="text-primary form-control"  name="notein"  id="notein" />
+                            </div>
+                            
+                        
+                       
+                    </div>       
+                        
+                          <div class="form-group" style="display: none" >
+                        <div   class="col-md-3 col-xs-3  text-right  "   > 
+                         <label class=" control-label">  تاريخ   :</label>
+                        </div>
+                              <div   class="col-md-9 col-xs-9  text-right  "   > 
+                         <input   onfocus="txt_onfocus(this,'yellow');" onblur="txt_onfocus(this,'white');" type="date" class="form-control date"  name ="date2" id ="date2"  value="2025-12-29"  /> 
+                              </div>
+                      
+                       
+                    </div>  
+                        <center>
+                        <input  tabindex="8" type="button" style="font-family: 'tajawal';" id="save" name="save" class="btn btn-success"   value="  موافق   "/>
+                        </center>
+                    </div>   
+   
+                    				
+       
+                </form>
+</div>
+                             </div>
+                   
+                   
+                    <div class="row" >
+                        
+                        
+               <div id="tablecon" style="display: none;">           
+                        
+                          <table id="example" class="table table-striped " cellspacing="0" width="100%">
+                 
+                  
+                  
+                  
+
+ 
+  
+ 
+        <thead class="thead_dark">
+                       <tr> <th> </th> <th> </th>
+  <th>رقم</th>
+   <th>تاريخ التحويل</th>
+                <th>لنا</th>
+                  <th>من</th>
+                   <th>المستفيد</th>
+                 <th>علينا</th>
+              
+               <th>الى</th>
+                
+                <th>الربح</th>
+                
+  
+         
+          <th>ملاحظات</th>
+          
+       
+            </tr>
+        </thead>
+    
+        <tbody>
+                             
+            
+            
+             <tr>
+                <td> <input  type="radio" name="select"   value="REC-576-446724" onchange="myFunction1()"> </td>
+ <td>1</td>
+              <td>REC-576-446724</td>
+                <td>2025-12-29 17:59:56</td>
+                <td style="font-size:20px">1,200 <p style="color:#052beb">دولار أمريكي</p> + 0 </td>
+                    <td>اون لاين<div  class="bbox"> 1165 </div></td>  
+                         <td></td>
+                <td style="font-size:20px">1,200 <p style="color:#052beb">دولار أمريكي</p> + 0 </td>
+                       
+                            
+                                  <td>تواصل <div  class="bbox"> \\\\290\\\\</div></td>
+                                        <td> <i class="fa fa-diamond"></i> 0 <p> <i class="fa fa-cut"></i> 0 </p> <p><i class="fa fa-random"></i>  0</p></td>
+                                              
+                                              <td>  <span    class="fa fa-user"></span> كفردريان</td>            
+                                                
+                                      </tr>  
+                       
+                           <tr>
+                <td> <input  type="radio" name="select"   value="REC-203-446723" onchange="myFunction1()"> </td>
+ <td>2</td>
+              <td>REC-203-446723</td>
+                <td>2025-12-29 17:59:43</td>
+                <td style="font-size:20px">4,000 <p style="color:#ff0000">ليرة تركية</p> + 0 </td>
+                    <td>البركة<div  class="bbox"> 757 </div></td>  
+                         <td>حسام المحمد</td>
+                <td style="font-size:20px">4,000 <p style="color:#ff0000">ليرة تركية</p> + 0 </td>
+                       
+                            
+                                  <td> كفردريان <div  class="bbox"> 555</div></td>
+                                        <td> <i class="fa fa-diamond"></i> 0 <p> <i class="fa fa-cut"></i> 0 </p> <p><i class="fa fa-random"></i>  0</p></td>
+                                              
+                                              <td>  <span    class="fa fa-user"></span> كفردريان</td>            
+                                                
+                                      </tr>  
+                       
+                           <tr>
+                <td> <input  type="radio" name="select"   value="REC-252-446722" onchange="myFunction1()"> </td>
+ <td>3</td>
+              <td>REC-252-446722</td>
+                <td>2025-12-29 17:59:22</td>
+                <td style="font-size:20px">2,000 <p style="color:#ff0000">ليرة تركية</p> + 0 </td>
+                    <td>ابراهيم عبدالباري<div  class="bbox"> 720 </div></td>  
+                         <td>هاشم مصطفى</td>
+                <td style="font-size:20px">2,000 <p style="color:#ff0000">ليرة تركية</p> + 0 </td>
+                       
+                            
+                                  <td> كفردريان <div  class="bbox"> 555</div></td>
+                                        <td> <i class="fa fa-diamond"></i> 0 <p> <i class="fa fa-cut"></i> 0 </p> <p><i class="fa fa-random"></i>  0</p></td>
+                                              
+                                              <td>  <span    class="fa fa-user"></span> كفردريان</td>            
+                                                
+                                      </tr>  
+                       
+                           <tr>
+                <td> <input  type="radio" name="select"   value="REC-964-446721" onchange="myFunction1()"> </td>
+ <td>4</td>
+              <td>REC-964-446721</td>
+                <td>2025-12-29 17:55:56</td>
+                <td style="font-size:20px">50 <p style="color:#052beb">دولار أمريكي</p> + 0 </td>
+                    <td>المختار<div  class="bbox"> 254 </div></td>  
+                         <td>حسان الحميدي</td>
+                <td style="font-size:20px">50 <p style="color:#052beb">دولار أمريكي</p> + 0 </td>
+                       
+                            
+                                  <td> كفردريان <div  class="bbox"> 555</div></td>
+                                        <td> <i class="fa fa-diamond"></i> 0 <p> <i class="fa fa-cut"></i> 0 </p> <p><i class="fa fa-random"></i>  0</p></td>
+                                              
+                                              <td>  <span    class="fa fa-user"></span> كفردريان</td>            
+                                                
+                                      </tr>  
+                       
+                           <tr>
+                <td> <input  type="radio" name="select"   value="REC-600-446720" onchange="myFunction1()"> </td>
+ <td>5</td>
+              <td>REC-600-446720</td>
+                <td>2025-12-29 17:55:34</td>
+                <td style="font-size:20px">500 <p style="color:#ff0000">ليرة تركية</p> + 0 </td>
+                    <td>اون لاين<div  class="bbox"> 1165 </div></td>  
+                         <td>حسين الخصور</td>
+                <td style="font-size:20px">500 <p style="color:#ff0000">ليرة تركية</p> + 0 </td>
+                       
+                            
+                                  <td> كفردريان <div  class="bbox"> 555</div></td>
+                                        <td> <i class="fa fa-diamond"></i> 0 <p> <i class="fa fa-cut"></i> 0 </p> <p><i class="fa fa-random"></i>  0</p></td>
+                                              
+                                              <td>  <span    class="fa fa-user"></span> كفردريان</td>            
+                                                
+                                      </tr>  
+                       
+                           <tr>
+                <td> <input  type="radio" name="select"   value="REC-449-446719" onchange="myFunction1()"> </td>
+ <td>6</td>
+              <td>REC-449-446719</td>
+                <td>2025-12-29 17:55:18</td>
+                <td style="font-size:20px">45 <p style="color:#052beb">دولار أمريكي</p> + 0 </td>
+                    <td>شام كاش كفر دريان<div  class="bbox"> 595 </div></td>  
+                         <td></td>
+                <td style="font-size:20px">45 <p style="color:#052beb">دولار أمريكي</p> + 0 </td>
+                       
+                            
+                                  <td> كفردريان <div  class="bbox"> 555</div></td>
+                                        <td> <i class="fa fa-diamond"></i> 0 <p> <i class="fa fa-cut"></i> 0 </p> <p><i class="fa fa-random"></i>  0</p></td>
+                                              
+                                              <td>  <span    class="fa fa-user"></span> كفردريان</td>            
+                                                
+                                      </tr>  
+                       
+                           <tr>
+                <td> <input  type="radio" name="select"   value="REC-62-446718" onchange="myFunction1()"> </td>
+ <td>7</td>
+              <td>REC-62-446718</td>
+                <td>2025-12-29 17:53:03</td>
+                <td style="font-size:20px">5 <p style="color:#052beb">دولار أمريكي</p> + 0 </td>
+                    <td>شام كاش كفر دريان<div  class="bbox"> 595 </div></td>  
+                         <td></td>
+                <td style="font-size:20px">5 <p style="color:#052beb">دولار أمريكي</p> + 0 </td>
+                       
+                            
+                                  <td> كفردريان <div  class="bbox"> 555</div></td>
+                                        <td> <i class="fa fa-diamond"></i> 0 <p> <i class="fa fa-cut"></i> 0 </p> <p><i class="fa fa-random"></i>  0</p></td>
+                                              
+                                              <td>  <span    class="fa fa-user"></span> كفردريان</td>            
+                                                
+                                      </tr>  
+                       
+                           <tr>
+                <td> <input  type="radio" name="select"   value="REC-311-446717" onchange="myFunction1()"> </td>
+ <td>8</td>
+              <td>REC-311-446717</td>
+                <td>2025-12-29 17:52:05</td>
+                <td style="font-size:20px">2,000 <p style="color:#ff0000">ليرة تركية</p> + 0 </td>
+                    <td>سما M.T<div  class="bbox"> 803 </div></td>  
+                         <td>دلة ابو زينو</td>
+                <td style="font-size:20px">2,000 <p style="color:#ff0000">ليرة تركية</p> + 0 </td>
+                       
+                            
+                                  <td> كفردريان <div  class="bbox"> 555</div></td>
+                                        <td> <i class="fa fa-diamond"></i> 0 <p> <i class="fa fa-cut"></i> 0 </p> <p><i class="fa fa-random"></i>  0</p></td>
+                                              
+                                              <td>  <span    class="fa fa-user"></span> كفردريان</td>            
+                                                
+                                      </tr>  
+                       
+                           <tr>
+                <td> <input  type="radio" name="select"   value="REC-930-446716" onchange="myFunction1()"> </td>
+ <td>9</td>
+              <td>REC-930-446716</td>
+                <td>2025-12-29 17:51:53</td>
+                <td style="font-size:20px">200 <p style="color:#052beb">دولار أمريكي</p> + 0 </td>
+                    <td>دهب<div  class="bbox"> 2301 </div></td>  
+                         <td>حسن موسى</td>
+                <td style="font-size:20px">200 <p style="color:#052beb">دولار أمريكي</p> + 0 </td>
+                       
+                            
+                                  <td> كفردريان <div  class="bbox"> 555</div></td>
+                                        <td> <i class="fa fa-diamond"></i> 0 <p> <i class="fa fa-cut"></i> 0 </p> <p><i class="fa fa-random"></i>  0</p></td>
+                                              
+                                              <td>  <span    class="fa fa-user"></span> كفردريان</td>            
+                                                
+                                      </tr>  
+                       
+                           <tr>
+                <td> <input  type="radio" name="select"   value="REC-896-446715" onchange="myFunction1()"> </td>
+ <td>10</td>
+              <td>REC-896-446715</td>
+                <td>2025-12-29 17:51:34</td>
+                <td style="font-size:20px">32 <p style="color:#052beb">دولار أمريكي</p> + 0 </td>
+                    <td>شام كاش كفر دريان<div  class="bbox"> 595 </div></td>  
+                         <td></td>
+                <td style="font-size:20px">32 <p style="color:#052beb">دولار أمريكي</p> + 0 </td>
+                       
+                            
+                                  <td> كفردريان <div  class="bbox"> 555</div></td>
+                                        <td> <i class="fa fa-diamond"></i> 0 <p> <i class="fa fa-cut"></i> 0 </p> <p><i class="fa fa-random"></i>  0</p></td>
+                                              
+                                              <td>  <span    class="fa fa-user"></span> كفردريان</td>            
+                                                
+                                      </tr>  
+                       
+                                       
+            
+        </tbody>
+      
+    </table>
+                    </div>
+<script type="text/javascript">
+window.onload = function () {
+     document.getElementById("tablecon").style.display = "block";
+}; 
+</script>  
+                        <div class="row" >
+                            <div class="col-md-2" >
+                           <form  name="frmdelete" class="form-horizontal" action="deletetrans" method="post" enctype="multipart/form-data" onsubmit="return confirm('هل أنت متأكدأنك تريد حذف الحوالة  ؟هذه الخطوة لا يمكن التراجع عنها؟');" >
+                    
+               					<input  type="hidden" name="tok"  value="257fa0031b9d371ea7994b8e24e854f2"/>
+              <input  type="hidden" name="transnum" id="select2" value="0"/>
+                    
+                    <button style="font-family: 'tajawal';" class="btn btn-danger" disabled id="del"  >
+                         <i class="fa fa-trash"></i>
+                        عكس قيد</button>
+              </form>
+                        </div>    
+                            
+                              <div class="col-md-2">
+                  <form  name="frmupd" class="form-horizontal" action="updatetrans" method="post" enctype="multipart/form-data"   >
+                    <input  type="hidden" name="transnum" id="select3" value="0"/>
+                    <button style="font-family: 'tajawal';" class="btn btn-info" disabled id="upd"  > <i class="fa fa-edit"></i>
+                        تعديل</button>
+              </form> 
+              </div>
+                            
+                            
+                                <div class="col-md-2" >
+                        
+                        
+                          <form  name="frmdelete" class="form-horizontal" action="deletetransx" method="post" enctype="multipart/form-data" onsubmit="return confirm('هل أنت متأكدأنك تريد الغاء القيد  ؟هذه الخطوة لا يمكن التراجع عنها؟');" >
+                    
+               					<input  type="hidden" name="tok"  value="33bc6f203855f52fe1b58aa7b5f1940a"/>
+              <input  type="hidden" name="transnum" id="select21" value="0"/>
+                    
+                    <button style="font-family: 'tajawal';" class="btn btn-danger" disabled id="delx"  >
+                         <i class="fa fa-xing"></i>
+                          حذف قيد</button>
+              </form>
+                        
+                     </div>     </div>        
+                        
+                    </div>
+           
+
+      
+          </section>
+      
+
+  <script> 
+     function checklimit(id) {    
+             mer=document.getElementById(id).value;
+            
+             cc=id+"xx";
+           $.ajax({ 
+				url:"gettest.php",
+				data:{mr_id:mer},
+				type:"POST",
+				success:function(response) {
+                                 document.getElementById(cc).innerHTML =response;
+				  	 
+					 
+				}
+				 
+			});
+        }
+  function  copynote(){
+      document.getElementById("notein").value=document.getElementById("note").value;
+  }  
+
+function myFunction1() {
+    var rates = document.getElementsByName('select');
+var index;
+for(var i = 0; i < rates.length; i++){
+    if(rates[i].checked){
+         select =rates[i].value;
+         index=i;
+    }
+}
+       
+    
+     document.getElementById("select2").value = select;
+     document.getElementById("select3").value = select;
+        document.getElementById("select21").value = select;
+     
+    
+    document.getElementById("del").disabled = false;
+     document.getElementById("delx").disabled = false;
+        document.getElementById("upd").disabled = false;
+     
+    
+}
+ 
+</script>
+
+
+     
+  </section>
+
+  <script type="module">
+
+  </script>
+  <!--script type="module">import { loadusers, loadCurrencies,toggleStar,loggerx } from "./modular.js"; loadusers(); loadCurrencies(); toggleStar(11);
+    loggerx();
+  </script-->
+  <script type="module" src="./modular.js"></script>
+ 
+   <script src="../../../assets/js/tafkit.js"></script>   
+   
+
+   
+<script>
+
+/*
+    function function1(xx=0){
+
+      
+  
+         if(xx==1) {document.getElementById("currencyto").value=document.getElementById("currencyfrom").value;
+         
+        document.getElementById("cut").value=1;
+        document.getElementById("op").value="*";
+        } else{
+        if(false){}
+         else if (document.getElementById("currencyfrom").value == "USD"){
+      document.getElementById("cut").value=cursrate[document.getElementById("currencyto").value].rate;
+       //document.getElementById("cut").value=42.951;
+      document.getElementById("op").value="/";document.getElementById("accto").value = (document.getElementById("accfrom").value / cursrate[document.getElementById("currencyto").value].rate) ;   
+    }  
+    else if (document.getElementById("currencyto").value == "USD"){
+      document.getElementById("cut").value=cursrate[document.getElementById("currencyfrom").value].rate;
+       //document.getElementById("cut").value=42.951;
+      document.getElementById("op").value="*";document.getElementById("accto").value = (document.getElementById("accfrom").value * cursrate[document.getElementById("currencyfrom").value].rate) ;   
+    }  
+    else {
+      document.getElementById("cut").value=cursrate[document.getElementById("currencyto").value].rate/cursrate[document.getElementById("currencyfrom").value].rate;
+       //document.getElementById("cut").value=42.951;
+      document.getElementById("op").value="/";document.getElementById("accto").value = (document.getElementById("accfrom").value / cursrate[document.getElementById("currencyto").value].rate) ;   
+    }  
+        
+  
+  }
+    function2();
+    }
+    
+  
+    */
+     
+ 
+	 
+</script>
+
+
+<script>
+
+  
+    function function2(xx=1){
+          
+                 if(xx==4)  {
+             
+             if( document.getElementById("op").value =="*" ){
+         document.getElementById("accfrom").value = (document.getElementById("accto").value /document.getElementById("cut").value) ;
+         
+     }
+     
+     else  if( document.getElementById("op").value =="/" ){
+         document.getElementById("accfrom").value = (document.getElementById("accto").value *document.getElementById("cut").value) ;
+         
+     }
+        }
+        else{
+     if( document.getElementById("op").value =="*" ){
+         document.getElementById("accto").value = (document.getElementById("accfrom").value *document.getElementById("cut").value) ;
+         
+     }
+     
+     else  if( document.getElementById("op").value =="/" ){
+         document.getElementById("accto").value = (document.getElementById("accfrom").value /document.getElementById("cut").value) ;
+         
+     }
+ }  
+     
+    
+    var lanacur= document.getElementById("currencyfrom").options[document.getElementById("currencyfrom").selectedIndex].text;
+   
+     
+  if(Math.abs(document.getElementById("taxfrom").value)>0.1  || document.getElementById("taxfrom").value==0)
+  {var lana=Number(document.getElementById("accfrom").value)+Number(document.getElementById("taxfrom").value);
+  document.getElementById("taxfromratio").innerHTML="";
+    }  
+  else{ var lana=Number(document.getElementById("accfrom").value)+Number(document.getElementById("taxfrom").value)*Number(document.getElementById("accfrom").value);
+     document.getElementById("taxfromratio").innerHTML=Number(document.getElementById("taxfrom").value)*Number(document.getElementById("accfrom").value); 
+    }
+    document.getElementById("lana").innerHTML=lana+" "+lanacur;
+     
+     
+ 
+     var alynacur=document.getElementById("currencyto").options[document.getElementById("currencyto").selectedIndex].text;
+      
+     
+    if(Math.abs(document.getElementById("taxto").value)>0.1  || document.getElementById("taxto").value==0)
+    { var alyna=Number(document.getElementById("accto").value)+Number(document.getElementById("taxto").value);
+         document.getElementById("taxtoratio").innerHTML="";
+     }
+else { var alyna=Number(document.getElementById("accto").value)+Number(document.getElementById("taxto").value)*Number(document.getElementById("accto").value);
+     document.getElementById("taxtoratio").innerHTML=Number(document.getElementById("taxto").value)*Number(document.getElementById("accto").value); 
+}
+    document.getElementById("alyna").innerHTML=alyna+" "+alynacur;
+      
+     
+    
+     acc=document.getElementById("accfrom").value;
+    accrcv=document.getElementById("accto").value;
+    cur=document.getElementById("currencyfrom").value;
+    currcv=document.getElementById("currencyto").value;
+    tax=document.getElementById("taxfrom").value;
+    taxrcv=document.getElementById("taxto").value;
+    taxcur=cur;
+    taxcurrcv=currcv;
+     
+       document.getElementById("taf").innerHTML =tafqeet( document.getElementById("accfrom").value)+" "+document.getElementById("currencyfrom").options[document.getElementById("currencyfrom").selectedIndex].text;
+       document.getElementById("taf1").innerHTML =tafqeet( document.getElementById("accto").value)+" "+document.getElementById("currencyto").options[document.getElementById("currencyto").selectedIndex].text;
+    }
+
+function outname() {
+    
+  
+    document.getElementById("outnametxt").innerHTML=document.getElementById("output").options[document.getElementById("output").selectedIndex].text;
+}
+
+
+function inname() {
+    
+  
+    document.getElementById("innametxt").innerHTML=document.getElementById("input").options[document.getElementById("input").selectedIndex].text;
+}
+/*
+  const firebaseConfig = {
+  apiKey: "AIzaSyAoK2ZOMvOxpwqhZIgfQ48O5bLbdeGtjDA",
+  authDomain: "syrialinkx.firebaseapp.com",
+  databaseURL: "https://syrialinkx.firebaseio.com",
+  projectId: "syrialinkx",
+  storageBucket: "syrialinkx.appspot.com",
+  messagingSenderId: "879365390863",
+  appId: "1:879365390863:web:1d13c7b4db21a99f70597a"
+};
+*/
+
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyC0esGNBo2_2w4JucRans9zBZulhgTAbb0",
+  authDomain: "sy-iyad.firebaseapp.com",
+  databaseURL: "https://sy-iyad-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "sy-iyad",
+  storageBucket: "sy-iyad.firebasestorage.app",
+  messagingSenderId: "873740808897",
+  appId: "1:873740808897:web:f1c636369a510256e41a40",
+  measurementId: "G-7VLX9WHL3H"
+};
+
+
+</script>
+
+
+
+	<!--script>
+    
+		 document.getElementById("output").value="";		 
+    document.querySelector('#frm').addEventListener('submit', function(e) {
+      var form = this;
+      
+      
+      if (document.forms["frm"]["output"].selectedIndex == 0) {
+       swal("خطأ", "الرجاء اختيار   المركز المرسل"+" انتبه يا   ادمن", "warning");
+
+		
+        return false;
+    }
+    
+    if (document.forms["frm"]["input"].selectedIndex == 0) {
+       swal("خطأ", "الرجاء اختيار   المركز المستقبل"+" انتبه يا  ادمن ", "warning");
+
+		
+        return false;
+    }
+	  
+          
+            if (document.forms["frm"]["output"].value == document.forms["frm"]["input"].value && document.forms["frm"]["currencyfrom"].value == document.forms["frm"]["currencyto"].value ) {
+       swal("خطأ", "الرجاء اختيار     مركزين مختلفين "+" انتبه يا  ادمن ", "warning");
+
+		
+        return false;
+    }
+          
+          
+     if (document.forms["frm"]["currencyfrom"].value == '') {
+       swal("خطأ", "الرجاء اختيار العملة الأولى"+" انتبه يا  ادمن ", "warning");
+
+		
+        return false;
+    }
+    
+     if (document.forms["frm"]["currencyto"].selectedIndex.value == '') {
+        swal("خطأ", "الرجاء اختيار العملة الثانية"+" انتبه يا  ادمن ", "warning");
+        return false;
+    }
+    
+     if (document.forms["frm"]["accfrom"].value <= 0) {
+        swal("خطأ", "الرجاء ادخال   مبلغ لنا بشكل صحيح"+" انتبه يا  ادمن ", "warning");
+        return false;
+    }
+    
+     if (document.forms["frm"]["accto"].value <= 0) {
+        swal("خطأ", "الرجاء ادخال   مبلغ علينا بشكل صحيح"+" انتبه يا   ادمن", "warning");
+        return false;
+    }
+     if (document.forms["frm"]["cut"].value <= 0) {
+         swal("خطأ", "حدث خطأ حاول مرة أخرى "+" انتبه يا  ادمن ", "warning");
+        return false;
+    }
+     
+        if (document.getElementById("currencyto").value == document.getElementById("currencyfrom").value && document.getElementById("cut").value!=1) {
+        swal("خطأ", "الرجاء     التأكد من سعر القص"+" انتبه يا  ادمن ", "warning");
+        return false;
+    }
+     
+    
+	  acc = document.getElementById("accfrom").value;
+            accrcv = document.getElementById("accto").value;
+            cur = document.getElementById("currencyfrom").value;
+            currcv = document.getElementById("currencyto").value;
+            tax = document.getElementById("taxfrom").value;
+            taxrcv = document.getElementById("taxto").value;
+            
+           
+            $.ajax({
+
+
+                        url: "checkkyt.php",
+                        data: {
+                            accfrom: acc,
+                            accto: accrcv,
+                            curfrom: cur,
+                            curto: currcv,
+                            taxfrom: tax,
+                            taxto: taxrcv,
+                            taxcurfrom: cur,
+                            taxcurto: currcv
+                        },
+                        type: 'POST',
+                        success: function(response) {
+                            var resp = $.trim(response);
+                            karr = Number(resp);
+                            
+                            if (karr < 0 || resp.length>7) {
+                                swal({
+                                    title: "هذا القيد خاسر ؟؟"+" انتبه يا  فرع البردقلي😰😰😰",
+                                    text: "هل تريد المتابعه وتنفيذ القيد؟؟",
+                                    icon: "warning",
+                                    buttons: [
+                                        'لا',
+                                        'نعم'
+                                    ],
+                                    dangerMode: false,
+
+                                }).then(function(isConfirm) {
+                                        if (isConfirm) {
+                                            form.submit();
+                                            document.forms["frm"]["save"].disabled = true;
+                                           swal("تم انشاء القيد بنجاح","شكرا لك يا فرع البردقلي"+"🌹🌹🌹🌹", {
+                                                button: false,
+                                                closeOnClickOutside: false,
+                                                icon: "success"
+                                            });
+
+
+                                        } else {}
+                                    });
+
+
+                                }
+
+                                else if (karr > 10) {
+                                    swal({
+                                        title: " هذا القيد يربح أكثر من 10 دولار!!"+" انتبه يا  فرع البردقلي😰😰😰",
+                                        text: "هل تريد المتابعه وتنفيذ القيد؟؟",
+                                        icon: "warning",
+                                        buttons: [
+                                            'لا',
+                                            'نعم'
+                                        ],
+                                        dangerMode: false,
+
+                                    }).then(function(isConfirm) {
+                                            if (isConfirm) {
+                                                form.submit();
+                                                toggleStar();
+                                                document.forms["frm"]["save"].disabled = true;
+                                               swal("تم انشاء القيد بنجاح","شكرا لك يا   "+"🌹🌹🌹🌹", {
+                                                    button: false,
+                                                    closeOnClickOutside: false,
+                                                    icon: "success"
+                                                });
+
+
+                                            } else {}
+                                        }
+
+);
+                                    }
+
+                                    else {
+                                        form.submit();
+                                       
+                                        document.forms["frm"]["save"].disabled = true;
+                                        swal("تم انشاء القيد بنجاح","شكرا لك يا اياد "+"🌹🌹🌹🌹", {
+                                            button: false,
+                                            closeOnClickOutside: false,
+                                            icon: "success"
+                                        });
+                                    }
+
+
+                            
+
+
+   
+} 
+  
+});
+       });
+  
+  
+  </script-->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  
+    <script src="assets/js/jquery.js"></script>   
+    <script src="assets/js/jquery-1.8.3.min.js"></script>   
+    <script src="assets/js/bootstrap.min.js"></script>   
+    
+    <script type="text/javascript" src="assets/js/gritter/js/jquery.gritter.js"></script>
+    <script type="text/javascript" src="assets/js/gritter-conf.js"></script>
+
+    <!--script for this page-->
+    <script src="assets/js/sparkline-chart.js"></script>    
+	<script src="assets/js/zabuto_calendar.js"></script>	
+	 
+   <script src="../../../js/jquery.dataTables.min.js"></script>	
+        <script src="../../../js/dataTables.bootstrap.min.js"></script>	
+	      <script type="application/javascript">
+            
+             $(document).ready(function() {
+    $('#example').DataTable( {
+         
+        language: {
+            url: '//cdn.datatables.net/plug-ins/1.10.24/i18n/Arabic.json'
+        },
+         "paging":   true,
+        "ordering": true,
+        "searching": true,
+        
+         "deferRender": true,
+           
+       dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'print','pageLength'
+        ],
+        
+    } );
+} );
+ 
+
+</script>
+                
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+                              
+
+ 
+        
+        
+  
+
+                           
+ 
+    <script src="../../../js/chosen.jquery.js" type="text/javascript"></script>
+  <script src="../../../js/prism.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../js/init.js" type="text/javascript" charset="utf-8"></script>
+       <script src="../../../assets/js/bootstrap.min.js"></script>
+       
+       	 
+   <script src="../../../vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+          
+            
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+                
+                
+              
+	</script>     
+
+
+       
+  <script>
+         var $radios = $('input:radio');
+
+$radios.change(function () {
+    $radios.parent().parent().removeClass('checked');
+    $(this).parent().parent().addClass('checked');
+    $("html, body").animate({ scrollTop: document.body.scrollHeight }, "slow");
+}); 
+
+
+ $('form').submit(function(){
+    $(this).children('button').prop('disabled', true);
+});
+          </script>
+          
+<script>
+        
+   </script>       
+      <style>
+          .checked {
+  box-shadow: 0 0 15px #5cd053;
+  border-color: #28921f;
+}
+
+</style>
+<script>
+
+
+var unfocusableElems = document.querySelectorAll('a');
+unfocusableElems.forEach(function (el) { el.setAttribute('tabindex', '-1'); });   
+
+            </script> 
+    <script type="text/javascript">
+window.onload = function () {
+     document.getElementById("tablecon").style.display = "block";
+     
+        $('.*').attr('tabindex', '-1');       
+}; 
+</script>      
+
+</body>
+
+            
+</html>
+
+

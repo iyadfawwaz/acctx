@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="login-container">
+        <form id="loginForm" class="login-form">
+            <h2>تسجيل الدخول</h2>
+            <div class="input-group">
+                <label for="email">البريد الإلكتروني</label>
+                <input type="email" id="email" required placeholder="example@mail.com">
+            </div>
+           <div class="input-group">
+    <label for="password">كلمة المرور</label>
+    <div style="position: relative;">
+        <input type="password" id="password" required>
+        <span id="togglePassword" style="position: absolute; left: 10px; top: 30%; cursor: pointer;">👁️</span>
+    </div>
+</div>
+
+            <button type="submit" class="login-btn">دخول</button>
+            <p class="message">ليس لديك حساب؟ <a href="#">إنشاء حساب</a></p>
+        </form>
+    </div>
+    <script src="cdn.jsdelivr.net"></script>
+
+
+    <!-- استدعاء Firebase App و Auth (نسخة Modular 2026) -->
+<script type="module">
+  import { initializeApp } from  "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+  import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
+  /*
+    const firebaseConfigx = {
+  apiKey: "AIzaSyC0esGNBo2_2w4JucRans9zBZulhgTAbb0",
+  authDomain: "sy-iyad.firebaseapp.com",
+  databaseURL: "https://sy-iyad-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "sy-iyad",
+  storageBucket: "sy-iyad.firebasestorage.app",
+  messagingSenderId: "873740808897",
+  appId: "1:873740808897:web:f1c636369a510256e41a40",
+  measurementId: "G-7VLX9WHL3H"
+};
+*/
+    const firebaseConfigx = {
+  apiKey: "AIzaSyA8Wo9SVYsIfkXoP5shUz7d45ysTp8qOWw",
+  authDomain: "iconic-indexer-315711.firebaseapp.com",
+  databaseURL: "https://iconic-indexer-315711-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "iconic-indexer-315711",
+  storageBucket: "iconic-indexer-315711.firebasestorage.app",
+  messagingSenderId: "971689870803",
+  appId: "1:971689870803:web:d8c88e5b067cfff5b6db26",
+  measurementId: "G-ZZ5F52WXYY"
+};
+
+  // تهيئة Firebase
+  const app = initializeApp(firebaseConfigx);
+  const auth = getAuth(app);
+
+  import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
+
+// التحقق من حالة المستخدم عند تحميل الصفحة
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    localStorage.setItem("userId",user.uid);
+    // إذا كان المستخدم مسجلاً دخوله بالفعل، نقله فوراً لصفحة الداشبورد
+    Swal.fire({
+    title: 'جاري التحقق...',
+    allowOutsideClick: false,
+    didOpen: () => {
+      Swal.showLoading();
+    }
+  });
+    window.location.href = "./a/b/c/pl.m.html"; 
+  } else {
+    // المستخدم غير مسجل، اترك الصفحة كما هي ليقوم بتسجيل الدخول
+     Swal.fire({
+    title:"لا يوجد مستخدم نشط.",
+    allowOutsideClick: false,
+    didOpen: () => {
+      Swal.showLoading();
+    },
+    timer:3000
+  });
+  
+  }
+});
+
+
+  // ربط نموذج تسجيل الدخول
+  const loginForm = document.getElementById('loginForm');
+  loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+     Swal.fire({
+    title: 'جاري التحقق...',
+    allowOutsideClick: false,
+    didOpen: () => {
+      Swal.showLoading();
+    },
+    timer:3000
+  });
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // نجاح تسجيل الدخول
+        const user = userCredential.user;
+        Swal.fire({
+    title: 'logged in '+user,
+    allowOutsideClick: false,
+    didOpen: () => {
+      Swal.showLoading();
+    },
+    timer:3000
+  });
+        window.location.href = "./a/b/c/pl.m.html"; // التوجه لصفحة المستخدم
+      })
+      .catch((error) => {
+        // فشل تسجيل الدخول
+        const errorMessage = error.message;
+         Swal.fire({
+    title: 'error '+errorMessage,
+    allowOutsideClick: false,
+    didOpen: () => {
+      Swal.showLoading();
+    },
+    timer:3000
+  });
+      });
+  });
+</script>
+
+    <script src="script.js"></script>
+</body>
+</html>

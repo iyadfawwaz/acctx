@@ -1,0 +1,1727 @@
+<html lang="en">
+  <head>
+      
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;500&display=swap" rel="stylesheet">
+
+
+<style>
+   
+    .dark-mode {
+   background-color: #3c3c3c !important;
+  color: white !important;
+   font-color: white !important;
+    background: rgb(60,60,60)!important;
+}
+     .scrollo-left {
+height: 40px; 
+overflow: hidden;
+position: relative;
+}
+ 
+</style>
+<style>
+    
+     .hideall{
+                display: none;
+            }
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 4.5s;
+  animation: fadein 0.5s, fadeout 0.5s 4.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+</style>
+
+
+      <style>
+          
+          * {
+  
+ font-family: tajawal;
+  
+
+}
+.thead_dark {
+    background: #004b97;
+    color:white;
+}
+
+.bbox{
+    background-color: yellow;
+    text-align: center;
+    border-radius: 20px;
+    font-size: 24px;
+}
+        
+.bootstrap-select .dropdown-menu {
+	width: 100%;
+}
+
+.bootstrap-select .dropdown-menu li small {
+	white-space: normal;
+}
+
+.wrapper{
+    max-width:100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+#tablecon{
+    max-width:100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+          </style>
+          
+            <style>
+.snote{
+max-width:100%;
+ 
+position: absolute;
+left: 0px;
+top: 200px;
+width: 100%;
+height: 100%;
+direction: rtl;
+z-index: 2;
+}
+
+.snote h2,p{
+  font-size:100%;
+  font-weight:normal;
+}
+
+.snote ul,li{
+  list-style:none;
+}
+
+.snote ul{
+  overflow:hidden;
+  padding:3em;
+}
+
+.snote ul li a{
+  text-decoration:none;
+  color:#000;
+  background:#ffc;
+  display:block;
+  height:15em;
+  width:20em;
+  padding:1em;
+  -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+   box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  -webkit-transform:rotate(-6deg);
+  -o-transform:rotate(-6deg);
+  -moz-transform:rotate(-6deg);
+  -moz-transition:-moz-transform .15s linear;
+  -o-transition:-o-transform .15s linear;
+  -webkit-transition:-webkit-transform .15s linear;
+}
+
+.snote ul li:nth-child(even) a{
+  -o-transform:rotate(4deg);
+  -webkit-transform:rotate(4deg);
+  -moz-transform:rotate(4deg);
+   position:relative;
+  top:5px;
+  background:#cfc;
+}
+
+.snote ul li:nth-child(3n) a{
+  -o-transform:rotate(-3deg);
+  -webkit-transform:rotate(-3deg);
+  -moz-transform:rotate(-3deg);
+  position:relative;
+  top:-5px;
+  background:#ccf;
+}
+
+.snote ul li:nth-child(4n) a{
+  -o-transform:rotate(5deg);
+  -webkit-transform:rotate(5deg);
+  -moz-transform:rotate(5deg);
+  position:relative;
+  top:-10px;
+  background:#fcf;
+}
+
+.snote ul li a:hover {
+  -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+  box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  -o-transform: scale(1.25);
+  position:relative;
+  z-index:5;
+}
+
+.snote ul li{
+  margin:1em;
+  float:left;
+}
+
+.snote ul li h2{
+  font-size:160%;
+  font-weight:bold;
+  padding-bottom:0px;
+  font-family:Oswald;
+  text-align:center;
+  color:#000;
+}
+ 
+</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name=”format-detection” content=”telephone=no”>
+
+ <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notokufiarabic.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notonaskharabic.css" />
+ 
+        <title>الميزان         </title>
+ 
+                            
+          
+ <link rel="shortcut icon" href="../../../img/icon.ico" type="image/x-icon">
+    <link rel="icon" href="../../../img/icon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="../../../assets/css/bootstrap-select.css">
+    <link href="../../../assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    
+    
+    <!-- Custom styles for this template -->
+    <link href="../../../assets/css/style1.css?ver=213" rel="stylesheet"/>
+    <link href="../../../assets/css/style-responsive.css" rel="stylesheet"/>
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.4.0/css/bootstrap-rtl.css" rel="stylesheet"/>
+ <link rel="stylesheet" href="../../../css/chosen.css">   
+         
+<style type="text/css" media="print">
+    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+    @page 
+    {
+        size:  A4;   /* auto is the initial value */
+        margin: 0mm;  /* this affects the margin in the printer settings */
+    }
+
+    html
+    {
+        
+        margin: 0px;  /* this affects the margin on the html before sending to printer */
+    }
+
+    body
+    {
+        border: solid 1px green ;
+        margin: 10mm 15mm 10mm 15mm; /* margin you want for the content */
+    }
+    
+     td
+    {
+        font-size: 12px;
+    }
+    
+     th
+    {
+        font-size: 12px;
+    }
+    
+    .hmz{
+        padding: 30px!important; width: 60%!important;    background: rgba(255, 255, 255, 0.2)!important;
+border-radius: 16px!important;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1)!important;
+backdrop-filter: blur(5px)!important;
+-webkit-backdrop-filter: blur(5px)!important;
+border: 1px solid rgba(255, 255, 255, 0.3)!important;
+    }
+    </style>
+    
+  
+ 
+ 
+  <style>
+      
+    
+.ft_theme_switcher {position:fixed;top:125px;left:-280px;z-index:99999999;background-color:#222;color:#fff;padding:20px;width:280px;border-radius: 0 3px 3px 0;}
+
+.ft_theme_switcher .toggle {top:14px;font-size:18px;line-height:40px;text-align:center;background-color:#222;cursor:pointer;right:-38px;width:38px;height:40px;position:absolute;border-radius: 0 3px 3px 0;}
+
+.ft_theme_switcher .desc h3 {font-weight:300;margin-top:0;direction: rtl;}
+
+.ft_theme_switcher .desc p {
+font-size:12px;
+line-height:19px;
+font-weight:300;
+margin-bottom:23px
+}
+
+.ft_theme_switcher .style_list {
+overflow:hidden
+}
+
+.ft_theme_switcher .style_list .style {
+margin-right:40px;
+margin-bottom:10px;
+display:block;
+width:100%;
+position:relative
+}
+
+.ft_theme_switcher .style_list .style a {
+outline:none;
+position:absolute;
+width:100%;
+height:100%;
+top:0;
+right:0
+}
+
+.ft_theme_switcher .style_list .style .name {font-size: 14px;color:#878787;}
+
+.ft_theme_switcher .style_list .style .colors {
+margin-bottom:2px;
+overflow:hidden
+}
+
+.ft_theme_switcher .style_list .style .colors .name {padding-right: 0px;float:right;direction: rtl;}
+
+.ft_theme_switcher .style_list .style .color {
+float:right;
+height:20px;
+width:25px
+}
+
+.ft_theme_switcher .style_list .style:hover .name {
+color:#fff
+}
+      
+      
+      a[href^=tel] {
+   text-decoration:inherit;
+   color: inherit;
+}
+          .LockOn {
+    display: block;
+    visibility: visible;
+    position: absolute;
+    z-index: 999;
+    top: 0px;
+    left: 0px;
+    width: 105%;
+    height: 105%;
+    background-color:white;
+    vertical-align:bottom;
+    padding-top: 20%; 
+    filter: alpha(opacity=75); 
+    opacity: 0.75; 
+    font-size:large;
+    color:blue;
+    font-style:italic;
+    font-weight:400;
+    background-image: url("../Common/loadingGIF.gif");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+.ulx {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+   
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.lix {
+  float: right;
+}
+
+.ax {
+  display: block;
+  color: white;
+  text-align: center;
+  padding :  0.2vw;
+  text-decoration: none;
+ 
+}
+
+.imx{ max-width: 4vw;}
+
+.ax:hover {
+  background: rgb(0,255,68);
+background: radial-gradient(circle, rgba(0,255,68,0.6530987394957983) 0%, rgba(255,255,255,0) 75%);
+}
+table tbody tr:nth-child(even):hover td{
+    background-color: #7ef29c !important;
+}
+
+table tbody tr:nth-child(odd):hover td {
+    background-color: #7ef29c !important;
+}
+
+@media screen and (max-width: 800px) {
+    .mainlogo{ width: 50vw !important; }
+.smalllogo{ width: 10vw !important; }
+    .ulx {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.lix {
+  float: right;
+}
+
+.ax {
+  display: block;
+  color: black;
+  text-align: center;
+  padding :  2vw;
+  text-decoration: none;
+ 
+}
+
+.imx{ max-width: 13vw; max-height: 40px;}
+
+.mainlogo{ width: 50vw !important; }
+
+.ax:hover {
+  background: rgb(0,255,68);
+background: radial-gradient(circle, rgba(0,255,68,0.6530987394957983) 0%, rgba(255,255,255,0) 75%);
+}
+}
+.glass1 {
+ background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);   
+}
+</style>
+
+
+ <style>
+        
+        @media (max-width: 767px) {
+            .hidden-mobile {
+                display: none;
+            }
+            
+            .hmz{padding : 0px!important; width:100%!important;} 
+             .wrapper{padding : 0px!important;}
+        }
+    </style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+  
+  
+  </head>
+
+  
+  
+<body>
+    
+     <nav class="navbar navbar-default"style="margin-bottom: 0px"  >
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button  type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        <a style="color: #004b97" class="navbar-brand  " href="pl.m.html"><img id="smalllogo" class="smalllogo" style="width: 2.5vw" src="../../../img/companylogo.PNG"/>  </a>
+
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+      <ul class="nav navbar-nav">
+         
+      <li class="dropdown">
+          <a style="color: #004b97" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">   <i class="fa fa-bank"></i> المراكز  <span class="caret"></span></a>
+          <ul class="dropdown-menu"> 
+              <li><a  style="color: #004b97" href="centers"><i class="fa fa-users"></i>    جميع الصناديق</a></li>
+               
+                            <li><a style="color: #004b97" href="deletedcenters"><i class="fa fa-trash"></i>   سلة المحذوفات </a></li>
+          
+                   
+        
+            <li><a style="color: #004b97" href="bb"><i class="fa fa-line-chart"></i> عدد حوالات المراكز</a></li>
+             <li><a style="color: #004b97" href="centers_1"><i class="fa fa-cubes"></i> حركة الصناديق</a></li>
+           
+          </ul>
+        </li>
+                 
+           <li class="dropdown">
+          <a href="#" style="color: #004b97" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-credit-card"></i> العمليات <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a style="color: #004b97" href="addkayit.html"><i class="fa fa-exchange"></i> قيد من الى</a></li><li><a style="color: #004b97" href="addkayit_1.html"><i class="fa fa-arrows-alt"></i> قيد متقدم</a></li><li><a style="color: #004b97" href="open.html"><i class="fa fa-key"></i> قيد افتتاحي</a></li><li><a style="color: #004b97" href="addsnin.html"><i class="fa fa-arrow-right"></i>   سند قبض </a></li><li><a style="color: #004b97" href="addsnout.html"><i class="fa fa-arrow-left"></i> سند دفع</a></li><li><a style="color: #004b97" href="cut.html"><i class="fa fa-cut"></i>   سند قص</a></li><li><a style="color: #004b97" href="addkayit_cut.html"><i class="fa fa-cut"></i>   سند قص مع اغلاق</a></li><li role="separator" class="divider"></li><li><a style="color: #004b97" href="translive.html"><i class="fa fa-eye"></i>     مراقبة العمليات</a></li><li><a style="color: #004b97" href="dafatcheck.html"><i class="fa fa-check"></i>       تدقيق القيود</a></li>               </ul>
+        </li>
+         <li class="dropdown">
+          <a href="#" style="color: #004b97" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-retweet"></i> الحسابات <span class="caret"></span></a>
+          <ul class="dropdown-menu"><li><a style="color: #004b97" href="mizan.html"><i class="fa fa-balance-scale"></i> ميزان المراجعة</a></li>              <li><a style="color: #004b97" href="kartable.html"><i class="fa fa-area-chart"></i> مخطط الميزان والارباح</a></li>                            
+              <li><a style="color: #004b97" href="sanadik.html"><i class="fa fa-cubes"></i> الصناديق</a></li><li><a style="color: #004b97" href="cutcenters.html"><i class="fa fa-cut"></i> مراكز القطع</a></li><li><a style="color: #004b97" href="report.html"><i class="fa fa-area-chart"></i> تقارير</a></li><li role="separator" class="divider"></li><li><a style="color: #004b97" href="account.html"><i class="fa fa-balance-scale"></i> كشف حساب  </a></li><li><a style="color: #004b97" href="dafatsearch.html"><i class="fa fa-exchange"></i> جميع القيود</a></li><li><a style="color: #004b97" href="mutabaka.html"><i class="fa fa-check-circle"></i>   مطابقات</a></li>              
+          </ul>
+        </li>
+        
+        
+        
+       
+         <li class="dropdown">
+          <a style="color: #004b97" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-paper-plane"></i> الحوالات <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a style="color: #004b97" href="dafatsearch.html"><i class="fa fa-exchange"></i>   القيود</a></li><li><a style="color: #004b97" href="incomesearch.html"><i class="fa fa-clock-o"></i>   حوالات قيد التسليم - داخلي  </a></li><li><a style="color: #004b97" href="incomesearch_ext.html"><i class="fa fa-history"></i>   حوالات قيد التسليم - خارجي  </a></li><li><a style="color: #004b97" href="transactive_1.html"><i class="fa fa-check"></i>  تم تسليمها   </a></li><li role="separator" class="divider"></li><li><a style="color: #004b97" href="check.html"><i class="fa fa-mobile-phone"></i> جهاز الحوالة</a></li>          </ul>
+        </li>
+        
+        
+         
+         
+                  
+        
+          
+        
+        
+                         <li class="dropdown">
+          <a style="color: #1a4053" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-star"></i> الربط <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+               
+               <li><a style="color: #1a4053" href="api_comp.html"><i class="fa fa-star"></i> شركات الربط</a></li> 
+                
+               
+               
+          </ul>
+        </li>        
+        <li class="dropdown">
+          <a style="color: #004b97" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-gear"></i> الأدوات <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a style="color: #004b97" href="sarf.html"><i class="fa fa-cut"></i> أسعار القص</a></li><li><a style="color: #004b97" href="curs.html"><i class="fa fa-dollar"></i>   ادارة العملات</a></li><li><a style="color: #004b97" href="eventrecord.html">  <i class="fa fa-bell"></i> سجل   الأحداث</a></li>  
+              <li><a style="color: #004b97" href="logrecord.html">  <i class="fa fa-eye"></i> سجل تسجيل الدخول</a></li>
+               <li><a style="color: #004b97" href="changepass.html"><i class="fa fa-lock"></i>       تغيير كلمة المرور </a></li>
+          </ul>
+        </li>
+        
+         <li>
+              
+              <form  name="frmdelete" class="form-horizontal" action="transsearch" method="post" enctype="multipart/form-data"  >
+                  <input type="text" tabindex="-1" name="patern" placeholder="ابحث عن حوالة" class="form-control " style="margin-top:  0.5vw"/>
+              </form>   
+              </li>
+        
+      </ul>
+           <ul class="nav pull-left top-menu">
+                     
+                    <li><a    class="logout" href="logout.php?logout">  خروج</a></li>
+                   
+            	</ul>
+      
+          <ul class="nav pull-left top-menu">
+                     
+                  
+              <li> <a class="logout"    title="    تحديث" href="javascript:location.reload(true)">  <i style=" font-size: 16px" class="fa fa-refresh"></i>    </a></li>
+              <li> <a class="logout"   title="  الوضع الليلي  "  href="javascript:dark();">  <i id="darktoggle" style=" font-size: 16px" class="fa fa-moon-o"></i>    </a></li>
+              <li> <a class="logout"  style=" padding: 3px"  title="    صندوق الوارد" href="inbox">  <i style=" font-size: 16px;" class="fa fa-envelope"></i>  <span class="badge" style="background-color: red;margin: 0px;">1</span>  </a></li>
+            	</ul>
+                     
+                  
+            	 
+        
+       <div class="scrollo-left" style="  ">  <pre style="border: 0; background-color: transparent; font-family: tajawal;  white-space: nowrap; overflow: hidden;margin-top: 0vw;  "   >  مساء الخير 😊😊 يا فرع البردقلي  </pre></div>
+       
+      
+    
+      
+        
+        
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+       
+            
+         <ul class="ulx">
+       <center class="glass1">
+             <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="العملاء    "  class="ax" href="centers.html" >  <img class="imx"     src="../../../img/icons/idara/1.png"/></a></li>
+              <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="كشف حساب    "  class="ax" href="account.html" >  <img class="imx"     src="../../../img/icons/idara/2.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="الصناديق    "  class="ax" href="sanadik.html" >  <img class="imx"     src="../../../img/icons/idara/3.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="مراكز القطع    "  class="ax" href="cutcenters.html" >  <img class="imx"     src="../../../img/icons/idara/4.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="      قيد من الى"  class="ax" href="addkayit.html" >  <img class="imx"     src="../../../img/icons/idara/8.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="      سند قبض"  class="ax" href="addsnin.html" >  <img class="imx"     src="../../../img/icons/idara/17.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="      سند دقع"  class="ax" href="addsnout.html" >  <img class="imx"     src="../../../img/icons/idara/18.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="          سند قص"  class="ax" href="cut" >  <img class="imx"     src="../../../img/icons/idara/9.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="            قص مع اغلاق"  class="ax" href="addkayit_cut.html" >  <img class="imx"     src="../../../img/icons/idara/27.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="      القيود"  class="ax" href="dafatsearch.html" >  <img class="imx"     src="../../../img/icons/idara/11.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="      قيد التسليم"  class="ax" href="incomesearch.html" >  <img class="imx"     src="../../../img/icons/idara/19.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="      تم التسليم"  class="ax" href="transactive_1.html" >  <img class="imx"     src="../../../img/icons/idara/20.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="    اسعار القص"  class="ax" href="sarf.html" >  <img class="imx"     src="../../../img/icons/idara/13.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="     تقارير"  class="ax" href="report.html" >  <img class="imx"     src="../../../img/icons/idara/14.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="      قيد متقدم"  class="ax" href="addkayit_1.html" >  <img class="imx"     src="../../../img/icons/idara/15.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="  بحث متقدم    "  class="ax" href="advanced_search.html" >  <img class="imx"     src="../../../img/icons/idara/16.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="  مراقبة العمل"  class="ax" href="translive.html" >  <img class="imx"     src="../../../img/icons/idara/21.png"/></a></li>   
+        </center>
+      </ul>
+    <script>
+   var elz = document.createElement("img");
+elz.src = "../../../img/spin.gif";                    
+window.onbeforeunload = function(){
+    
+  document.getElementById('coverScreen').style.display = 'block';
+  
+
+};
+</script>
+<div id="coverScreen" style="display: none" class="LockOn">
+        <center>  <img  src="../../../img/spin.gif"/></center>
+</div>
+
+ <script>
+     
+         var $radios = $('input:radio');
+
+$radios.change(function () {
+    $radios.parent().parent().removeClass('checked');
+    $(this).parent().parent().addClass('checked');
+  $("html, body").animate({ scrollTop: document.body.scrollHeight }, "slow");
+
+}); 
+
+ function ACTG(){
+            var tt='side';
+                var a = $('#scalee');
+    			a.hasClass("ocult") ? a.animate({
+    				left: "0"
+    			}, 500) : a.animate({
+    				left: "-280px"
+    			}, 500), a.toggleClass("ocult")
+                
+                $.ajax({
+                        url: 'checkbalance', 
+                          data:{type:tt}, 
+                          type:'POST',
+                        success: function(result){
+                
+                           
+                          $(".amwidget").html(result);
+                          
+                          
+                        }
+                
+                });
+            
+          }
+          
+          
+          
+          
+function dark() {
+    
+    
+   
+    
+    
+    var all = document.getElementsByTagName("*");
+
+for (var i=0, max=all.length; i < max; i++) {
+     all[i].classList.toggle("dark-mode");
+}
+if(document.body.classList.contains("dark-mode")){
+  
+ 
+ mode="dark";
+ }
+ 
+ else {
+try{ document.getElementById("smalllogo").src="../../../img/companylogo.PNG";
+ document.getElementById("mainlogo").src="../../../img/companylogo.PNG";
+ } catch(ex){}
+  
+mode="light";
+ }
+ 
+ 
+    $.ajax({
+                                url:"checknot.php",
+				data:{mode:mode},
+				type:'POST',
+				success:function(response) {
+                                 
+                                   
+                               }
+				});
+}
+ 
+  function shownotes() {
+
+                document.getElementById("snote").classList.toggle("hideall");
+
+            }
+ 
+function savenote(id){
+    var val=document.getElementById(id).value;    
+     $.ajax({
+                            
+                        
+				url:"savenote.php",
+				data:{tok:id,value:val},
+				type:'POST',
+				success:function(response) {
+                                   
+				}
+			});
+}
+
+function mkdark() {
+   var all = document.getElementsByTagName("*");
+
+for (var i=0, max=all.length; i < max; i++) {
+     all[i].classList.add("dark-mode");
+}
+ try{
+ document.getElementById("smalllogo").src="../../../img/companylogodark.PNG";
+ document.getElementById("mainlogo").src="../../../img/companylogodark.PNG";
+ } catch(ex){}
+ 
+ 
+  
+  
+}
+
+
+ $(document).ready(function(){
+        $(".bbox").click(function() {
+            
+          mer=  $(this).html();
+            
+            $.ajax({ 
+				url:"gettest.php",
+				data:{mr_bx:mer},
+				type:"POST",
+				success:function(response) {
+                                document.getElementById("accshowxx").innerHTML =response;
+				  	 
+					 
+				}
+				 
+			});
+        });
+});
+ 
+ 
+ 
+          
+          </script>
+          
+          
+          
+     <div class="ft_theme_switcher theme_switcher_bod  "  style="background-color: #004b97;top:215px;">
+               <div style="background-color: #004b97" class="toggle" onclick="shownotes();"><i style="font-size: 33px; "class="fa fa-sticky-note-o"></i></div>
+           
+        </div>   
+<div class="snote hideall" id="snote">
+<ul>
+  <li>
+    <a  >
+        <h2 style="font-family: tajawal">ملاحظة 1</h2><hr />
+        <textarea id="note1" onblur="savenote('note1')" style="background-color:rgba(0, 0, 0, 0.0);  border: none; font-family: tajawal;width: 100%;height: 50%;font-size: 20px">المالية</textarea>
+    </a>
+  </li>
+    <li>
+    <a  >
+        <h2 style="font-family: tajawal">ملاحظة 2</h2><hr />
+      <textarea id="note2" onblur="savenote('note2')" style="background-color:rgba(0, 0, 0, 0.0);  border: none; font-family: tajawal;width: 100%;height: 50%;font-size: 20px">و الحوالات</textarea>
+    </a>
+  </li>
+    <li>
+    <a  >
+        <h2 style="font-family: tajawal">ملاحظة 3</h2><hr />
+      <textarea id="note3" onblur="savenote('note3')" style="background-color:rgba(0, 0, 0, 0.0);  border: none; font-family: tajawal;width: 100%;height: 50%;font-size: 20px">للصرافة</textarea>
+    </a>
+  </li>
+    <li>
+    <a  >
+        <h2 style="font-family: tajawal">ملاحظة 4</h2><hr />
+      <textarea id="note4" onblur="savenote('note4')" style="background-color:rgba(0, 0, 0, 0.0);  border: none; font-family: tajawal;width: 100%;height: 50%;font-size: 20px">شركة أميسا</textarea>
+    </a>
+  </li>
+  
+   <li>
+       <a style="height: 50em;width: 25em; overflow-y: scroll" >
+        <h2 style="font-family: tajawal">ملاحظات المراكز</h2><hr />
+      <p id="note5"  style="background-color:rgba(0, 0, 0, 0.0);  border: none; font-family: tajawal;  font-size: 16px">
+      <bre style="color:red">حوالات غير مسلمة - mut : </bre>حمزة<hr/>      
+      </p>
+    </a>
+  </li>
+   
+  
+  
+</ul>
+</div>
+          <div id="accshowxx" class="text-center" >	</div>		
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.20/c3.css" integrity="sha512-GQSxWe9Cj4o4EduO7zO9HjULmD4olIjiQqZ7VJuwBxZlkWaUFGCxRkn39jYnD2xZBtEilm0m4WBG7YEmQuMs5Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+         <section class="wrapper"> 
+                   
+               
+              <br/>                    
+              
+                   <form  name="frdate" class="form-horizontal" action="#" method="post" enctype="multipart/form-data"  >
+     
+<div   class="row"   >
+<div   class="col-md-2 col-xs-6  text-right  "   >
+    <label>من تاريخ :</label>
+</div>
+                <div   class="col-md-2 col-xs-6  text-right  "   >
+                    <input class="form-control" type="date" name ="from" id ="from"  value="2024-12-01" >
+                        
+                        </div>
+    
+    <div   class="col-md-2 col-xs-6  text-right  "   >
+    <label>الى تاريخ :</label>
+</div>
+                <div   class="col-md-2 col-xs-6  text-right  "   >
+                            <input class="form-control" type="date" name ="to" id ="to" value="2025-12-29"  >
+                        
+                        </div>
+    
+      <div   class="col-md-2 col-xs-6  text-right  "   >
+                     <button style="font-family: 'tajawal'; " class="form-control btn-success"     >
+                               <i class="fa fa-search"  ></i>
+بحث</button> 
+                                    
+                        </div>
+               
+     </div>
+	 </form>  
+              <br/>
+              
+                <canvas id="myChart3" width="400" height="100"></canvas>  
+              
+              
+              <div id="tablecon" style="display: none;">
+              <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                 
+                  
+                  
+                  
+
+ 
+  
+ 
+        <thead class="thead_dark">
+                  <tr>  
+ <th> </th>
+  <th>الوقت</th>
+  <th>الميزان - دولار</th>
+  <th>الارباح - دولار</th>
+            <th>قص </th>    
+       
+            </tr>
+        </thead>
+        
+        <tbody> 
+            
+            
+            
+             <tr>
+                
+<td >1</td>
+     <td >2025-11-24 16:51:50</td>
+         <td >-3.44</td>
+              <td >8,497.749</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.152//ريال سعودي=3.8//ليرة سورية=11,500//ليرة تركية=42.356//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >2</td>
+     <td >2025-11-11 11:33:45</td>
+         <td >-3.44</td>
+              <td >4,152.013</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.153//ريال سعودي=3.8//ليرة سورية=11,500//ليرة تركية=42.208//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >3</td>
+     <td >2025-11-11 11:31:18</td>
+         <td >-3.44</td>
+              <td >4,152.013</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.153//ريال سعودي=3.8//ليرة سورية=11,500//ليرة تركية=42.208//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >4</td>
+     <td >2025-11-04 11:35:57</td>
+         <td >-3.439</td>
+              <td >537.247</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.150//ريال سعودي=3.8//ليرة سورية=11,500//ليرة تركية=41.993//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >5</td>
+     <td >2025-11-02 16:12:56</td>
+         <td >-3.439</td>
+              <td >173.433</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.151//ريال سعودي=3.8//ليرة سورية=11,500//ليرة تركية=42.02//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >6</td>
+     <td >2025-10-29 11:46:09</td>
+         <td >-3.439</td>
+              <td >9,337.418</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.16//ريال سعودي=3.8//ليرة سورية=11,500//ليرة تركية=41.872//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >7</td>
+     <td >2025-10-26 14:51:06</td>
+         <td >-3.439</td>
+              <td >8,028.818</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.160//ريال سعودي=3.8//ليرة سورية=11,500//ليرة تركية=41.97//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >8</td>
+     <td >2025-10-26 14:42:45</td>
+         <td >-3.439</td>
+              <td >8,027.118</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.160//ريال سعودي=3.8//ليرة سورية=11,500//ليرة تركية=41.97//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >9</td>
+     <td >2025-10-26 12:27:31</td>
+         <td >-3.439</td>
+              <td >7,970.214</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.160//ريال سعودي=3.8//ليرة سورية=11,500//ليرة تركية=41.97//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >10</td>
+     <td >2025-10-26 11:19:58</td>
+         <td >-3.439</td>
+              <td >7,967.766</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.160//ريال سعودي=3.8//ليرة سورية=11,500//ليرة تركية=41.97//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >11</td>
+     <td >2025-10-26 11:19:44</td>
+         <td >-3.439</td>
+              <td >7,967.766</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.160//ريال سعودي=3.8//ليرة سورية=11,500//ليرة تركية=41.97//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >12</td>
+     <td >2025-10-22 13:46:40</td>
+         <td >-3.439</td>
+              <td >5,615.561</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.156//ريال سعودي=3.8//ليرة سورية=11,500//ليرة تركية=42.041//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >13</td>
+     <td >2025-10-22 13:45:53</td>
+         <td >-3.439</td>
+              <td >5,615.561</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.156//ريال سعودي=3.8//ليرة سورية=11,500//ليرة تركية=42.041//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >14</td>
+     <td >2025-10-21 16:46:13</td>
+         <td >-3.439</td>
+              <td >5,353.348</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.158//ريال سعودي=3.8//ليرة سورية=11,500//ليرة تركية=41.996//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >15</td>
+     <td >2025-10-20 14:45:22</td>
+         <td >-3.439</td>
+              <td >4,828.197</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.161//ريال سعودي=3.8//ليرة سورية=11,500//ليرة تركية=41.97//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >16</td>
+     <td >2025-10-05 14:52:05</td>
+         <td >-3.438</td>
+              <td >626.702</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.171//ريال سعودي=3.8//ليرة سورية=11,500//ليرة تركية=41.686//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >17</td>
+     <td >2025-09-20 12:56:44</td>
+         <td >-3.44</td>
+              <td >5,035.772</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.169//ريال سعودي=3.8//ليرة سورية=11,500//ليرة تركية=41.42//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >18</td>
+     <td >2025-09-07 11:46:35</td>
+         <td >-3.438</td>
+              <td >1,615.519</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.166//ريال سعودي=3.8//ليرة سورية=10,900//ليرة تركية=41.27//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >19</td>
+     <td >2025-09-02 23:52:37</td>
+         <td >-3.441</td>
+              <td >474.255</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.161//ريال سعودي=3.8//ليرة سورية=10,900//ليرة تركية=41.16//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >20</td>
+     <td >2025-08-02 00:18:25</td>
+         <td >-3.443</td>
+              <td >0</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.155//ريال سعودي=3.8//ليرة سورية=10,250//ليرة تركية=40.539//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >21</td>
+     <td >2025-07-30 17:50:10</td>
+         <td >-3.442</td>
+              <td >13,359.936</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.145//ريال سعودي=3.8//ليرة سورية=10,250//ليرة تركية=40.509//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >22</td>
+     <td >2025-07-29 12:33:59</td>
+         <td >-3.442</td>
+              <td >12,296.635</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.155//ريال سعودي=3.8//ليرة سورية=10,250//ليرة تركية=40.501//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >23</td>
+     <td >2025-07-24 16:45:33</td>
+         <td >-3.439</td>
+              <td >10,937.294</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.171//ريال سعودي=3.8//ليرة سورية=10,250//ليرة تركية=40.456//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >24</td>
+     <td >2025-07-23 15:26:14</td>
+         <td >-3.439</td>
+              <td >10,353.237</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.169//ريال سعودي=3.8//ليرة سورية=10,250//ليرة تركية=40.51//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >25</td>
+     <td >2025-07-22 17:30:23</td>
+         <td >-3.439</td>
+              <td >10,427.28</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.166//ريال سعودي=3.8//ليرة سورية=10,250//ليرة تركية=40.474//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >26</td>
+     <td >2025-07-12 17:31:45</td>
+         <td >-3.437</td>
+              <td >6,453.884</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.166//ريال سعودي=3.8//ليرة سورية=10,000//ليرة تركية=39.97//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >27</td>
+     <td >2025-06-29 19:01:17</td>
+         <td >-3.441</td>
+              <td >9,202.227</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.167//ريال سعودي=3.8//ليرة سورية=8,900//ليرة تركية=39.755//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >28</td>
+     <td >2025-06-23 14:24:49</td>
+         <td >-3.44</td>
+              <td >7,073.776</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.144//ريال سعودي=3.8//ليرة سورية=8,900//ليرة تركية=39.64//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >29</td>
+     <td >2025-06-22 17:08:06</td>
+         <td >-3.44</td>
+              <td >9,535.584</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.149//ريال سعودي=3.8//ليرة سورية=8,900//ليرة تركية=39.635//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >30</td>
+     <td >2025-06-18 13:03:22</td>
+         <td >-3.436</td>
+              <td >5,385.743</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.147//ريال سعودي=3.8//ليرة سورية=8,900//ليرة تركية=39.504//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >31</td>
+     <td >2025-06-03 13:10:12</td>
+         <td >-3.435</td>
+              <td >836.452</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.137//ريال سعودي=3.8//ليرة سورية=8,900//ليرة تركية=39.013//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >32</td>
+     <td >2025-05-31 12:05:45</td>
+         <td >-3.434</td>
+              <td >12,700.202</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.131//ريال سعودي=3.8//ليرة سورية=12,000//ليرة تركية=38.96//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >33</td>
+     <td >2025-05-25 19:29:55</td>
+         <td >-3.432</td>
+              <td >10,658.291</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.132//ريال سعودي=3.8//ليرة سورية=12,000//ليرة تركية=38.618//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >34</td>
+     <td >2025-05-08 17:44:59</td>
+         <td >-3.436</td>
+              <td >1,276.216</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.126//ريال سعودي=3.8//ليرة سورية=11,500//ليرة تركية=38.574//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >35</td>
+     <td >2025-05-08 17:13:04</td>
+         <td >-3.436</td>
+              <td >1,274.77</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.128//ريال سعودي=3.8//ليرة سورية=11,500//ليرة تركية=38.577//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >36</td>
+     <td >2025-05-04 19:35:26</td>
+         <td >-3.44</td>
+              <td >595.28</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.126//ريال سعودي=3.8//ليرة سورية=11,500//ليرة تركية=38.5//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >37</td>
+     <td >2025-05-02 20:12:18</td>
+         <td >-3.439</td>
+              <td >368.514</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.127//ريال سعودي=3.8//ليرة سورية=11,500//ليرة تركية=38.427//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >38</td>
+     <td >2025-04-24 13:00:42</td>
+         <td >-3.439</td>
+              <td >5,973.708</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.133//ريال سعودي=3.8//ليرة سورية=11,500//ليرة تركية=38.315//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >39</td>
+     <td >2025-04-22 14:38:34</td>
+         <td >-3.44</td>
+              <td >4,726.117</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.143//ريال سعودي=3.8//ليرة سورية=10,500//ليرة تركية=38.23//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >40</td>
+     <td >2025-04-20 14:32:06</td>
+         <td >-3.438</td>
+              <td >3,802.252</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.134//ريال سعودي=3.8//ليرة سورية=10,500//ليرة تركية=38.14//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >41</td>
+     <td >2025-04-08 18:15:47</td>
+         <td >-3.437</td>
+              <td >468.017</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.086//ليرة سورية=10,500//ليرة تركية=38.089//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >42</td>
+     <td >2025-04-08 17:12:37</td>
+         <td >-3.437</td>
+              <td >471.897</td>
+               <td >//🇪🇬 جنيه مصري=51//يورو أوربي=1.087//ليرة سورية=10,300//ليرة تركية=38.088//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >43</td>
+     <td >2025-03-20 15:06:58</td>
+         <td >-3.44</td>
+              <td >7,678.045</td>
+               <td >//🇪🇬 جنيه مصري=51//يورو أوربي=1.082//ليرة سورية=10,300//ليرة تركية=37.976//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >44</td>
+     <td >2025-03-13 11:57:01</td>
+         <td >-3.439</td>
+              <td >5,535.555</td>
+               <td >//🇪🇬 جنيه مصري=51//يورو أوربي=1.084//ليرة سورية=10,300//ليرة تركية=36.61//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >45</td>
+     <td >2025-03-11 20:48:43</td>
+         <td >-3.439</td>
+              <td >3,841.097</td>
+               <td >//🇪🇬 جنيه مصري=51//يورو أوربي=1.089//ليرة سورية=10,300//ليرة تركية=36.61//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >46</td>
+     <td >2025-03-11 20:47:24</td>
+         <td >-3.439</td>
+              <td >3,841.097</td>
+               <td >//🇪🇬 جنيه مصري=51//يورو أوربي=1.089//ليرة سورية=10,300//ليرة تركية=36.61//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >47</td>
+     <td >2025-02-26 14:23:14</td>
+         <td >-3.438</td>
+              <td >6,119.913</td>
+               <td >//🇪🇬 جنيه مصري=51//يورو أوربي=1.046//ليرة سورية=10,300//ليرة تركية=36.406//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >48</td>
+     <td >2025-02-20 12:46:19</td>
+         <td >-3.438</td>
+              <td >4,583.705</td>
+               <td >//🇪🇬 جنيه مصري=51//يورو أوربي=1.040//ليرة سورية=10,300//ليرة تركية=36.366//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >49</td>
+     <td >2025-02-16 12:21:39</td>
+         <td >-3.444</td>
+              <td >4,657.416</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.045//ليرة سورية=14,000//ليرة تركية=36.315//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >50</td>
+     <td >2025-02-16 12:21:30</td>
+         <td >-3.444</td>
+              <td >4,657.416</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.045//ليرة سورية=14,000//ليرة تركية=36.315//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >51</td>
+     <td >2025-02-16 12:19:07</td>
+         <td >-3.444</td>
+              <td >4,657.416</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.045//ليرة سورية=14,000//ليرة تركية=36.315//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >52</td>
+     <td >2025-02-15 10:02:55</td>
+         <td >-3.444</td>
+              <td >5,328.753</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.045//ليرة سورية=14,000//ليرة تركية=36.22//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >53</td>
+     <td >2025-02-13 14:43:48</td>
+         <td >-3.444</td>
+              <td >4,707.72</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.038//ليرة سورية=14,000//ليرة تركية=36.121//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >54</td>
+     <td >2025-02-11 17:05:52</td>
+         <td >-3.446</td>
+              <td >3,282.636</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.03//ليرة سورية=14,000//ليرة تركية=36.131//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >55</td>
+     <td >2025-02-11 11:10:22</td>
+         <td >-3.447</td>
+              <td >3,103.137</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.028//ليرة سورية=14,000//ليرة تركية=36.001//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >56</td>
+     <td >2025-02-09 12:59:52</td>
+         <td >-3.447</td>
+              <td >3,081.379</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.031//ليرة سورية=14,000//ليرة تركية=36//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+            <tr>
+                
+<td >57</td>
+     <td >2024-12-30 14:12:19</td>
+         <td >-3.448</td>
+              <td >6,757.005</td>
+               <td >//🇪🇬 جنيه مصري=50//يورو أوربي=1.042//ليرة سورية=14,000//ليرة تركية=35.051//دولار أمريكي=1</td>
+              
+                    
+
+                  
+            </tr>
+                        
+            
+        </tbody>
+      
+    </table>
+
+          </div>
+<script type="text/javascript">
+window.onload = function () {
+     document.getElementById("tablecon").style.display = "block";
+}; 
+</script>  
+    
+
+
+
+          </section>
+      
+
+      <!--main content end-->
+      <!--footer start-->
+      <footer class="site-footer">
+          <div class="text-center">
+             2022 - شركة أميســا 
+              <a href="#" class="go-top">
+                  <i class="fa fa-angle-up"></i>
+              </a>
+          </div>
+      </footer>
+      <!--footer end-->
+  </section>
+    
+    
+    
+<script src="../../../assets/js/jquery.js"></script>   
+    <script src="../../../assets/js/jquery-1.8.3.min.js"></script>   
+    <script src="../../../assets/js/bootstrap.min.js"></script>   
+    <script class="include" type="text/javascript" src="../../../assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    
+
+    <!--common script for all pages-->
+    <script src="../../../assets/js/common-scripts.js"></script>
+    
+    <script type="text/javascript" src="../../../assets/js/gritter/js/jquery.gritter.js"></script>
+    <script type="text/javascript" src="../../../assets/js/gritter-conf.js"></script>
+
+    <!--script for this page-->
+  <script src="../../../js/chart.js"></script>
+  
+       <script>
+    var prof=[];
+     var karat=[];
+     var dates=[];
+      
+    karat[0] =-3.448;prof[0] =6757.005;dates[0] =1;karat[1] =-3.447;prof[1] =3081.379;dates[1] =1;karat[2] =-3.447;prof[2] =3103.137;dates[2] =1;karat[3] =-3.446;prof[3] =3282.636;dates[3] =1;karat[4] =-3.444;prof[4] =4707.720;dates[4] =1;karat[5] =-3.444;prof[5] =5328.753;dates[5] =1;karat[6] =-3.444;prof[6] =4657.416;dates[6] =1;karat[7] =-3.444;prof[7] =4657.416;dates[7] =1;karat[8] =-3.444;prof[8] =4657.416;dates[8] =1;karat[9] =-3.438;prof[9] =4583.705;dates[9] =1;karat[10] =-3.438;prof[10] =6119.913;dates[10] =1;karat[11] =-3.439;prof[11] =3841.097;dates[11] =1;karat[12] =-3.439;prof[12] =3841.097;dates[12] =1;karat[13] =-3.439;prof[13] =5535.555;dates[13] =1;karat[14] =-3.440;prof[14] =7678.045;dates[14] =1;karat[15] =-3.437;prof[15] =471.897;dates[15] =1;karat[16] =-3.437;prof[16] =468.017;dates[16] =1;karat[17] =-3.438;prof[17] =3802.252;dates[17] =1;karat[18] =-3.440;prof[18] =4726.117;dates[18] =1;karat[19] =-3.439;prof[19] =5973.708;dates[19] =1;karat[20] =-3.439;prof[20] =368.514;dates[20] =1;karat[21] =-3.440;prof[21] =595.280;dates[21] =1;karat[22] =-3.436;prof[22] =1274.770;dates[22] =1;karat[23] =-3.436;prof[23] =1276.216;dates[23] =1;karat[24] =-3.432;prof[24] =10658.291;dates[24] =1;karat[25] =-3.434;prof[25] =12700.202;dates[25] =1;karat[26] =-3.435;prof[26] =836.452;dates[26] =1;karat[27] =-3.436;prof[27] =5385.743;dates[27] =1;karat[28] =-3.440;prof[28] =9535.584;dates[28] =1;karat[29] =-3.440;prof[29] =7073.776;dates[29] =1;karat[30] =-3.441;prof[30] =9202.227;dates[30] =1;karat[31] =-3.437;prof[31] =6453.884;dates[31] =1;karat[32] =-3.439;prof[32] =10427.280;dates[32] =1;karat[33] =-3.439;prof[33] =10353.237;dates[33] =1;karat[34] =-3.439;prof[34] =10937.294;dates[34] =1;karat[35] =-3.442;prof[35] =12296.635;dates[35] =1;karat[36] =-3.442;prof[36] =13359.936;dates[36] =1;karat[37] =-3.443;prof[37] =0.000;dates[37] =1;karat[38] =-3.441;prof[38] =474.255;dates[38] =1;karat[39] =-3.438;prof[39] =1615.519;dates[39] =1;karat[40] =-3.440;prof[40] =5035.772;dates[40] =1;karat[41] =-3.438;prof[41] =626.702;dates[41] =1;karat[42] =-3.439;prof[42] =4828.197;dates[42] =1;karat[43] =-3.439;prof[43] =5353.348;dates[43] =1;karat[44] =-3.439;prof[44] =5615.561;dates[44] =1;karat[45] =-3.439;prof[45] =5615.561;dates[45] =1;karat[46] =-3.439;prof[46] =7967.766;dates[46] =1;karat[47] =-3.439;prof[47] =7967.766;dates[47] =1;karat[48] =-3.439;prof[48] =7970.214;dates[48] =1;karat[49] =-3.439;prof[49] =8027.118;dates[49] =1;karat[50] =-3.439;prof[50] =8028.818;dates[50] =1;karat[51] =-3.439;prof[51] =9337.418;dates[51] =1;karat[52] =-3.439;prof[52] =173.433;dates[52] =1;karat[53] =-3.439;prof[53] =537.247;dates[53] =1;karat[54] =-3.440;prof[54] =4152.013;dates[54] =1;karat[55] =-3.440;prof[55] =4152.013;dates[55] =1;karat[56] =-3.440;prof[56] =8497.749;dates[56] =1;    
+    
+ 
+var ctx = document.getElementById("myChart3");
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: dates,
+        datasets: [{
+            label: '  ميزان  ',
+            data: karat,
+           
+            borderColor: [
+               
+                'rgba(54, 162, 235, 1)'
+                 
+                 
+            ],
+            
+            borderWidth: 1
+        },
+    {
+            label: '    أرباح',
+            data: prof,
+           
+            borderColor: [
+               
+                 
+                'rgba(153, 102, 255, 1)',
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)'
+                 
+            ],
+            
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+</script>  
+ 
+  
+  
+	<script src="../../../assets/js/zabuto_calendar.js"></script>	
+         
+        <script src="../../../js/jquery.dataTables.min.js"></script>	
+        <script src="../../../js/dataTables.bootstrap.min.js"></script>	
+	<script type="application/javascript">
+	 $(document).ready(function() {
+    $('#example').DataTable();
+} );
+	</script>
+	<script type="application/javascript">
+        $(document).ready(function () {
+            $("#date-popover").popover({html: true, trigger: "manual"});
+            $("#date-popover").hide();
+            $("#date-popover").click(function (e) {
+                $(this).hide();
+            });
+        
+            $("#my-calendar").zabuto_calendar({
+                action: function () {
+                    return myDateFunction(this.id, false);
+                },
+                action_nav: function () {
+                    return myNavFunction(this.id);
+                },
+                ajax: {
+                    url: "show_data.php?action=1",
+                    modal: true
+                },
+                legend: [
+                    {type: "text", label: "Special event", badge: "00"},
+                    {type: "block", label: "Regular event", }
+                ]
+            });
+        });
+        
+        
+        function myNavFunction(id) {
+            $("#date-popover").hide();
+            var nav = $("#" + id).data("navigation");
+            var to = $("#" + id).data("to");
+            console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
+        }
+    </script>
+  
+  
+  
+ 
+  
+     
+
+    <!--common script for all pages-->
+    <script src="../../../assets/js/common-scripts.js"></script>
+    
+    
+
+    <!--script for this page-->
+    
+	 
+	
+ 
+	 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.20/c3.js"></script>
+   <script src="../../../vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>     
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"79ee079ebc8144109c7ea4ca979dd72f","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+  
+</html>
+
+
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css" />
+    <!-- jQuery Library (Chosen requires jQuery) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Chosen jQuery Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+
+    
+    
+</head>
+<body>
+    <script>console.log("test.js loaded");</script>
+     <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-app.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-database.js"></script>
+    
+       
+        <script>
+          const firebaseConfig = {
+  apiKey: "AIzaSyC0esGNBo2_2w4JucRans9zBZulhgTAbb0",
+  authDomain: "sy-iyad.firebaseapp.com",
+  databaseURL: "https://sy-iyad-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "sy-iyad",
+  storageBucket: "sy-iyad.firebasestorage.app",
+  messagingSenderId: "873740808897",
+  appId: "1:873740808897:web:f1c636369a510256e41a40",
+  measurementId: "G-7VLX9WHL3H"
+};
+FirebaseOptions = firebaseConfig;
+
+firebase.initializeApp(FirebaseOptions);
+const databas = firebase.database();
+
+  function updateUserAccountAndAll(user,cur, count) {
+        databas.ref(user).child("account").child(cur).child("count").transaction( (mutableData)=> {
+           
+               // mutableData.set(mutableData.get() == null ? 0 : mutableData.get() + count);
+               console.log(mutableData);
+             //   document.write(mutableData)
+                return mutableData;
+        });
+       
+            }
+
+updateUserAccountAndAll("رأس المال","دولار أمريكي",0);
+
+        </script>
+
+    
+    <select class="select-chosen" style="width: 80%;" data-placeholder="Choose a Country..." id="mySelect">
+        <option value="" >   </option>
+        
+    </select>
+    <script>
+    $(document).ready(function(){
+        $(".chosen-select").chosen();
+        $(".select-chosen").chosen({search_contains: true,search_icon: false});
+
+
+    });
+</script>
+    
+   
+
+    <button  id="idx" value="GameOn">ga</button>
+ 
+</body>
+</html>

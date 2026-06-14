@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>hello world</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    
+
+   
+</head>
+<body>
+
+
+
+    <script type="module">
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-analytics.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-auth.js";
+import { getDatabase, ref, runTransaction, set, child,get, update } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-database.js"; 
+
+         const firebaseConfigx = {
+  apiKey: "AIzaSyA8Wo9SVYsIfkXoP5shUz7d45ysTp8qOWw",
+  authDomain: "iconic-indexer-315711.firebaseapp.com",
+  databaseURL: "https://iconic-indexer-315711-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "iconic-indexer-315711",
+  storageBucket: "iconic-indexer-315711.firebasestorage.app",
+  messagingSenderId: "971689870803",
+  appId: "1:971689870803:web:d8c88e5b067cfff5b6db26",
+  measurementId: "G-ZZ5F52WXYY"
+};
+
+ const app = initializeApp(firebaseConfigx);
+const db = getDatabase(app);
+  const auth = getAuth(app);
+
+
+
+
+const likesRef = ref(db, '/ru2p8Y0umzPJjTo9rg4fzv5j3Rx1/users/');
+
+/**
+ * Safely increments the likes count for a post.
+ */
+function incrementLikes() {
+  runTransaction(likesRef, (users) => {
+    // The update function receives the current data (or null if it doesn't exist)
+    if (users === null) {
+      return 1; // Start at 1 if the count doesn't exist
+    } else {
+        alert(users);
+        console.log(users);
+      return set(child(likesRef,users.iyad+"/id"),{x:22}); // Increment the current value
+    }
+  }, (error, committed, snapshot) => {
+    // Optional completion callback
+    if (error) {
+      console.error("Transaction failed: ", error);
+    } else if (!committed) {
+      console.log("Transaction aborted (e.g., returned undefined)");
+    } else {
+      console.log("Transaction committed successfully! New count:", snapshot.val());
+    }
+  });
+}
+
+const pre = {
+  id : "123",
+  name : "test",
+  count : 0
+
+}
+
+// Call the function to increment likes
+
+async function setLatest(username,currency){
+  pre.count = await getLatest(username,currency) + 100;
+    update(child(likesRef,username+"/account/"+currency),pre);
+   
+
+}
+
+ export async function getLatest(username,currency){
+
+    
+ const r = await get(child(likesRef,username)).then((users)=>{
+  
+   
+  
+     return Number( users.val().account[currency].count);
+  });
+  return r;
+}
+setLatest("خالد","دولار أمريكي");
+console.log(await getLatest("خالد","دولار أمريكي") );
+//console.log(await getLatest("محمد","دولار أمريكي") );
+
+  // ? "Firebase app initialized successfully!" : "Firebase app initialization failed.");
+    </script>
+    
+</body>
+</html>

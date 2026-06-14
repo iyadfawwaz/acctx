@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css" />
+    <!-- jQuery Library (Chosen requires jQuery) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Chosen jQuery Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+
+    <link rel='stylesheet' type='text/css' href='css/chosen.css'>
+    <link rel='stylesheet' type='text/css' href='css/bootstrap.min.css'>
+    <link rel='stylesheet' type='text/css' href='a/b/c/assets/css/bootstrap-select.css'>
+    
+    <link rel='stylesheet' type='text/css' href='a/b/c/assets/css/chosen.css'>
+    
+    <link rel='stylesheet' type='text/css' href='a/b/c/assets/css/style-responsive.css'>
+    
+    <link rel='stylesheet' type='text/css' href='a/b/c/assets/js/bootstrap.min.js'>
+    
+    <link rel='stylesheet' type='text/css' href='a/b/c/assets/js/jquery-1.8.3.min.js'>
+    
+    <link rel='stylesheet' type='text/css' href='a/b/c/assets/js/jquery.js'>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+
+</head>
+<body>
+    <select style="width: 80%;" class="chosen-select" data-placeholder="choose one.." id="mySelect">
+        <option value="" >   </option>
+   
+  <!-- ... your other content ... -->
+
+  <!-- Firebase Core SDK -->
+<script src="https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js"></script>
+
+  <!-- Specific Product SDKs (e.g., Auth & Firestore) -->
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js';
+  //  import { getAuth } from 'https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js';
+  //  import { getFirestore } from 'https://www.gstatic.com/firebasejs/12.7.0/firebase-firestore.js';
+        import { getDatabase,ref,get,child } from 'https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js';
+
+    // Your Firebase project configuration (replace with your actual values)
+       const firebaseConfig = {
+  apiKey: "AIzaSyC0esGNBo2_2w4JucRans9zBZulhgTAbb0",
+  authDomain: "sy-iyad.firebaseapp.com",
+  databaseURL: "https://sy-iyad-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "sy-iyad",
+  storageBucket: "sy-iyad.firebasestorage.app",
+  messagingSenderId: "873740808897",
+  appId: "1:873740808897:web:f1c636369a510256e41a40",
+  measurementId: "G-7VLX9WHL3H"
+};
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+
+    // Initialize other services
+  
+
+    const database = getDatabase(app);
+    console.log("Firebase initialized"+database);
+
+      function updateUserAccountAndAll(userId,cur, count) {
+       const dbRef = ref(getDatabase(),"/ySDqBLEsP4fEorxCVlXfdeMzqs53/");
+get(child(dbRef, 'users/')).then((snapshot) => {
+  if (snapshot.exists()) {
+    console.log(snapshot.val());
+
+   var select = document.querySelector("select");
+    snapshot.forEach(function(childSnapshot) {
+         
+        console.log(childSnapshot.key+" "+childSnapshot.val().uid);
+        var childData = childSnapshot.val();
+        var option = document.createElement("option");
+        option.text = childSnapshot.key;
+        option.value = childData.uid;
+        select.add(option);
+        $('.chosen-select').trigger("chosen:updated");
+     });
+      
+  } else {
+    console.log("No data available");
+  }
+}).catch((error) => {
+  console.error(error);
+});
+
+      
+     }
+
+
+updateUserAccountAndAll("رأس المال","دولار أمريكي",0);
+//toggleStar(databas.ref("رأس المال"),"");
+
+    // Now you can use 'auth', 'db', etc. in your JavaScript
+  </script>
+
+</body>
+</html>

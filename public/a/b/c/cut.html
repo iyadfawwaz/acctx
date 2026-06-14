@@ -1,0 +1,1815 @@
+<html lang="en">
+  <head>
+
+
+    <script src="https://www.gstatic.com/firebasejs/12.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.8.0/firebase-database-compat.js"></script>
+
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;500&display=swap" rel="stylesheet">
+
+
+<style>
+   
+    .dark-mode {
+   background-color: #3c3c3c !important;
+  color: white !important;
+   font-color: white !important;
+    background: rgb(60,60,60)!important;
+}
+     .scrollo-left {
+height: 40px; 
+overflow: hidden;
+position: relative;
+}
+ 
+    
+     .hideall{
+                display: none;
+            }
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 4.5s;
+  animation: fadein 0.5s, fadeout 0.5s 4.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+          
+          * {
+  
+ font-family: tajawal;
+  
+
+}
+.thead_dark {
+    background: #004b97;
+    color:white;
+}
+
+.bbox{
+    background-color: yellow;
+    text-align: center;
+    border-radius: 20px;
+    font-size: 24px;
+}
+        
+.bootstrap-select .dropdown-menu {
+	width: 100%;
+}
+
+.bootstrap-select .dropdown-menu li small {
+	white-space: normal;
+}
+
+.wrapper{
+    max-width:100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+#tablecon{
+    max-width:100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.snote{
+max-width:100%;
+ 
+position: absolute;
+left: 0px;
+top: 200px;
+width: 100%;
+height: 100%;
+direction: rtl;
+z-index: 2;
+}
+
+.snote h2,p{
+  font-size:100%;
+  font-weight:normal;
+}
+
+.snote ul,li{
+  list-style:none;
+}
+
+.snote ul{
+  overflow:hidden;
+  padding:3em;
+}
+
+.snote ul li a{
+  text-decoration:none;
+  color:#000;
+  background:#ffc;
+  display:block;
+  height:15em;
+  width:20em;
+  padding:1em;
+  -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+   box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  -webkit-transform:rotate(-6deg);
+  -o-transform:rotate(-6deg);
+  -moz-transform:rotate(-6deg);
+  -moz-transition:-moz-transform .15s linear;
+  -o-transition:-o-transform .15s linear;
+  -webkit-transition:-webkit-transform .15s linear;
+}
+
+.snote ul li:nth-child(even) a{
+  -o-transform:rotate(4deg);
+  -webkit-transform:rotate(4deg);
+  -moz-transform:rotate(4deg);
+   position:relative;
+  top:5px;
+  background:#cfc;
+}
+
+.snote ul li:nth-child(3n) a{
+  -o-transform:rotate(-3deg);
+  -webkit-transform:rotate(-3deg);
+  -moz-transform:rotate(-3deg);
+  position:relative;
+  top:-5px;
+  background:#ccf;
+}
+
+.snote ul li:nth-child(4n) a{
+  -o-transform:rotate(5deg);
+  -webkit-transform:rotate(5deg);
+  -moz-transform:rotate(5deg);
+  position:relative;
+  top:-10px;
+  background:#fcf;
+}
+
+.snote ul li a:hover {
+  -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+  box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  -o-transform: scale(1.25);
+  position:relative;
+  z-index:5;
+}
+
+.snote ul li{
+  margin:1em;
+  float:left;
+}
+
+.snote ul li h2{
+  font-size:160%;
+  font-weight:bold;
+  padding-bottom:0px;
+  font-family:Oswald;
+  text-align:center;
+  color:#000;
+}
+ 
+</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name=”format-detection” content=”telephone=no”>
+
+ <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notokufiarabic.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notonaskharabic.css" />
+ 
+        <title>سند قص   </title>
+ 
+                            
+          
+ <link rel="shortcut icon" href="../../../img/companylogo.png" type="image/x-icon">
+    <link rel="icon" href="../../../img/companylogo.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="../../../assets/css/bootstrap-select.css">
+    <link href="../../../assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    
+    
+    <!-- Custom styles for this template -->
+    <link href="../../../assets/css/style1.css?ver=213" rel="stylesheet"/>
+    <link href="../../../assets/css/style-responsive.css" rel="stylesheet"/>
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.4.0/css/bootstrap-rtl.css" rel="stylesheet"/>
+ <link rel="stylesheet" href="../../../css/chosen.css">   
+         
+<style type="text/css" media="print">
+    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+    @page 
+    {
+        size:  A4;   /* auto is the initial value */
+        margin: 0mm;  /* this affects the margin in the printer settings */
+    }
+
+    html
+    {
+        
+        margin: 0px;  /* this affects the margin on the html before sending to printer */
+    }
+
+    body
+    {
+        border: solid 1px green ;
+        margin: 10mm 15mm 10mm 15mm; /* margin you want for the content */
+    }
+    
+     td
+    {
+        font-size: 12px;
+    }
+    
+     th
+    {
+        font-size: 12px;
+    }
+    
+    .hmz{
+        padding: 30px!important; width: 60%!important;    background: rgba(255, 255, 255, 0.2)!important;
+border-radius: 16px!important;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1)!important;
+backdrop-filter: blur(5px)!important;
+-webkit-backdrop-filter: blur(5px)!important;
+border: 1px solid rgba(255, 255, 255, 0.3)!important;
+    }
+    </style>
+    
+  
+ 
+ 
+  <style>
+      
+    
+.ft_theme_switcher {position:fixed;top:125px;left:-280px;z-index:99999999;background-color:#222;color:#fff;padding:20px;width:280px;border-radius: 0 3px 3px 0;}
+
+.ft_theme_switcher .toggle {top:14px;font-size:18px;line-height:40px;text-align:center;background-color:#222;cursor:pointer;right:-38px;width:38px;height:40px;position:absolute;border-radius: 0 3px 3px 0;}
+
+.ft_theme_switcher .desc h3 {font-weight:300;margin-top:0;direction: rtl;}
+
+.ft_theme_switcher .desc p {
+font-size:12px;
+line-height:19px;
+font-weight:300;
+margin-bottom:23px
+}
+
+.ft_theme_switcher .style_list {
+overflow:hidden
+}
+
+.ft_theme_switcher .style_list .style {
+margin-right:40px;
+margin-bottom:10px;
+display:block;
+width:100%;
+position:relative
+}
+
+.ft_theme_switcher .style_list .style a {
+outline:none;
+position:absolute;
+width:100%;
+height:100%;
+top:0;
+right:0
+}
+
+.ft_theme_switcher .style_list .style .name {font-size: 14px;color:#878787;}
+
+.ft_theme_switcher .style_list .style .colors {
+margin-bottom:2px;
+overflow:hidden
+}
+
+.ft_theme_switcher .style_list .style .colors .name {padding-right: 0px;float:right;direction: rtl;}
+
+.ft_theme_switcher .style_list .style .color {
+float:right;
+height:20px;
+width:25px
+}
+
+.ft_theme_switcher .style_list .style:hover .name {
+color:#fff
+}
+      
+      
+      a[href^=tel] {
+   text-decoration:inherit;
+   color: inherit;
+}
+          .LockOn {
+    display: block;
+    visibility: visible;
+    position: absolute;
+    z-index: 999;
+    top: 0px;
+    left: 0px;
+    width: 105%;
+    height: 105%;
+    background-color:white;
+    vertical-align:bottom;
+    padding-top: 20%; 
+    filter: alpha(opacity=75); 
+    opacity: 0.75; 
+    font-size:large;
+    color:blue;
+    font-style:italic;
+    font-weight:400;
+    background-image: url("../Common/loadingGIF.gif");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+.ulx {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+   
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.lix {
+  float: right;
+}
+
+.ax {
+  display: block;
+  color: white;
+  text-align: center;
+  padding :  0.2vw;
+  text-decoration: none;
+ 
+}
+
+.imx{ max-width: 4vw;}
+
+.ax:hover {
+  background: rgb(0,255,68);
+background: radial-gradient(circle, rgba(0,255,68,0.6530987394957983) 0%, rgba(255,255,255,0) 75%);
+}
+table tbody tr:nth-child(even):hover td{
+    background-color: #7ef29c !important;
+}
+
+table tbody tr:nth-child(odd):hover td {
+    background-color: #7ef29c !important;
+}
+
+@media screen and (max-width: 800px) {
+    .mainlogo{ width: 50vw !important; }
+.smalllogo{ width: 10vw !important; }
+    .ulx {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.lix {
+  float: right;
+}
+
+.ax {
+  display: block;
+  color: black;
+  text-align: center;
+  padding :  2vw;
+  text-decoration: none;
+ 
+}
+
+.imx{ max-width: 13vw; max-height: 40px;}
+
+.mainlogo{ width: 50vw !important; }
+
+.ax:hover {
+  background: rgb(0,255,68);
+background: radial-gradient(circle, rgba(0,255,68,0.6530987394957983) 0%, rgba(255,255,255,0) 75%);
+}
+}
+.glass1 {
+ background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);   
+}
+</style>
+
+
+ <style>
+        
+        @media (max-width: 767px) {
+            .hidden-mobile {
+                display: none;
+            }
+            
+            .hmz{padding : 0px!important; width:100%!important;} 
+             .wrapper{padding : 0px!important;}
+        }
+    </style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+  
+  </head>
+
+  
+  
+<body>
+<script src="firebase.js"></script>
+  <script>
+   const app = firebase.initializeApp(firebaseConfig);
+
+  </script>
+    
+     <nav class="navbar navbar-default"style="margin-bottom: 0px"  >
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button  type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        <a style="color: #004b97" class="navbar-brand  " href="pl.m.html"><img id="smalllogo" class="smalllogo" style="width: 2.5vw" src="../../../img/companylogo.PNG"/>  </a>
+
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+      <ul class="nav navbar-nav">
+         
+      <li class="dropdown">
+          <a style="color: #004b97" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">   <i class="fa fa-bank"></i> المراكز  <span class="caret"></span></a>
+          <ul class="dropdown-menu"> 
+              <li><a  style="color: #004b97" href="centers"><i class="fa fa-users"></i>    جميع الصناديق</a></li>
+               
+                            <li><a style="color: #004b97" href="deletedcenters"><i class="fa fa-trash"></i>   سلة المحذوفات </a></li>
+          
+                   
+        
+            <li><a style="color: #004b97" href="bb"><i class="fa fa-line-chart"></i> عدد حوالات المراكز</a></li>
+             <li><a style="color: #004b97" href="centers_1"><i class="fa fa-cubes"></i> حركة الصناديق</a></li>
+           
+          </ul>
+        </li>
+                 
+           <li class="dropdown">
+          <a href="#" style="color: #004b97" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-credit-card"></i> العمليات <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a style="color: #004b97" href="addkayit.html"><i class="fa fa-exchange"></i> قيد من الى</a></li><li><a style="color: #004b97" href="addkayit_1.html"><i class="fa fa-arrows-alt"></i> قيد متقدم</a></li><li><a style="color: #004b97" href="open.html"><i class="fa fa-key"></i> قيد افتتاحي</a></li><li><a style="color: #004b97" href="addsnin.html"><i class="fa fa-arrow-right"></i>   سند قبض </a></li><li><a style="color: #004b97" href="addsnout.html"><i class="fa fa-arrow-left"></i> سند دفع</a></li><li><a style="color: #004b97" href="cut.html"><i class="fa fa-cut"></i>   سند قص</a></li><li><a style="color: #004b97" href="addkayit_cut.html"><i class="fa fa-cut"></i>   سند قص مع اغلاق</a></li><li role="separator" class="divider"></li><li><a style="color: #004b97" href="translive.html"><i class="fa fa-eye"></i>     مراقبة العمليات</a></li><li><a style="color: #004b97" href="dafatcheck.html"><i class="fa fa-check"></i>       تدقيق القيود</a></li>               </ul>
+        </li>
+         <li class="dropdown">
+          <a href="#" style="color: #004b97" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-retweet"></i> الحسابات <span class="caret"></span></a>
+          <ul class="dropdown-menu"><li><a style="color: #004b97" href="mizan.html"><i class="fa fa-balance-scale"></i> ميزان المراجعة</a></li>              <li><a style="color: #004b97" href="kartable.html"><i class="fa fa-area-chart"></i> مخطط الميزان والارباح</a></li>                            
+              <li><a style="color: #004b97" href="sanadik.html"><i class="fa fa-cubes"></i> الصناديق</a></li><li><a style="color: #004b97" href="cutcenters.html"><i class="fa fa-cut"></i> مراكز القطع</a></li><li><a style="color: #004b97" href="report.html"><i class="fa fa-area-chart"></i> تقارير</a></li><li role="separator" class="divider"></li><li><a style="color: #004b97" href="account.html"><i class="fa fa-balance-scale"></i> كشف حساب  </a></li><li><a style="color: #004b97" href="dafatsearch.html"><i class="fa fa-exchange"></i> جميع القيود</a></li><li><a style="color: #004b97" href="mutabaka.html"><i class="fa fa-check-circle"></i>   مطابقات</a></li>              
+          </ul>
+        </li>
+        
+        
+        
+       
+         <li class="dropdown">
+          <a style="color: #004b97" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-paper-plane"></i> الحوالات <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a style="color: #004b97" href="dafatsearch.html"><i class="fa fa-exchange"></i>   القيود</a></li><li><a style="color: #004b97" href="incomesearch.html"><i class="fa fa-clock-o"></i>   حوالات قيد التسليم - داخلي  </a></li><li><a style="color: #004b97" href="incomesearch_ext.html"><i class="fa fa-history"></i>   حوالات قيد التسليم - خارجي  </a></li><li><a style="color: #004b97" href="transactive_1.html"><i class="fa fa-check"></i>  تم تسليمها   </a></li><li role="separator" class="divider"></li><li><a style="color: #004b97" href="check.html"><i class="fa fa-mobile-phone"></i> جهاز الحوالة</a></li>          </ul>
+        </li>
+        
+        
+         
+         
+                  
+        
+          
+        
+        
+                         <li class="dropdown">
+          <a style="color: #1a4053" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-star"></i> الربط <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+               
+               <li><a style="color: #1a4053" href="api_comp.html"><i class="fa fa-star"></i> شركات الربط</a></li> 
+                
+               
+               
+          </ul>
+        </li>        
+        <li class="dropdown">
+          <a style="color: #004b97" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-gear"></i> الأدوات <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a style="color: #004b97" href="sarf.html"><i class="fa fa-cut"></i> أسعار القص</a></li><li><a style="color: #004b97" href="curs.html"><i class="fa fa-dollar"></i>   ادارة العملات</a></li><li><a style="color: #004b97" href="eventrecord.html">  <i class="fa fa-bell"></i> سجل   الأحداث</a></li>  
+              <li><a style="color: #004b97" href="logrecord.html">  <i class="fa fa-eye"></i> سجل تسجيل الدخول</a></li>
+               <li><a style="color: #004b97" href="changepass.html"><i class="fa fa-lock"></i>       تغيير كلمة المرور </a></li>
+          </ul>
+        </li>
+        
+         <li>
+              
+              <form  name="frmdelete" class="form-horizontal" action="transsearch" method="post" enctype="multipart/form-data"  >
+                  <input type="text" tabindex="-1" name="patern" placeholder="ابحث عن حوالة" class="form-control " style="margin-top:  0.5vw"/>
+              </form>   
+              </li>
+        
+      </ul>
+           <ul class="nav pull-left top-menu">
+                     
+                    <li><a    class="logout" href="logout.php?logout">  خروج</a></li>
+                   
+            	</ul>
+      
+          <ul class="nav pull-left top-menu">
+                     
+                  
+              <li> <a class="logout"    title="    تحديث" href="javascript:location.reload(true)">  <i style=" font-size: 16px" class="fa fa-refresh"></i>    </a></li>
+              <li> <a class="logout"   title="  الوضع الليلي  "  href="javascript:dark();">  <i id="darktoggle" style=" font-size: 16px" class="fa fa-moon-o"></i>    </a></li>
+              <li> <a class="logout"  style=" padding: 3px"  title="    صندوق الوارد" href="inbox">  <i style=" font-size: 16px;" class="fa fa-envelope"></i>  <span class="badge" style="background-color: red;margin: 0px;">1</span>  </a></li>
+            	</ul>
+                     
+                  
+            	 
+        
+       <div class="scrollo-left" style="  ">  <pre style="border: 0; background-color: transparent; font-family: tajawal;  white-space: nowrap; overflow: hidden;margin-top: 0vw;  "   >  مساء الخير 😊😊 يا فرع البردقلي  </pre></div>
+       
+      
+    
+      
+        
+        
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+       
+            
+         <ul class="ulx">
+       <center class="glass1">
+             <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="العملاء    "  class="ax" href="centers.html" >  <img class="imx"     src="../../../img/icons/idara/1.png"/></a></li>
+              <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="كشف حساب    "  class="ax" href="account.html" >  <img class="imx"     src="../../../img/icons/idara/2.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="الصناديق    "  class="ax" href="sanadik.html" >  <img class="imx"     src="../../../img/icons/idara/3.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="مراكز القطع    "  class="ax" href="cutcenters.html" >  <img class="imx"     src="../../../img/icons/idara/4.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="      قيد من الى"  class="ax" href="addkayit.html" >  <img class="imx"     src="../../../img/icons/idara/8.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="      سند قبض"  class="ax" href="addsnin.html" >  <img class="imx"     src="../../../img/icons/idara/17.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="      سند دقع"  class="ax" href="addsnout.html" >  <img class="imx"     src="../../../img/icons/idara/18.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="          سند قص"  class="ax" href="cut" >  <img class="imx"     src="../../../img/icons/idara/9.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="            قص مع اغلاق"  class="ax" href="addkayit_cut.html" >  <img class="imx"     src="../../../img/icons/idara/27.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="      القيود"  class="ax" href="dafatsearch.html" >  <img class="imx"     src="../../../img/icons/idara/11.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="      قيد التسليم"  class="ax" href="incomesearch.html" >  <img class="imx"     src="../../../img/icons/idara/19.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="      تم التسليم"  class="ax" href="transactive_1.html" >  <img class="imx"     src="../../../img/icons/idara/20.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="    اسعار القص"  class="ax" href="sarf.html" >  <img class="imx"     src="../../../img/icons/idara/13.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="     تقارير"  class="ax" href="report.html" >  <img class="imx"     src="../../../img/icons/idara/14.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="      قيد متقدم"  class="ax" href="addkayit_1.html" >  <img class="imx"     src="../../../img/icons/idara/15.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="  بحث متقدم    "  class="ax" href="advanced_search.html" >  <img class="imx"     src="../../../img/icons/idara/16.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="  مراقبة العمل"  class="ax" href="translive.html" >  <img class="imx"     src="../../../img/icons/idara/21.png"/></a></li>   
+        </center>
+      </ul>
+    <script>
+   var elz = document.createElement("img");
+elz.src = "../../../img/spin.gif";                    
+window.onbeforeunload = function(){
+    
+  document.getElementById('coverScreen').style.display = 'block';
+  
+
+};
+</script>
+<div id="coverScreen" style="display: none" class="LockOn">
+        <center>  <img  src="../../../img/spin.gif"/></center>
+</div>
+
+ <script>
+     
+         var $radios = $('input:radio');
+
+$radios.change(function () {
+    $radios.parent().parent().removeClass('checked');
+    $(this).parent().parent().addClass('checked');
+  $("html, body").animate({ scrollTop: document.body.scrollHeight }, "slow");
+
+}); 
+
+ function ACTG(){
+            var tt='side';
+                var a = $('#scalee');
+    			a.hasClass("ocult") ? a.animate({
+    				left: "0"
+    			}, 500) : a.animate({
+    				left: "-280px"
+    			}, 500), a.toggleClass("ocult")
+                
+                $.ajax({
+                        url: 'checkbalance', 
+                          data:{type:tt}, 
+                          type:'POST',
+                        success: function(result){
+                
+                           
+                          $(".amwidget").html(result);
+                          
+                          
+                        }
+                
+                });
+            
+          }
+          
+          
+          
+          
+function dark() {
+    
+    
+   
+    
+    
+    var all = document.getElementsByTagName("*");
+
+for (var i=0, max=all.length; i < max; i++) {
+     all[i].classList.toggle("dark-mode");
+}
+if(document.body.classList.contains("dark-mode")){
+  
+ 
+ mode="dark";
+ }
+ 
+ else {
+try{ document.getElementById("smalllogo").src="../../../img/companylogo.PNG";
+ document.getElementById("mainlogo").src="../../../img/companylogo.PNG";
+ } catch(ex){}
+  
+mode="light";
+ }
+ 
+ 
+    $.ajax({
+                                url:"checknot.php",
+				data:{mode:mode},
+				type:'POST',
+				success:function(response) {
+                                 
+                                   
+                               }
+				});
+}
+ 
+  function shownotes() {
+
+                document.getElementById("snote").classList.toggle("hideall");
+
+            }
+ 
+function savenote(id){
+    var val=document.getElementById(id).value;    
+     $.ajax({
+                            
+                        
+				url:"savenote.php",
+				data:{tok:id,value:val},
+				type:'POST',
+				success:function(response) {
+                                   
+				}
+			});
+}
+
+function mkdark() {
+   var all = document.getElementsByTagName("*");
+
+for (var i=0, max=all.length; i < max; i++) {
+     all[i].classList.add("dark-mode");
+}
+ try{
+ document.getElementById("smalllogo").src="../../../img/companylogodark.PNG";
+ document.getElementById("mainlogo").src="../../../img/companylogodark.PNG";
+ } catch(ex){}
+ 
+ 
+  
+  
+}
+
+
+ $(document).ready(function(){
+        $(".bbox").click(function() {
+            
+          mer=  $(this).html();
+            
+            $.ajax({ 
+				url:"gettest.php",
+				data:{mr_bx:mer},
+				type:"POST",
+				success:function(response) {
+                                document.getElementById("accshowxx").innerHTML =response;
+				  	 
+					 
+				}
+				 
+			});
+        });
+});
+ 
+ 
+ 
+          
+          </script>
+          
+          
+          
+     <div class="ft_theme_switcher theme_switcher_bod  "  style="background-color: #004b97;top:215px;">
+               <div style="background-color: #004b97" class="toggle" onclick="shownotes();"><i style="font-size: 33px; "class="fa fa-sticky-note-o"></i></div>
+           
+        </div>   
+<div class="snote hideall" id="snote">
+<ul>
+  <li>
+    <a  >
+        <h2 style="font-family: tajawal">ملاحظة 1</h2><hr />
+        <textarea id="note1" onblur="savenote('note1')" style="background-color:rgba(0, 0, 0, 0.0);  border: none; font-family: tajawal;width: 100%;height: 50%;font-size: 20px">المالية</textarea>
+    </a>
+  </li>
+    <li>
+    <a  >
+        <h2 style="font-family: tajawal">ملاحظة 2</h2><hr />
+      <textarea id="note2" onblur="savenote('note2')" style="background-color:rgba(0, 0, 0, 0.0);  border: none; font-family: tajawal;width: 100%;height: 50%;font-size: 20px">و الحوالات</textarea>
+    </a>
+  </li>
+    <li>
+    <a  >
+        <h2 style="font-family: tajawal">ملاحظة 3</h2><hr />
+      <textarea id="note3" onblur="savenote('note3')" style="background-color:rgba(0, 0, 0, 0.0);  border: none; font-family: tajawal;width: 100%;height: 50%;font-size: 20px">للصرافة</textarea>
+    </a>
+  </li>
+    <li>
+    <a  >
+        <h2 style="font-family: tajawal">ملاحظة 4</h2><hr />
+      <textarea id="note4" onblur="savenote('note4')" style="background-color:rgba(0, 0, 0, 0.0);  border: none; font-family: tajawal;width: 100%;height: 50%;font-size: 20px">شركة أميسا</textarea>
+    </a>
+  </li>
+  
+   <li>
+       <a style="height: 50em;width: 25em; overflow-y: scroll" >
+        <h2 style="font-family: tajawal">ملاحظات المراكز</h2><hr />
+      <p id="note5"  style="background-color:rgba(0, 0, 0, 0.0);  border: none; font-family: tajawal;  font-size: 16px">
+      <bre style="color:red">حوالات غير مسلمة - mut : </bre>حمزة<hr/>      
+      </p>
+    </a>
+  </li>
+   
+  
+  
+</ul>
+</div>
+          <div id="accshowxx" class="text-center" >	</div>		  
+    
+           
+        
+   
+      
+      
+                         
+          <section class="wrapper">
+              <h4>سند قص</h4>
+                    <div class="row " style="direction:rtl">
+			<div   class="col-md-3 col-xs-3 text-right  "   >
+                             <label class="  control-label">العميل :</label>
+							 </div>
+							 
+			<div   class="   col-md-9 col-xs-9 text-right  "   >
+                            <form name="loadall" id="loadall" >                                     
+<select style="width: 30rem;" name="selectx" id="select4"  data-placeholder="اختر المركز" class="chosen-select"   > 
+                       
+			<option></option>
+                       	</select>
+                         </form>
+                        
+                        </div>    
+                          </div> 
+              <br/>
+     
+       
+                         <center>
+                        <div   class="col-md-2 text-right  "   >
+                            <button type="submit" style="font-family: 'tajawal';  "  onclick="mytake()" id="takephoto" class="btn btn-info"   >
+                             <i class="fa fa-camera"  ></i>
+                            التقاط صورة
+                            </button>
+                         </div> 
+                        
+                       
+                        
+                         <div  class="row"  id="photo">
+                         <div  class="row" style="padding:10px 10px;margin: 10px 10px;">
+                             <div class="col-md-12 ">  <h2>مطابقة الأرصدة شركة أميســا</h2> </div>
+                            
+                               <div class="box1 col-md-6" style="border : 2px solid #004b97; border-radius:5px 5px; padding:0px 0px;  " > 
+                                                <span style="color: black " class="fa fa-user"></span> 
+                                       
+                                                                <h2 style="color: black; font-weight:bold  "  >     </h2>                                       <br/>
+                                                          <div  style="color: black; background: rgb(169,199,235);
+background: radial-gradient(circle, rgba(169,199,235,0.7371323529411764) 0%, rgba(255,255,255,1) 100%);border-bottom-right-radius:3px 5px; border-bottom-left-radius:5px;font-size:20px;">    2025-12-29 21:18:42    </div>                                         </div> 
+                             
+                             <div class="col-md-6 ">
+                        <img src="../../../img/companylogo.PNG" style="width:300px"/>
+                        </div>
+                         </div>
+                        
+                         <div id="row" class="row" style="padding:10px 10px;margin: 10px 10px; ">
+                         
+                
+                         </div>                             
+                             
+                         
+			 
+                        
+                         </div>
+                   
+                            
+			  </div>
+                        </center>	
+              <div class="row">
+                  
+               	
+                  
+              <div class="col-md-8 " > 
+                  
+                  
+                  <form  name="frmx" id="frmx" class="form-horizontal"  method="post" enctype="multipart/form-data" >
+                          
+              
+                    <div class="row" > 
+                     
+                     <div class="well well-lg text-right col-md-6" style="border: solid 2px #11d3af;" > 
+                     
+                         <center><p>لنا     </p></center>
+                         
+                         <hr/>
+                         <div class="form-group"  >
+                        
+                         <label class="col-xs-3 control-label">العملة :</label>
+                         <select class="col-xs-6 text-primary form-control" name ="currencyfrom" id ="currencyfrom"   >
+                               <option>--لنا--</option>
+                                   
+                           </select>
+                          
+                        
+                        </div> 
+                         
+                         
+                          <div class="form-group"  >
+                        
+                         <label class="col-xs-3  control-label">المبلغ :</label>
+                         <input size="20" class="col-xs-6 text-primary form-control" step="any" type="number" id="accfrom" name="accfrom" min="0" value="0" style="font-size: 20px"  onchange="function1();"/>
+                         <br/><div id="taf" class="alert alert-info" style="background-color: yellow" ></div>
+                           <input  type="hidden" name="id" value=""/>
+                      
+                       
+                    </div>  
+                         
+                          <div class="form-group"  >
+                        
+                         <label class="col-xs-3 control-label">  القص :</label>
+                            <input size="20" class="col-xs-4 text-primary form-control" type="number" name="cut" step="any" id="cut" min="0" value="0"   onchange="function1();"/>
+                           <select    id="op" name="op" class="col-xs-3 form-control" onchange="function1();" >
+			<option value='*'>ضرب</option>
+                        <option value='/'>قسمة</option>
+                         
+                           </select> 
+                      
+                       
+                    </div>  
+                         
+                    </div>   
+                          
+                       
+                    
+                      <div class="well well-lg text-right col-md-6" style="border: solid 2px  #b1d311;" > 
+                     
+                        <center><p>علينا</p></center>
+                        <hr/>
+                         <div class="form-group"  >
+                        
+                         <label class="col-xs-3 control-label">العملة :</label>
+                         <select class="col-xs-6 text-primary form-control" name ="currencyto" id ="currencyto"   >
+                             <option>--علينا--</option>
+                             
+                                  
+                           
+                           </select>
+                          
+                        
+                        </div> 
+                         
+                         
+                          <div class="form-group"  >
+                        
+                         <label class="col-xs-3 control-label">المبلغ :</label>
+                         <input size="20" class="col-xs-6 text-primary form-control" type="text" onchange="function3();" step="any"  id="accto" name="accto" style="font-size: 20px"   />
+                            <br/> <div id="taf1" class="alert alert-danger" style="background-color: yellow"></div>
+                      
+                        
+                    </div>  
+                        
+                         <div class="form-group"  >
+                              <label class="col-xs-3 control-label">  cut </label>
+                              <input style="width: 50;" class="btn btn-theme03" type="click" name="savex" id="savex" value="قص"/>
+                                                      
+                         </div>
+                    </div>   
+                        
+                    </div>
+                      
+       
+                </form>
+            
+
+
+              </div>
+                  
+                  <div class="col-md-4" >
+						 <div class="well "   > 
+                   <center>
+				   
+				   
+                      
+                         
+                       
+                           <p style="color : black; font-weight:bold;">سعر قص البرنامج <span class="fa fa-cut"> </span> </p>
+                          <table class="table  table-bordered"  style="color : black; "  >
+                              <tr><td>من</td> <td>الى</td> <td>قص</td>  </tr>
+                              
+                               <tr><td style="color : #ff0000 " > ليرة تركية</td> <td style="color : #052beb "  > دولار أمريكي</td> <td > 42.948</td>   </tr> <tr><td style="color : #c301c6 " > يورو أوربي</td> <td style="color : #052beb "  > دولار أمريكي</td> <td > 1.1712</td>   </tr> <tr><td style="color : #052beb " > دولار أمريكي</td> <td style="color : #c301c6 "  > يورو أوربي</td> <td > 1.1742</td>   </tr> <tr><td style="color : #052beb " > دولار أمريكي</td> <td style="color : #ff0000 "  > ليرة تركية</td> <td > 42.844</td>   </tr> <tr><td style="color : #c301c6 " > يورو أوربي</td> <td style="color : #ff0000 "  > ليرة تركية</td> <td > 50.176</td>   </tr> <tr><td style="color : #ff0000 " > ليرة تركية</td> <td style="color : #c301c6 "  > يورو أوربي</td> <td > 50.431</td>   </tr> <tr><td style="color : #052beb " > دولار أمريكي</td> <td style="color : #dfc30c "  > 🇪🇬 جنيه مصري</td> <td > 50.000000</td>   </tr> <tr><td style="color : #dfc30c " > 🇪🇬 جنيه مصري</td> <td style="color : #052beb "  > دولار أمريكي</td> <td > 50.000000</td>   </tr> <tr><td style="color : #052beb " > دولار أمريكي</td> <td style="color : #0baaf9 "  > ليرة سورية</td> <td > 11800.000000</td>   </tr> <tr><td style="color : #0baaf9 " > ليرة سورية</td> <td style="color : #052beb "  > دولار أمريكي</td> <td > 12100.000000</td>   </tr> <tr><td style="color : #ff0000 " > ليرة تركية</td> <td style="color : #0baaf9 "  > ليرة سورية</td> <td > 270.000000</td>   </tr> <tr><td style="color : #0baaf9 " > ليرة سورية</td> <td style="color : #ff0000 "  > ليرة تركية</td> <td > 290.000000</td>   </tr> <tr><td style="color : #052beb " > دولار أمريكي</td> <td style="color : #59d507 "  > ريال سعودي</td> <td > 3.750000</td>   </tr> <tr><td style="color : #59d507 " > ريال سعودي</td> <td style="color : #052beb "  > دولار أمريكي</td> <td > 3.850000</td>   </tr> <tr><td style="color : #dfc30c " > 🇪🇬 جنيه مصري</td> <td style="color : #ff0000 "  > ليرة تركية</td> <td > 1.300000</td>   </tr> <tr><td style="color : #ff0000 " > ليرة تركية</td> <td style="color : #dfc30c "  > 🇪🇬 جنيه مصري</td> <td > 1.200000</td>   </tr>                              
+                              
+                               
+                           
+                              
+                              
+                              
+                          </table>
+                         
+                        
+                        
+                        </center>
+                    		</div>	
+							</div>  
+                  
+                     </div>
+          
+          
+               <div class="row" >
+                        
+                        
+               <div id="tablecon" style="display: none;">           
+                        
+                          <table id="example" class="table table-striped " cellspacing="0" width="100%">
+                 
+                  
+                  
+                  
+
+ 
+  
+ 
+        <thead class="thead_dark">
+                       <tr> <th> </th> <th> </th>
+  <th>رقم</th>
+   <th>تاريخ  </th>
+                <th>لنا</th>
+                 
+                 <th>علينا</th>
+               <th>العميل</th>
+               
+                
+                <th>الربح</th>
+                
+  
+         
+          <th>ملاحظات</th>
+           <th> </th>
+       
+            </tr>
+        </thead>
+     
+        <tbody>
+            
+            
+            
+             <tr>
+                <td> <input  type="radio" name="select"   value="CUT-537-446914" onchange="myFunction1()"> </td>
+ <td>1</td>
+              <td id="q6">CUT-537-446914</td>
+                <td id="q5">2025-12-29 21:00:09</td>
+                <td id="q2" style="font-size:20px">897.227 <p style="color:#052beb">دولار أمريكي</p> </td>
+                <td id="q3" style="font-size:20px">38,500 <p style="color:#ff0000">ليرة تركية</p> </td>
+                       
+                            <td id="q1">دهب<div  class="bbox"> 2301 </div></td>   
+                                   
+                                        <td> <i class="fa fa-diamond"></i> 14.808 <p> <i class="fa fa-cut"></i> 14.808 </p> <p><i class="fa fa-random"></i>  0</p></td>
+                                               
+                                              <td  id="q4">قص من دولار أمريكي الى ليرة تركية  - سعر  القص  42.91</td>
+                                             <td class="btnedit"><button type="submit" style="font-family: 'tajawal';" class="btn btn-theme03 "       >
+                          <i class="fa fa-copy"></i>
+                          نسخ  
+                    </button></td>   
+                                      </tr>  
+                       
+                           <tr>
+                <td> <input  type="radio" name="select"   value="CUT-107-446910" onchange="myFunction1()"> </td>
+ <td>2</td>
+              <td id="q6">CUT-107-446910</td>
+                <td id="q5">2025-12-29 20:59:30</td>
+                <td id="q2" style="font-size:20px">461.144 <p style="color:#052beb">دولار أمريكي</p> </td>
+                <td id="q3" style="font-size:20px">19,790 <p style="color:#ff0000">ليرة تركية</p> </td>
+                       
+                            <td id="q1">البركة<div  class="bbox"> 757 </div></td>   
+                                   
+                                        <td> <i class="fa fa-diamond"></i> 7.558 <p> <i class="fa fa-cut"></i> 7.558 </p> <p><i class="fa fa-random"></i>  0</p></td>
+                                               
+                                              <td  id="q4">قص من دولار أمريكي الى ليرة تركية  - سعر  القص  42.915</td>
+                                             <td class="btnedit"><button type="submit" style="font-family: 'tajawal';" class="btn btn-theme03 "       >
+                          <i class="fa fa-copy"></i>
+                          نسخ  
+                    </button></td>   
+                                      </tr>  
+                       
+                           <tr>
+                <td> <input  type="radio" name="select"   value="CUT-275-446906" onchange="myFunction1()"> </td>
+ <td>3</td>
+              <td id="q6">CUT-275-446906</td>
+                <td id="q5">2025-12-29 20:58:46</td>
+                <td id="q2" style="font-size:20px">212.071 <p style="color:#052beb">دولار أمريكي</p> </td>
+                <td id="q3" style="font-size:20px">9,100 <p style="color:#ff0000">ليرة تركية</p> </td>
+                       
+                            <td id="q1">الملك غولدن<div  class="bbox"> 2544 </div></td>   
+                                   
+                                        <td> <i class="fa fa-diamond"></i> 3.499 <p> <i class="fa fa-cut"></i> 3.499 </p> <p><i class="fa fa-random"></i>  0</p></td>
+                                               
+                                              <td  id="q4">قص من دولار أمريكي الى ليرة تركية  - سعر  القص  42.9101</td>
+                                             <td class="btnedit"><button type="submit" style="font-family: 'tajawal';" class="btn btn-theme03 "       >
+                          <i class="fa fa-copy"></i>
+                          نسخ  
+                    </button></td>   
+                                      </tr>  
+                       
+                           <tr>
+                <td> <input  type="radio" name="select"   value="CUT-835-446902" onchange="myFunction1()"> </td>
+ <td>4</td>
+              <td id="q6">CUT-835-446902</td>
+                <td id="q5">2025-12-29 20:57:48</td>
+                <td id="q2" style="font-size:20px">263.189 <p style="color:#052beb">دولار أمريكي</p> </td>
+                <td id="q3" style="font-size:20px">11,300 <p style="color:#ff0000">ليرة تركية</p> </td>
+                       
+                            <td id="q1">اون لاين<div  class="bbox"> 1165 </div></td>   
+                                   
+                                        <td> <i class="fa fa-diamond"></i> 4.193 <p> <i class="fa fa-cut"></i> 4.193 </p> <p><i class="fa fa-random"></i>  0</p></td>
+                                               
+                                              <td  id="q4">قص من دولار أمريكي الى ليرة تركية  - سعر  القص  42.935</td>
+                                             <td class="btnedit"><button type="submit" style="font-family: 'tajawal';" class="btn btn-theme03 "       >
+                          <i class="fa fa-copy"></i>
+                          نسخ  
+                    </button></td>   
+                                      </tr>  
+                       
+                           <tr>
+                <td> <input  type="radio" name="select"   value="CUT-433-446899" onchange="myFunction1()"> </td>
+ <td>5</td>
+              <td id="q6">CUT-433-446899</td>
+                <td id="q5">2025-12-29 20:45:22</td>
+                <td id="q2" style="font-size:20px">1,100,000 <p style="color:#0baaf9">ليرة سورية</p> </td>
+                <td id="q3" style="font-size:20px">94 <p style="color:#052beb">دولار أمريكي</p> </td>
+                       
+                            <td id="q1">فرع حمص<div  class="bbox"> 817 </div></td>   
+                                   
+                                        <td> <i class="fa fa-diamond"></i> -0.159 <p> <i class="fa fa-cut"></i> -0.159 </p> <p><i class="fa fa-random"></i>  0</p></td>
+                                               
+                                              <td  id="q4">قص من ليرة سورية الى دولار أمريكي  - سعر  القص  11702.12765957446</td>
+                                             <td class="btnedit"><button type="submit" style="font-family: 'tajawal';" class="btn btn-theme03 "       >
+                          <i class="fa fa-copy"></i>
+                          نسخ  
+                    </button></td>   
+                                      </tr>  
+                       
+                           <tr>
+                <td> <input  type="radio" name="select"   value="CUT-670-446890" onchange="myFunction1()"> </td>
+ <td>6</td>
+              <td id="q6">CUT-670-446890</td>
+                <td id="q5">2025-12-29 20:14:36</td>
+                <td id="q2" style="font-size:20px">2,000 <p style="color:#ff0000">ليرة تركية</p> </td>
+                <td id="q3" style="font-size:20px">45 <p style="color:#052beb">دولار أمريكي</p> </td>
+                       
+                            <td id="q1">فرع حمص<div  class="bbox"> 817 </div></td>   
+                                   
+                                        <td> <i class="fa fa-diamond"></i> 0.84 <p> <i class="fa fa-cut"></i> 0.84 </p> <p><i class="fa fa-random"></i>  0</p></td>
+                                               
+                                              <td  id="q4">قص من ليرة تركية الى دولار أمريكي  - سعر  القص  44.44444444</td>
+                                             <td class="btnedit"><button type="submit" style="font-family: 'tajawal';" class="btn btn-theme03 "       >
+                          <i class="fa fa-copy"></i>
+                          نسخ  
+                    </button></td>   
+                                      </tr>  
+                       
+                           <tr>
+                <td> <input  type="radio" name="select"   value="CUT-382-446885" onchange="myFunction1()"> </td>
+ <td>7</td>
+              <td id="q6">CUT-382-446885</td>
+                <td id="q5">2025-12-29 20:13:40</td>
+                <td id="q2" style="font-size:20px">7,525 <p style="color:#ff0000">ليرة تركية</p> </td>
+                <td id="q3" style="font-size:20px">1,994,000 <p style="color:#0baaf9">ليرة سورية</p> </td>
+                       
+                            <td id="q1">فرع حمص<div  class="bbox"> 817 </div></td>   
+                                   
+                                        <td> <i class="fa fa-diamond"></i> 2.374 <p> <i class="fa fa-cut"></i> 2.374 </p> <p><i class="fa fa-random"></i>  0</p></td>
+                                               
+                                              <td  id="q4">قص من ليرة تركية الى ليرة سورية  - سعر  القص  264.9833887</td>
+                                             <td class="btnedit"><button type="submit" style="font-family: 'tajawal';" class="btn btn-theme03 "       >
+                          <i class="fa fa-copy"></i>
+                          نسخ  
+                    </button></td>   
+                                      </tr>  
+                       
+                           <tr>
+                <td> <input  type="radio" name="select"   value="CUT-706-446881" onchange="myFunction1()"> </td>
+ <td>8</td>
+              <td id="q6">CUT-706-446881</td>
+                <td id="q5">2025-12-29 20:11:23</td>
+                <td id="q2" style="font-size:20px">4,816 <p style="color:#052beb">دولار أمريكي</p> </td>
+                <td id="q3" style="font-size:20px">56,173,499.98 <p style="color:#0baaf9">ليرة سورية</p> </td>
+                       
+                            <td id="q1">فرع حمص<div  class="bbox"> 817 </div></td>   
+                                   
+                                        <td> <i class="fa fa-diamond"></i> 23.856 <p> <i class="fa fa-cut"></i> 23.856 </p> <p><i class="fa fa-random"></i>  0</p></td>
+                                               
+                                              <td  id="q4">قص من دولار أمريكي الى ليرة سورية  - سعر  القص  11663.93272</td>
+                                             <td class="btnedit"><button type="submit" style="font-family: 'tajawal';" class="btn btn-theme03 "       >
+                          <i class="fa fa-copy"></i>
+                          نسخ  
+                    </button></td>   
+                                      </tr>  
+                       
+                           <tr>
+                <td> <input  type="radio" name="select"   value="CUT-577-446878" onchange="myFunction1()"> </td>
+ <td>9</td>
+              <td id="q6">CUT-577-446878</td>
+                <td id="q5">2025-12-29 20:10:39</td>
+                <td id="q2" style="font-size:20px">31,112,500 <p style="color:#0baaf9">ليرة سورية</p> </td>
+                <td id="q3" style="font-size:20px">2,627 <p style="color:#052beb">دولار أمريكي</p> </td>
+                       
+                            <td id="q1">فرع حمص<div  class="bbox"> 817 </div></td>   
+                                   
+                                        <td> <i class="fa fa-diamond"></i> 27.198 <p> <i class="fa fa-cut"></i> 27.198 </p> <p><i class="fa fa-random"></i>  0</p></td>
+                                               
+                                              <td  id="q4">قص من ليرة سورية الى دولار أمريكي  - سعر  القص  11843.35744</td>
+                                             <td class="btnedit"><button type="submit" style="font-family: 'tajawal';" class="btn btn-theme03 "       >
+                          <i class="fa fa-copy"></i>
+                          نسخ  
+                    </button></td>   
+                                      </tr>  
+                       
+                           <tr>
+                <td> <input  type="radio" name="select"   value="CUT-576-446873" onchange="myFunction1()"> </td>
+ <td>10</td>
+              <td id="q6">CUT-576-446873</td>
+                <td id="q5">2025-12-29 18:53:40</td>
+                <td id="q2" style="font-size:20px">1,711.5 <p style="color:#052beb">دولار أمريكي</p> </td>
+                <td id="q3" style="font-size:20px">73,285 <p style="color:#ff0000">ليرة تركية</p> </td>
+                       
+                            <td id="q1"> كفردريان<div  class="bbox"> 555 </div></td>   
+                                   
+                                        <td> <i class="fa fa-diamond"></i> 31.476 <p> <i class="fa fa-cut"></i> 31.476 </p> <p><i class="fa fa-random"></i>  0</p></td>
+                                               
+                                              <td  id="q4">قص من دولار أمريكي الى ليرة تركية  - سعر  القص  42.8191645</td>
+                                             <td class="btnedit"><button type="submit" style="font-family: 'tajawal';" class="btn btn-theme03 "       >
+                          <i class="fa fa-copy"></i>
+                          نسخ  
+                    </button></td>   
+                                      </tr>  
+                       
+                                       
+            
+        </tbody>
+      
+    </table>
+                    </div>
+<script type="text/javascript">
+window.onload = function () {
+     document.getElementById("tablecon").style.display = "block";
+}; 
+</script>  
+                        <div class="row" >
+                            <div class="col-md-2" >
+                           <form  name="frmdelete" class="form-horizontal" action="deletetrans" method="post" enctype="multipart/form-data" onsubmit="return confirm('هل أنت متأكدأنك تريد حذف الحوالة  ؟هذه الخطوة لا يمكن التراجع عنها؟');" >
+                    
+               					<input  type="hidden" name="tok"  value="71f069abd14308cbdb71f4217a8610c4"/>
+              <input  type="hidden" name="transnum" id="select2" value="0"/>
+                    
+                    <button style="font-family: 'tajawal';" class="btn btn-danger" disabled id="del"  >
+                         <i class="fa fa-trash"></i>
+                        عكس قيد</button>
+              </form>
+                        </div>    
+                            
+                              <div class="col-md-2">
+                 
+              </div>
+                            
+                            
+                                <div class="col-md-2" >
+                        
+                        
+                          <form  name="frmdelete" class="form-horizontal" action="deletetransx" method="post" enctype="multipart/form-data" onsubmit="return confirm('هل أنت متأكدأنك تريد الغاء القيد  ؟هذه الخطوة لا يمكن التراجع عنها؟');" >
+                    
+               					<input  type="hidden" name="tok"  value="5dfb605a24f8dd896dd6973d0ad56144"/>
+              <input  type="hidden" name="transnum" id="select21" value="0"/>
+                    
+                    <button style="font-family: 'tajawal';" class="btn btn-danger" disabled id="delx"  >
+                         <i class="fa fa-xing"></i>
+                          حذف قيد</button>
+              </form>
+                        
+                     </div>     </div>        
+                        
+                    </div>
+          
+          
+          
+          </section>
+      
+
+
+      <!--main content end-->
+      <!--footer start-->
+       <footer class="site-footer">
+          <div class="text-center">
+            2022 - شركة أميســا 
+              <a href="#" class="go-top">
+                  <i class="fa fa-angle-up"></i>
+              </a>
+          </div>
+      </footer>
+      <!--footer end-->
+  </section>
+
+    
+        
+                      
+              <script src="../../../assets/js/tafkit.js"></script>                    
+
+<script>
+    
+    
+function myFunction1() {
+    var rates = document.getElementsByName('select');
+var index;
+for(var i = 0; i < rates.length; i++){
+    if(rates[i].checked){
+         select =rates[i].value;
+         index=i;
+    }
+}
+       
+    
+     document.getElementById("select2").value = select;
+     
+        document.getElementById("select21").value = select;
+     
+    
+    document.getElementById("del").disabled = false;
+     document.getElementById("delx").disabled = false;
+     
+     
+    
+}
+    function function1( xx=0){
+          
+          
+          document.getElementById("currencyto").disabled =false;
+            $('#currencyto option').prop('disabled', false);
+          
+          
+          if(xx==1){
+          
+          if(false){}
+         else if (document.getElementById("currencyfrom").value == "tl" && document.getElementById("currencyto").value == "usd"){
+       document.getElementById("cut").value=42.948;
+      document.getElementById("op").value="/";document.getElementById("accto").value = (document.getElementById("accfrom").value / 42.948) ;   }  else if (document.getElementById("currencyfrom").value == "eur" && document.getElementById("currencyto").value == "usd"){
+       document.getElementById("cut").value=1.1712;
+      document.getElementById("op").value="*";document.getElementById("accto").value = (document.getElementById("accfrom").value * 1.1712) ;   }  else if (document.getElementById("currencyfrom").value == "usd" && document.getElementById("currencyto").value == "eur"){
+       document.getElementById("cut").value=1.1742;
+      document.getElementById("op").value="/";document.getElementById("accto").value = (document.getElementById("accfrom").value / 1.1742) ;   }  else if (document.getElementById("currencyfrom").value == "usd" && document.getElementById("currencyto").value == "tl"){
+       document.getElementById("cut").value=42.844;
+      document.getElementById("op").value="*";document.getElementById("accto").value = (document.getElementById("accfrom").value * 42.844) ;   }  else if (document.getElementById("currencyfrom").value == "eur" && document.getElementById("currencyto").value == "tl"){
+       document.getElementById("cut").value=50.176;
+      document.getElementById("op").value="*";document.getElementById("accto").value = (document.getElementById("accfrom").value * 50.176) ;   }  else if (document.getElementById("currencyfrom").value == "tl" && document.getElementById("currencyto").value == "eur"){
+       document.getElementById("cut").value=50.431;
+      document.getElementById("op").value="/";document.getElementById("accto").value = (document.getElementById("accfrom").value / 50.431) ;   }  else if (document.getElementById("currencyfrom").value == "usd" && document.getElementById("currencyto").value == "EGP"){
+       document.getElementById("cut").value=50;
+      document.getElementById("op").value="/";document.getElementById("accto").value = (document.getElementById("accfrom").value / 50) ;   }  else if (document.getElementById("currencyfrom").value == "EGP" && document.getElementById("currencyto").value == "usd"){
+       document.getElementById("cut").value=50;
+      document.getElementById("op").value="/";document.getElementById("accto").value = (document.getElementById("accfrom").value / 50) ;   }  else if (document.getElementById("currencyfrom").value == "usd" && document.getElementById("currencyto").value == "SY"){
+       document.getElementById("cut").value=11800;
+      document.getElementById("op").value="*";document.getElementById("accto").value = (document.getElementById("accfrom").value * 11800) ;   }  else if (document.getElementById("currencyfrom").value == "SY" && document.getElementById("currencyto").value == "usd"){
+       document.getElementById("cut").value=12100;
+      document.getElementById("op").value="/";document.getElementById("accto").value = (document.getElementById("accfrom").value / 12100) ;   }  else if (document.getElementById("currencyfrom").value == "tl" && document.getElementById("currencyto").value == "SY"){
+       document.getElementById("cut").value=270;
+      document.getElementById("op").value="*";document.getElementById("accto").value = (document.getElementById("accfrom").value * 270) ;   }  else if (document.getElementById("currencyfrom").value == "SY" && document.getElementById("currencyto").value == "tl"){
+       document.getElementById("cut").value=290;
+      document.getElementById("op").value="/";document.getElementById("accto").value = (document.getElementById("accfrom").value / 290) ;   }  else if (document.getElementById("currencyfrom").value == "usd" && document.getElementById("currencyto").value == "SAR"){
+       document.getElementById("cut").value=3.75;
+      document.getElementById("op").value="*";document.getElementById("accto").value = (document.getElementById("accfrom").value * 3.75) ;   }  else if (document.getElementById("currencyfrom").value == "SAR" && document.getElementById("currencyto").value == "usd"){
+       document.getElementById("cut").value=3.85;
+      document.getElementById("op").value="/";document.getElementById("accto").value = (document.getElementById("accfrom").value / 3.85) ;   }  else if (document.getElementById("currencyfrom").value == "EGP" && document.getElementById("currencyto").value == "tl"){
+       document.getElementById("cut").value=1.3;
+      document.getElementById("op").value="/";document.getElementById("accto").value = (document.getElementById("accfrom").value / 1.3) ;   }  else if (document.getElementById("currencyfrom").value == "tl" && document.getElementById("currencyto").value == "EGP"){
+       document.getElementById("cut").value=1.2;
+      document.getElementById("op").value="*";document.getElementById("accto").value = (document.getElementById("accfrom").value * 1.2) ;   }               else {document.getElementById("cut").value=0;  document.getElementById("op").value="*"; document.getElementById("accto").value =0;}
+          
+          }
+          if(false){}
+          else if (document.getElementById("currencyfrom").value == "EGP") {
+       document.getElementById("toEGP").disabled=true;
+      
+           
+      
+    }else if (document.getElementById("currencyfrom").value == "eur") {
+       document.getElementById("toeur").disabled=true;
+      
+           
+      
+    }else if (document.getElementById("currencyfrom").value == "SAR") {
+       document.getElementById("toSAR").disabled=true;
+      
+           
+      
+    }else if (document.getElementById("currencyfrom").value == "SY") {
+       document.getElementById("toSY").disabled=true;
+      
+           
+      
+    }else if (document.getElementById("currencyfrom").value == "tl") {
+       document.getElementById("totl").disabled=true;
+      
+           
+      
+    }else if (document.getElementById("currencyfrom").value == "usd") {
+       document.getElementById("tousd").disabled=true;
+      
+           
+      
+    }         
+    
+     if (document.getElementById("op").value == "*"  ){
+       
+         cut=document.getElementById("cut").value;
+            
+            document.getElementById("accto").value = Math.round(((document.getElementById("accfrom").value * cut)) * 1000) / 1000; ; 
+        
+        }
+        
+        else  if (document.getElementById("op").value == "/"  ){
+       
+         cut=document.getElementById("cut").value;
+            
+            document.getElementById("accto").value =  Math.round(((document.getElementById("accfrom").value / cut)) * 1000) / 1000; 
+       
+        }
+   
+     document.getElementById("taf").innerHTML =tafqeet( document.getElementById("accfrom").value)+" "+document.getElementById("currencyfrom").options[document.getElementById("currencyfrom").selectedIndex].text;
+       document.getElementById("taf1").innerHTML =tafqeet( document.getElementById("accto").value)+" "+document.getElementById("currencyto").options[document.getElementById("currencyto").selectedIndex].text;
+    }
+     
+    
+    
+     
+    
+    
+    
+     function function3(){
+        
+        if (document.getElementById("op").value == "*"  ){
+       
+         cut=document.getElementById("cut").value;
+            
+            document.getElementById("accfrom").value =  Math.round(((document.getElementById("accto").value / cut)) * 1000) / 1000 ; 
+       
+        }
+        
+        else  if (document.getElementById("op").value == "/"  ){
+       
+         cut=document.getElementById("cut").value;
+            
+            document.getElementById("accfrom").value =   Math.round(((document.getElementById("accto").value * cut)) * 1000) / 1000; 
+       
+        }
+   
+     document.getElementById("taf").innerHTML =tafqeet( document.getElementById("accfrom").value)+" "+document.getElementById("currencyfrom").options[document.getElementById("currencyfrom").selectedIndex].text;
+       document.getElementById("taf1").innerHTML =tafqeet( document.getElementById("accto").value)+" "+document.getElementById("currencyto").options[document.getElementById("currencyto").selectedIndex].text;
+        
+        
+    
+    
+    }
+     
+ 
+	
+	// settings of status
+	var jqteStatus = true;
+	$(".status").click(function()
+	{
+		jqteStatus = jqteStatus ? false : true;
+		$('.jqte-test').jqte({"status" : jqteStatus})
+	});
+</script>
+
+
+<script src="../../../assets/js/jquery.js"></script>
+    <script src="../../../assets/js/jquery-1.8.3.min.js"></script>
+    <script src="../../../assets/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="../../../assets/js/jquery.dcjqaccordion.2.7.js"></script>
+   
+   
+ 
+    <!--common script for all pages-->
+    
+    
+    <script type="text/javascript" src="../../../assets/js/gritter/js/jquery.gritter.js"></script>
+    <script type="text/javascript" src="../../../assets/js/gritter-conf.js"></script>
+
+    <!--script for this page-->
+    <script src="../../../assets/js/sparkline-chart.js"></script>    
+	<script src="../../../assets/js/zabuto_calendar.js"></script>	
+	 
+	 <script src="../../../js/jquery.dataTables.min.js"></script>	
+        <script src="../../../js/dataTables.bootstrap.min.js"></script>	
+	    
+          <img style="display: none;max-width:100%; min-width: 400px" id="img"/>
+<script type="text/javascript">
+    
+ 
+
+function mytake(  ) { 
+   
+                           
+       
+        const scale = 1    
+        const node = document.getElementById("photo");
+        
+       
+        const style = {
+            transform: 'scale('+scale+')',
+            transformOrigin: 'top left',
+            width: node.offsetWidth + "px",
+             height: node.offsetHeight + "px"
+             
+        }
+        
+        const param = {
+             height: node.offsetHeight * scale,
+             width: node.offsetWidth * scale,
+              quality: 1,
+             style
+        }
+
+        domtoimage.toPng(node, param)
+            .then(function (dataUrl) {
+                
+                
+        $("#img").attr("src", dataUrl);
+                
+                
+                
+            })
+            .then(function () {
+   
+	 
+     const canvas = document.createElement("canvas");
+canvas.width = node.offsetWidth*1.1;
+canvas.height = node.offsetHeight*1.2;
+ 
+const ctx = canvas.getContext("2d");
+ var ccu=node.offsetWidth;
+ctx.textAlign="right";
+var img = document.getElementById("img");
+ ctx.font = "bold 30px tajawal";
+ ctx.fillStyle = "#00000";
+ 
+  
+ 
+
+
+  
+  ctx.drawImage(img, 70, 50);
+   
+  
+//tested on chrome 76
+canvas.toBlob(function(blob) { 
+    const item = new ClipboardItem({ "image/png": blob });
+    navigator.clipboard.write([item]); 
+});
+swal("تم نسخ صورة المطابقة الى الحافظة", {
+      icon: "success",
+       timer: 1000
+    });	 
+    });
+	 
+			
+				 } 
+
+
+</script>  
+       
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+                              
+  <script src="../../../js/chosen.jquery.js" type="text/javascript"></script>
+  <script src="../../../js/prism.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../js/init.js" type="text/javascript" charset="utf-8"></script>
+ 
+  <script>
+ 
+
+ 
+</script>
+    <script type="application/javascript">
+            
+              $(document).ready(function() {
+    $('#example').DataTable( {
+          
+        language: {
+            url: '//cdn.datatables.net/plug-ins/1.10.24/i18n/Arabic.json'
+        },
+         "paging":   true,
+        "ordering": true,
+        "searching": true,
+        
+          "deferRender": true,
+           
+       dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'print','pageLength'
+        ],
+        
+    } );
+} );
+ 
+
+
+$(function () {
+        $('#example').on('click', '.btnedit', function(){
+            
+         
+        
+            //get data from table row
+              p1 ="اسم المركز :"+ $(this).parent().children("#q1").text();
+              p2 = "لنا:"+$(this).parent().children("#q2").text();
+              p3 = "علينا :"+$(this).parent().children("#q3").text();
+              
+              p4 = "البيان :"+$(this).parent().children("#q4").text();
+              p5 = "تاريخ :"+$(this).parent().children("#q5").text();
+              p6 = "رقم القيد:"+$(this).parent().children("#q6").text();
+              
+              
+               var txt="شركة أميســا "+"\n"+p1+"\n"+p2+"\n"+p3+"\n"+p4+"\n"+p5+"\n";
+        
+        var textArea = document.createElement("textarea");
+    
+  textArea.value = txt;
+  
+   textArea.setAttribute('readonly', '');
+   textArea.style = {position: 'absolute', left: '-9999px'};
+   document.body.appendChild(textArea);
+   
+   
+  
+  
+  textArea.focus();
+  textArea.select();
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  document.body.removeChild(textArea);
+    
+              swal("تم نسخ المعلومات الى الحافظة", {
+      icon: "success",
+       timer: 1000
+    });
+              
+    })
+ })
+          
+</script>
+
+<script>
+ 
+/*
+(async () => {
+
+ await firebase.auth().signInWithEmailAndPassword("admin@i.net", "ils66476")
+  .then((userCredential) => {
+    // Signed in
+     user = userCredential.user;
+    // localStorage.setItem("user",user);
+     // user;
+    // ...
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    alert(errorMessage);
+  });
+  
+})();
+
+ alert(user);
+
+
+  var starCountRef = firebase.database().ref('/JKm1fDLu02Y0D4xdferPkBllnCM2/users');
+starCountRef.on('value', (snapshot) => {
+
+  snapshot.forEach(element => {
+    
+  const data = element.val();
+  const user = element.key;
+  var selo = document.getElementById("select4");
+  console.log(user);
+  var opt = document.createElement("option");
+  opt.value = data.uid;
+  opt.text = user;
+  selo.append(opt);
+  $(selo).trigger("chosen:updated");
+  });
+
+ // updateStarCount(postElement, data);
+});
+
+function loadUserCurs(username){
+
+  starCountRef.child(" "+username+"/account").on('value', (snapshot) => {
+
+    alert(snapshot.val());
+    var rowsdiv = document.getElementById("row");
+
+  snapshot.forEach(element => {
+    
+  const data = element.val();
+  const username = element.key;
+ 
+  console.log(username+data.count);
+  alert(user.uid);
+
+});
+  });
+  
+}
+  */
+
+</script>
+
+<script>
+
+</script>
+        <script type="module">
+  import {loadCurrencies,curs,loadCurrencyLocal,loadUserCurs,alexu,cutter} from "./modular.js"
+   var t = await loadCurrencyLocal();
+   console.log("ok"+  t+curs.size);
+   var ma = document.getElementById("row");
+    curs.forEach(element => {
+    
+   var diva = document.createElement("div");
+   diva.classList='box1 col-md-3 ';
+   diva.style.display='inline-block'; 
+   diva.style.border ='2px solid #004b97'; 
+   diva.style.borderRadius='5px 5px'; 
+   diva.style.padding= '0px 0px;'
+   diva.innerHTML =
+                                               "<h2 style='color: black'  >"+element.name+"</h2>"+
+                                                                "<h1 id='"+element.code+"' style='color: blue;font-size: 50'>0 </h1><div  style='color: blue;"+ 
+"background: radial-gradient(circle, rgba(169,199,235,0.7371323529411764) 0%, rgba(255,255,255,1) 100%);border-bottom-right-radius:5px; border-bottom-left-radius:5px;font-size:20px;'>        مدين لنا   </div> ";
+ma.appendChild(diva);
+   
+   });
+
+    $('#select4').on('change',function(){
+
+   loadUserCurs(this.options[this.selectedIndex].text);
+   $('#currencyfrom').on('change',function(){
+
+    alexu();
+   });
+  });
+
+  document.querySelector('#savex').addEventListener('click', function(e) {
+      var form = this;
+      
+      e.preventDefault();
+
+       if (document.forms["loadall"]["select4"].selectedIndex == 0) {
+       swal("خطأ", "الرجاء اختيار  العميل"+" انتبه يا   اياد", "warning");
+
+		
+        return false;
+    }
+	  
+     if (document.forms["frmx"]["currencyfrom"].selectedIndex == 0) {
+       swal("خطأ", "الرجاء اختيار العملة الأولى"+" انتبه يا   اياد", "warning");
+
+		
+        return false;
+    }
+    
+     if (document.forms["frmx"]["currencyto"].selectedIndex == 0) {
+        swal("خطأ", "الرجاء اختيار العملة الثانية"+" انتبه يا   اياد", "warning");
+        return false;
+    }
+    
+     if (document.forms["frmx"]["accfrom"].value <= 0) {
+        swal("خطأ", "الرجاء ادخال المبلغ الاول بشكل صحيح"+" انتبه يا  اياد ", "warning");
+        return false;
+    }
+     if (document.forms["frmx"]["cut"].value <= 0) {
+         swal("خطأ", "حدث خطأ حاول مرة أخرى "+" انتبه يا   اياد", "warning");
+        return false;
+    }
+    
+     if (document.forms["frmx"]["accto"].value <= 0) {
+        swal("خطأ", "حدث خطأ حاول مرة أخرى "+" انتبه يا  اياد ", "warning");
+        return false;
+    }
+     
+    if (document.forms["frmx"]["currencyto"].value == document.forms["frmx"]["currencyfrom"].value) {
+    
+     swal("خطأ", "الرجاء اختيار عملتين مختلفتين لطرفي القص "+" انتبه يا  اياد ", "warning");
+      return false;
+    }
+    
+     
+	  
+      swal({ 
+          title: "هل أنت متأكد ؟؟",
+          text: "عند موافقتك سيتم قص المبلغ الذي قمت بتحديده",
+          icon: "warning",
+          buttons: [
+            'لا',
+            'نعم'
+          ],
+          dangerMode: false,
+        }).then(function(isConfirm) {
+          if (isConfirm) {
+            
+              document.forms["frmx"]["savex"].disabled = true;
+              cutter();
+              document.forms["frmx"]["savex"].disabled = false;
+                  swal("تم عملية القص    بنجاح","شكرا لك يا اياد "+"🌹🌹🌹🌹", {
+      icon: "success",
+       timer: 1000
+    });
+            
+          } else {
+            
+          }
+        });
+    });
+
+ 
+</script>
+</body>
+  
+</html>

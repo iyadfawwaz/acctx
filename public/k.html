@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css" />
+    <!-- jQuery Library (Chosen requires jQuery) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Chosen jQuery Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+
+    <link rel='stylesheet' type='text/css' href='css/chosen.css'>
+    <link rel='stylesheet' type='text/css' href='css/bootstrap.min.css'>
+    <link rel='stylesheet' type='text/css' href='a/b/c/assets/css/bootstrap-select.css'>
+    
+    <link rel='stylesheet' type='text/css' href='a/b/c/assets/css/chosen.css'>
+    
+    <link rel='stylesheet' type='text/css' href='a/b/c/assets/css/style-responsive.css'>
+    
+    <link rel='stylesheet' type='text/css' href='a/b/c/assets/js/bootstrap.min.js'>
+    
+    <link rel='stylesheet' type='text/css' href='a/b/c/assets/js/jquery-1.8.3.min.js'>
+    
+    <link rel='stylesheet' type='text/css' href='a/b/c/assets/js/jquery.js'>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>dd</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+
+</head>
+<body>
+    <input type="text" id="input" />
+   <select class="chosen-select" style="width: 80%;" data-placeholder="Choose a Country..." id="mySelect">
+        <option value="" >   </option>
+        
+    </select>
+    <script>
+    $(document).ready(function(){
+        $(".chosen-select").chosen();
+        $(".select-chosen").chosen({search_contains: true,search_icon: false});
+
+         $('#myselect').trigger("chosen:updated");
+
+
+    });
+</script>
+
+    <!--script src="https://www.gstatic.com/firebasejs/11.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.7.0/firebase-database.js"></script>
+    <script type="module">
+        /*
+        import {getDatebase} from "https://www.gstatic.com/firebasejs/11.7.0/firebase-database.js";
+
+        const firebaseConfig = {};
+        let app = initializeApp(firebaseConfig);
+      let db = getDatebase(app);
+      console.log(db);
+      */
+    </script-->
+    <script type="module" src="test.js"></script>
+</body>
+</html>

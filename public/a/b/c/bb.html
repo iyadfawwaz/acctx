@@ -1,0 +1,4755 @@
+<html lang="en">
+  <head>
+      
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;500&display=swap" rel="stylesheet">
+
+
+<style>
+   
+    .dark-mode {
+   background-color: #3c3c3c !important;
+  color: white !important;
+   font-color: white !important;
+    background: rgb(60,60,60)!important;
+}
+     .scrollo-left {
+height: 40px; 
+overflow: hidden;
+position: relative;
+}
+ 
+</style>
+<style>
+    
+     .hideall{
+                display: none;
+            }
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 4.5s;
+  animation: fadein 0.5s, fadeout 0.5s 4.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+</style>
+
+
+      <style>
+          
+          * {
+  
+ font-family: tajawal;
+  
+
+}
+.thead_dark {
+    background: #004b97;
+    color:white;
+}
+
+.bbox{
+    background-color: yellow;
+    text-align: center;
+    border-radius: 20px;
+    font-size: 24px;
+}
+        
+.bootstrap-select .dropdown-menu {
+	width: 100%;
+}
+
+.bootstrap-select .dropdown-menu li small {
+	white-space: normal;
+}
+
+.wrapper{
+    max-width:100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+#tablecon{
+    max-width:100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+          </style>
+          
+            <style>
+.snote{
+max-width:100%;
+ 
+position: absolute;
+left: 0px;
+top: 200px;
+width: 100%;
+height: 100%;
+direction: rtl;
+z-index: 2;
+}
+
+.snote h2,p{
+  font-size:100%;
+  font-weight:normal;
+}
+
+.snote ul,li{
+  list-style:none;
+}
+
+.snote ul{
+  overflow:hidden;
+  padding:3em;
+}
+
+.snote ul li a{
+  text-decoration:none;
+  color:#000;
+  background:#ffc;
+  display:block;
+  height:15em;
+  width:20em;
+  padding:1em;
+  -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+   box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  -webkit-transform:rotate(-6deg);
+  -o-transform:rotate(-6deg);
+  -moz-transform:rotate(-6deg);
+  -moz-transition:-moz-transform .15s linear;
+  -o-transition:-o-transform .15s linear;
+  -webkit-transition:-webkit-transform .15s linear;
+}
+
+.snote ul li:nth-child(even) a{
+  -o-transform:rotate(4deg);
+  -webkit-transform:rotate(4deg);
+  -moz-transform:rotate(4deg);
+   position:relative;
+  top:5px;
+  background:#cfc;
+}
+
+.snote ul li:nth-child(3n) a{
+  -o-transform:rotate(-3deg);
+  -webkit-transform:rotate(-3deg);
+  -moz-transform:rotate(-3deg);
+  position:relative;
+  top:-5px;
+  background:#ccf;
+}
+
+.snote ul li:nth-child(4n) a{
+  -o-transform:rotate(5deg);
+  -webkit-transform:rotate(5deg);
+  -moz-transform:rotate(5deg);
+  position:relative;
+  top:-10px;
+  background:#fcf;
+}
+
+.snote ul li a:hover {
+  -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+  box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  -o-transform: scale(1.25);
+  position:relative;
+  z-index:5;
+}
+
+.snote ul li{
+  margin:1em;
+  float:left;
+}
+
+.snote ul li h2{
+  font-size:160%;
+  font-weight:bold;
+  padding-bottom:0px;
+  font-family:Oswald;
+  text-align:center;
+  color:#000;
+}
+ 
+</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name=”format-detection” content=”telephone=no”>
+
+ <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notokufiarabic.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notonaskharabic.css" />
+ 
+        <title>عدد الحركات      </title>
+ 
+                            
+          
+ <link rel="shortcut icon" href="../../../img/icon.ico" type="image/x-icon">
+    <link rel="icon" href="../../../img/icon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="../../../assets/css/bootstrap-select.css">
+    <link href="../../../assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    
+    
+    <!-- Custom styles for this template -->
+    <link href="../../../assets/css/style1.css?ver=213" rel="stylesheet"/>
+    <link href="../../../assets/css/style-responsive.css" rel="stylesheet"/>
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.4.0/css/bootstrap-rtl.css" rel="stylesheet"/>
+ <link rel="stylesheet" href="../../../css/chosen.css">   
+         
+<style type="text/css" media="print">
+    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+    @page 
+    {
+        size:  A4;   /* auto is the initial value */
+        margin: 0mm;  /* this affects the margin in the printer settings */
+    }
+
+    html
+    {
+        
+        margin: 0px;  /* this affects the margin on the html before sending to printer */
+    }
+
+    body
+    {
+        border: solid 1px green ;
+        margin: 10mm 15mm 10mm 15mm; /* margin you want for the content */
+    }
+    
+     td
+    {
+        font-size: 12px;
+    }
+    
+     th
+    {
+        font-size: 12px;
+    }
+    
+    .hmz{
+        padding: 30px!important; width: 60%!important;    background: rgba(255, 255, 255, 0.2)!important;
+border-radius: 16px!important;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1)!important;
+backdrop-filter: blur(5px)!important;
+-webkit-backdrop-filter: blur(5px)!important;
+border: 1px solid rgba(255, 255, 255, 0.3)!important;
+    }
+    </style>
+    
+  
+ 
+ 
+  <style>
+      
+    
+.ft_theme_switcher {position:fixed;top:125px;left:-280px;z-index:99999999;background-color:#222;color:#fff;padding:20px;width:280px;border-radius: 0 3px 3px 0;}
+
+.ft_theme_switcher .toggle {top:14px;font-size:18px;line-height:40px;text-align:center;background-color:#222;cursor:pointer;right:-38px;width:38px;height:40px;position:absolute;border-radius: 0 3px 3px 0;}
+
+.ft_theme_switcher .desc h3 {font-weight:300;margin-top:0;direction: rtl;}
+
+.ft_theme_switcher .desc p {
+font-size:12px;
+line-height:19px;
+font-weight:300;
+margin-bottom:23px
+}
+
+.ft_theme_switcher .style_list {
+overflow:hidden
+}
+
+.ft_theme_switcher .style_list .style {
+margin-right:40px;
+margin-bottom:10px;
+display:block;
+width:100%;
+position:relative
+}
+
+.ft_theme_switcher .style_list .style a {
+outline:none;
+position:absolute;
+width:100%;
+height:100%;
+top:0;
+right:0
+}
+
+.ft_theme_switcher .style_list .style .name {font-size: 14px;color:#878787;}
+
+.ft_theme_switcher .style_list .style .colors {
+margin-bottom:2px;
+overflow:hidden
+}
+
+.ft_theme_switcher .style_list .style .colors .name {padding-right: 0px;float:right;direction: rtl;}
+
+.ft_theme_switcher .style_list .style .color {
+float:right;
+height:20px;
+width:25px
+}
+
+.ft_theme_switcher .style_list .style:hover .name {
+color:#fff
+}
+      
+      
+      a[href^=tel] {
+   text-decoration:inherit;
+   color: inherit;
+}
+          .LockOn {
+    display: block;
+    visibility: visible;
+    position: absolute;
+    z-index: 999;
+    top: 0px;
+    left: 0px;
+    width: 105%;
+    height: 105%;
+    background-color:white;
+    vertical-align:bottom;
+    padding-top: 20%; 
+    filter: alpha(opacity=75); 
+    opacity: 0.75; 
+    font-size:large;
+    color:blue;
+    font-style:italic;
+    font-weight:400;
+    background-image: url("../Common/loadingGIF.gif");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+.ulx {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+   
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.lix {
+  float: right;
+}
+
+.ax {
+  display: block;
+  color: white;
+  text-align: center;
+  padding :  0.2vw;
+  text-decoration: none;
+ 
+}
+
+.imx{ max-width: 4vw;}
+
+.ax:hover {
+  background: rgb(0,255,68);
+background: radial-gradient(circle, rgba(0,255,68,0.6530987394957983) 0%, rgba(255,255,255,0) 75%);
+}
+table tbody tr:nth-child(even):hover td{
+    background-color: #7ef29c !important;
+}
+
+table tbody tr:nth-child(odd):hover td {
+    background-color: #7ef29c !important;
+}
+
+@media screen and (max-width: 800px) {
+    .mainlogo{ width: 50vw !important; }
+.smalllogo{ width: 10vw !important; }
+    .ulx {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.lix {
+  float: right;
+}
+
+.ax {
+  display: block;
+  color: black;
+  text-align: center;
+  padding :  2vw;
+  text-decoration: none;
+ 
+}
+
+.imx{ max-width: 13vw; max-height: 40px;}
+
+.mainlogo{ width: 50vw !important; }
+
+.ax:hover {
+  background: rgb(0,255,68);
+background: radial-gradient(circle, rgba(0,255,68,0.6530987394957983) 0%, rgba(255,255,255,0) 75%);
+}
+}
+.glass1 {
+ background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);   
+}
+</style>
+
+
+ <style>
+        
+        @media (max-width: 767px) {
+            .hidden-mobile {
+                display: none;
+            }
+            
+            .hmz{padding : 0px!important; width:100%!important;} 
+             .wrapper{padding : 0px!important;}
+        }
+    </style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+  
+  
+  </head>
+
+  
+  
+<body>
+  <script>console.log(localStorage.getItem("userId"));</script>
+    
+    <nav class="navbar navbar-default"style="margin-bottom: 0px"  >
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        <a style="color: #004b97" class="navbar-brand  " href="pl.m"><img id="smalllogo" class="smalllogo" style="width: 2.5vw" src="../../../img/companylogo.PNG"/>  </a>
+
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+      <ul class="nav navbar-nav">
+         
+      <li class="dropdown">
+          <a style="color: #004b97" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">   <i class="fa fa-bank"></i> المراكز  <span class="caret"></span></a>
+          <ul class="dropdown-menu"> 
+              <li><a  style="color: #004b97" href="centers"><i class="fa fa-users"></i>    جميع الصناديق</a></li>
+               
+                            <li><a style="color: #004b97" href="deletedcenters"><i class="fa fa-trash"></i>   سلة المحذوفات </a></li>
+          
+                   
+        
+            <li><a style="color: #004b97" href="bb"><i class="fa fa-line-chart"></i> عدد حوالات المراكز</a></li>
+             <li><a style="color: #004b97" href="centers_1"><i class="fa fa-cubes"></i> حركة الصناديق</a></li>
+           
+          </ul>
+        </li>
+                 
+           <li class="dropdown">
+          <a href="#" style="color: #004b97" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-credit-card"></i> العمليات <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a style="color: #004b97" href="addkayit"><i class="fa fa-exchange"></i> قيد من الى</a></li><li><a style="color: #004b97" href="addkayit_1"><i class="fa fa-arrows-alt"></i> قيد متقدم</a></li><li><a style="color: #004b97" href="open"><i class="fa fa-key"></i> قيد افتتاحي</a></li><li><a style="color: #004b97" href="addsnin"><i class="fa fa-arrow-right"></i>   سند قبض </a></li><li><a style="color: #004b97" href="addsnout"><i class="fa fa-arrow-left"></i> سند دفع</a></li><li><a style="color: #004b97" href="cut"><i class="fa fa-cut"></i>   سند قص</a></li><li><a style="color: #004b97" href="addkayit_cut"><i class="fa fa-cut"></i>   سند قص مع اغلاق</a></li><li role="separator" class="divider"></li><li><a style="color: #004b97" href="translive"><i class="fa fa-eye"></i>     مراقبة العمليات</a></li><li><a style="color: #004b97" href="dafatcheck"><i class="fa fa-check"></i>       تدقيق القيود</a></li>               </ul>
+        </li>
+         <li class="dropdown">
+          <a href="#" style="color: #004b97" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-retweet"></i> الحسابات <span class="caret"></span></a>
+          <ul class="dropdown-menu"><li><a style="color: #004b97" href="mizan"><i class="fa fa-balance-scale"></i> ميزان المراجعة</a></li>              <li><a style="color: #004b97" href="kartable"><i class="fa fa-area-chart"></i> مخطط الميزان والارباح</a></li>                            
+              <li><a style="color: #004b97" href="sanadik"><i class="fa fa-cubes"></i> الصناديق</a></li><li><a style="color: #004b97" href="cutcenters"><i class="fa fa-cut"></i> مراكز القطع</a></li><li><a style="color: #004b97" href="report"><i class="fa fa-area-chart"></i> تقارير</a></li><li role="separator" class="divider"></li><li><a style="color: #004b97" href="account"><i class="fa fa-balance-scale"></i> كشف حساب  </a></li><li><a style="color: #004b97" href="dafatsearch"><i class="fa fa-exchange"></i> جميع القيود</a></li><li><a style="color: #004b97" href="mutabaka"><i class="fa fa-check-circle"></i>   مطابقات</a></li>              
+          </ul>
+        </li>
+        
+        
+        
+       
+         <li class="dropdown">
+          <a style="color: #004b97" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-paper-plane"></i> الحوالات <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a style="color: #004b97" href="dafatsearch"><i class="fa fa-exchange"></i>   القيود</a></li><li><a style="color: #004b97" href="incomesearch"><i class="fa fa-clock-o"></i>   حوالات قيد التسليم - داخلي  </a></li><li><a style="color: #004b97" href="incomesearch_ext"><i class="fa fa-history"></i>   حوالات قيد التسليم - خارجي  </a></li><li><a style="color: #004b97" href="transactive_1"><i class="fa fa-check"></i>  تم تسليمها   </a></li><li role="separator" class="divider"></li><li><a style="color: #004b97" href="check"><i class="fa fa-mobile-phone"></i> جهاز الحوالة</a></li>          </ul>
+        </li>
+        
+        
+         
+         
+                  
+        
+          
+        
+        
+                         <li class="dropdown">
+          <a style="color: #1a4053" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-star"></i> الربط <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+               
+               <li><a style="color: #1a4053" href="api_comp"><i class="fa fa-star"></i> شركات الربط</a></li> 
+                
+               
+               
+          </ul>
+        </li>        
+        <li class="dropdown">
+          <a style="color: #004b97" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-gear"></i> الأدوات <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a style="color: #004b97" href="sarf"><i class="fa fa-cut"></i> أسعار القص</a></li><li><a style="color: #004b97" href="curs"><i class="fa fa-dollar"></i>   ادارة العملات</a></li><li><a style="color: #004b97" href="eventrecord">  <i class="fa fa-bell"></i> سجل   الأحداث</a></li>  
+              <li><a style="color: #004b97" href="logrecord">  <i class="fa fa-eye"></i> سجل تسجيل الدخول</a></li>
+               <li><a style="color: #004b97" href="changepass"><i class="fa fa-lock"></i>       تغيير كلمة المرور </a></li>
+          </ul>
+        </li>
+        
+         <li>
+              
+              <form  name="frmdelete" class="form-horizontal" action="transsearch" method="post" enctype="multipart/form-data"  >
+                  <input type="text" tabindex="-1" name="patern" placeholder="ابحث عن حوالة" class="form-control " style="margin-top:  0.5vw"/>
+              </form>   
+              </li>
+        
+      </ul>
+           <ul class="nav pull-left top-menu">
+                     
+                    <li><a    class="logout" href="logout.php?logout">  خروج</a></li>
+                   
+            	</ul>
+      
+          <ul class="nav pull-left top-menu">
+                     
+                  
+              <li> <a class="logout"    title="    تحديث" href="javascript:location.reload(true)">  <i style=" font-size: 16px" class="fa fa-refresh"></i>    </a></li>
+              <li> <a class="logout"   title="  الوضع الليلي  "  href="javascript:dark();">  <i id="darktoggle" style=" font-size: 16px" class="fa fa-moon-o"></i>    </a></li>
+              <li> <a class="logout"  style=" padding: 3px"  title="    صندوق الوارد" href="inbox">  <i style=" font-size: 16px;" class="fa fa-envelope"></i>  <span class="badge" style="background-color: red;margin: 0px;">1</span>  </a></li>
+            	</ul>
+                     
+                  
+            	 
+        
+       <div class="scrollo-left" style="  ">  <pre style="border: 0; background-color: transparent; font-family: tajawal;  white-space: nowrap; overflow: hidden;margin-top: 0vw;  "   >  ليلة سعيدة😊😊 يا فرع البردقلي  </pre></div>
+       
+      
+    
+      
+        
+        
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+       
+            
+         <ul class="ulx">
+       <center class="glass1">
+             <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="العملاء    "  class="ax" href="centers" >  <img class="imx"     src="../../../img/icons/idara/1.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="كشف حساب    "  class="ax" href="account" >  <img class="imx"     src="../../../img/icons/idara/2.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="الصناديق    "  class="ax" href="sanadik" >  <img class="imx"     src="../../../img/icons/idara/3.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="مراكز القطع    "  class="ax" href="cutcenters" >  <img class="imx"     src="../../../img/icons/idara/4.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="      قيد من الى"  class="ax" href="addkayit" >  <img class="imx"     src="../../../img/icons/idara/8.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="      سند قبض"  class="ax" href="addsnin" >  <img class="imx"     src="../../../img/icons/idara/17.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="      سند دقع"  class="ax" href="addsnout" >  <img class="imx"     src="../../../img/icons/idara/18.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="          سند قص"  class="ax" href="cut" >  <img class="imx"     src="../../../img/icons/idara/9.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="            قص مع اغلاق"  class="ax" href="addkayit_cut" >  <img class="imx"     src="../../../img/icons/idara/27.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="      القيود"  class="ax" href="dafatsearch" >  <img class="imx"     src="../../../img/icons/idara/11.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="      قيد التسليم"  class="ax" href="incomesearch" >  <img class="imx"     src="../../../img/icons/idara/19.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="      تم التسليم"  class="ax" href="transactive_1" >  <img class="imx"     src="../../../img/icons/idara/20.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="    اسعار القص"  class="ax" href="sarf" >  <img class="imx"     src="../../../img/icons/idara/13.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="     تقارير"  class="ax" href="report" >  <img class="imx"     src="../../../img/icons/idara/14.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="      قيد متقدم"  class="ax" href="addkayit_1" >  <img class="imx"     src="../../../img/icons/idara/15.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="  بحث متقدم    "  class="ax" href="advanced_search" >  <img class="imx"     src="../../../img/icons/idara/16.png"/></a></li> <li  class="lix js-tilt data-tilt"><a  data-toggle="tooltip" title="  مراقبة العمل"  class="ax" href="translive" >  <img class="imx"     src="../../../img/icons/idara/21.png"/></a></li>   
+        </center>
+      </ul>
+    <script>
+   var elz = document.createElement("img");
+elz.src = "../../../img/spin.gif";                    
+window.onbeforeunload = function(){
+    
+  document.getElementById('coverScreen').style.display = 'block';
+  
+
+};
+</script>
+<div id="coverScreen" style="display: none" class="LockOn">
+        <center>  <img  src="../../../img/spin.gif"/></center>
+</div>
+
+ <script>
+     
+         var $radios = $('input:radio');
+
+$radios.change(function () {
+    $radios.parent().parent().removeClass('checked');
+    $(this).parent().parent().addClass('checked');
+  $("html, body").animate({ scrollTop: document.body.scrollHeight }, "slow");
+
+}); 
+
+ function ACTG(){
+            var tt='side';
+                var a = $('#scalee');
+    			a.hasClass("ocult") ? a.animate({
+    				left: "0"
+    			}, 500) : a.animate({
+    				left: "-280px"
+    			}, 500), a.toggleClass("ocult")
+                
+                $.ajax({
+                        url: 'checkbalance', 
+                          data:{type:tt}, 
+                          type:'POST',
+                        success: function(result){
+                
+                           
+                          $(".amwidget").html(result);
+                          
+                          
+                        }
+                
+                });
+            
+          }
+          
+          
+          
+          
+function dark() {
+    
+    
+   
+    
+    
+    var all = document.getElementsByTagName("*");
+
+for (var i=0, max=all.length; i < max; i++) {
+     all[i].classList.toggle("dark-mode");
+}
+if(document.body.classList.contains("dark-mode")){
+  
+ 
+ mode="dark";
+ }
+ 
+ else {
+try{ document.getElementById("smalllogo").src="../../../img/companylogo.PNG";
+ document.getElementById("mainlogo").src="../../../img/companylogo.PNG";
+ } catch(ex){}
+  
+mode="light";
+ }
+ 
+ 
+    $.ajax({
+                                url:"checknot.php",
+				data:{mode:mode},
+				type:'POST',
+				success:function(response) {
+                                 
+                                   
+                               }
+				});
+}
+ 
+  function shownotes() {
+
+                document.getElementById("snote").classList.toggle("hideall");
+
+            }
+ 
+function savenote(id){
+    var val=document.getElementById(id).value;    
+     $.ajax({
+                            
+                        
+				url:"savenote.php",
+				data:{tok:id,value:val},
+				type:'POST',
+				success:function(response) {
+                                   
+				}
+			});
+}
+
+function mkdark() {
+   var all = document.getElementsByTagName("*");
+
+for (var i=0, max=all.length; i < max; i++) {
+     all[i].classList.add("dark-mode");
+}
+ try{
+ document.getElementById("smalllogo").src="../../../img/companylogodark.PNG";
+ document.getElementById("mainlogo").src="../../../img/companylogodark.PNG";
+ } catch(ex){}
+ 
+ 
+  
+  
+}
+
+
+ $(document).ready(function(){
+        $(".bbox").click(function() {
+            
+          mer=  $(this).html();
+            
+            $.ajax({ 
+				url:"gettest.php",
+				data:{mr_bx:mer},
+				type:"POST",
+				success:function(response) {
+                                document.getElementById("accshowxx").innerHTML =response;
+				  	 
+					 
+				}
+				 
+			});
+        });
+});
+ 
+ 
+ 
+          
+          </script>
+          
+          
+          
+     <div class="ft_theme_switcher theme_switcher_bod  "  style="background-color: #004b97;top:215px;">
+               <div style="background-color: #004b97" class="toggle" onclick="shownotes();"><i style="font-size: 33px; "class="fa fa-sticky-note-o"></i></div>
+           
+        </div>   
+<div class="snote hideall" id="snote">
+<ul>
+  <li>
+    <a  >
+        <h2 style="font-family: tajawal">ملاحظة 1</h2><hr />
+        <textarea id="note1" onblur="savenote('note1')" style="background-color:rgba(0, 0, 0, 0.0);  border: none; font-family: tajawal;width: 100%;height: 50%;font-size: 20px">المالية</textarea>
+    </a>
+  </li>
+    <li>
+    <a  >
+        <h2 style="font-family: tajawal">ملاحظة 2</h2><hr />
+      <textarea id="note2" onblur="savenote('note2')" style="background-color:rgba(0, 0, 0, 0.0);  border: none; font-family: tajawal;width: 100%;height: 50%;font-size: 20px">و الحوالات</textarea>
+    </a>
+  </li>
+    <li>
+    <a  >
+        <h2 style="font-family: tajawal">ملاحظة 3</h2><hr />
+      <textarea id="note3" onblur="savenote('note3')" style="background-color:rgba(0, 0, 0, 0.0);  border: none; font-family: tajawal;width: 100%;height: 50%;font-size: 20px">للصرافة</textarea>
+    </a>
+  </li>
+    <li>
+    <a  >
+        <h2 style="font-family: tajawal">ملاحظة 4</h2><hr />
+      <textarea id="note4" onblur="savenote('note4')" style="background-color:rgba(0, 0, 0, 0.0);  border: none; font-family: tajawal;width: 100%;height: 50%;font-size: 20px">شركة أميسا</textarea>
+    </a>
+  </li>
+  
+   <li>
+       <a style="height: 50em;width: 25em; overflow-y: scroll" >
+        <h2 style="font-family: tajawal">ملاحظات المراكز</h2><hr />
+      <p id="note5"  style="background-color:rgba(0, 0, 0, 0.0);  border: none; font-family: tajawal;  font-size: 16px">
+      <bre style="color:red">حوالات غير مسلمة - mut : </bre>حمزة<hr/>      
+      </p>
+    </a>
+  </li>
+   
+  
+  
+</ul>
+</div>
+          <div id="accshowxx" class="text-center" >	</div>		      
+ 
+    
+           
+           
+     
+      
+           
+           
+          <section class="wrapper"> 
+                 
+              
+              
+              <form  name="frdate" class="form-horizontal" action="#" method="post" enctype="multipart/form-data"  >
+     
+<div   class="row"   >
+<div   class="col-md-2 col-xs-6  text-right  "   >
+    <label>من تاريخ :</label>
+</div>
+                <div   class="col-md-2 col-xs-6  text-right  "   >
+                    <input class="form-control" type="date" name ="from" id ="from"  value="2025-11-29" >
+                        
+                        </div>
+    
+    <div   class="col-md-2 col-xs-6  text-right  "   >
+    <label>الى تاريخ :</label>
+</div>
+                <div   class="col-md-2 col-xs-6  text-right  "   >
+                            <input class="form-control" type="date" name ="to" id ="to" value="2025-12-29"  >
+                        
+                        </div>
+    
+      <div   class="col-md-2 col-xs-6  text-right  "   >
+                     <button style="font-family: 'tajawal'; " class="form-control btn-success"     >
+                               <i class="fa fa-search"  ></i>
+بحث</button> 
+                                    
+                        </div>
+               
+     </div>
+	 </form>  
+             <br/>
+             
+             <div id="tablecon" style="display: none;">
+              <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                 
+                  
+                  
+                  
+
+ 
+  
+ 
+        <thead class="thead_dark">
+            <tr> <th> </th> 
+
+                <th>الاسم</th>
+                <th>صادر تركي  </th>
+               <th> صادر دولار</th>
+               <th> صادر يورو</th>
+                <th> صادر كلي</th>
+  <th>وارد تركي</th>
+   
+   <th>وارد دولار  </th>
+    <th> وارد يورو</th>
+               <th> وارد كلي</th>
+                
+   
+            </tr>
+        </thead>
+        <tfoot>
+              <tr> <th> </th>  
+
+               
+                <th>الاسم</th>
+                <th>صادر تركي  </th>
+               <th> صادر دولار</th>
+               <th> صادر يورو</th>
+                <th> صادر كلي</th>
+  <th>وارد تركي</th>
+   
+   <th>وارد دولار  </th>
+    <th> وارد يورو</th>
+               <th> وارد كلي</th>
+                
+   
+            </tr>
+        </tfoot>
+        <tbody>
+            
+            <tr>
+                <td></td>
+                  <td>المجموع</td>
+                    <td id='outtl'></td>
+                      <td id='outusd'></td>
+                        <td id='outeur'></td>
+                          <td id='outtotal'></td>
+                             <td id='intl'></td>
+                      <td id='inusd'></td>
+                        <td id='ineur'></td>
+                          <td id='intotal'></td>
+            </tr>
+            
+             <tr>
+                 
+<td>1</td>
+                <td>حوالات غير مسلمة</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>2</td>
+                <td>مركز قطع تركي</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>3</td>
+                <td>مركز قطع يورو</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>4</td>
+                <td>فروقات صرف ايجابية</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td>2</td> <td></td>
+                   <td>2</td>  
+            </tr>
+            <tr>
+                 
+<td>5</td>
+                <td>فروقات صرف سلبية</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>6</td>
+                <td>عمولات محققة</td>
+                <td>1</td>
+                <td>4</td>
+                       <td></td>
+                     <td>5</td><td>40</td><td>5</td> <td></td>
+                   <td>45</td>  
+            </tr>
+            <tr>
+                 
+<td>7</td>
+                <td>رأس المال</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>8</td>
+                <td>أرباح وخسائر</td>
+                <td>3</td>
+                <td>9</td>
+                       <td>2</td>
+                     <td>14</td><td></td><td>5</td> <td></td>
+                   <td>5</td>  
+            </tr>
+            <tr>
+                 
+<td>9</td>
+                <td>الصندوق</td>
+                <td>101</td>
+                <td>305</td>
+                       <td>1</td>
+                     <td>407</td><td>197</td><td>657</td> <td>1</td>
+                   <td>855</td>  
+            </tr>
+            <tr>
+                 
+<td>10</td>
+                <td>فروقات صرف متقدم</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>11</td>
+                <td>قيد التسليم خارجي</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>12</td>
+                <td>عمولات محققة - قيود</td>
+                <td>1</td>
+                <td>3</td>
+                       <td></td>
+                     <td>4</td><td>37</td><td>54</td> <td>6</td>
+                   <td>97</td>  
+            </tr>
+            <tr>
+                 
+<td>13</td>
+                <td>قيد التسليم داخلي</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>14</td>
+                <td>مركز قطع جنيه مصري</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>15</td>
+                <td>مؤرشف كفردريان</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>16</td>
+                <td>الراوي </td>
+                <td></td>
+                <td>6</td>
+                       <td></td>
+                     <td>6</td><td></td><td>5</td> <td></td>
+                   <td>5</td>  
+            </tr>
+            <tr>
+                 
+<td>17</td>
+                <td>السفير</td>
+                <td>9</td>
+                <td>73</td>
+                       <td></td>
+                     <td>82</td><td>2</td><td>14</td> <td></td>
+                   <td>16</td>  
+            </tr>
+            <tr>
+                 
+<td>18</td>
+                <td>اون لاين</td>
+                <td>82</td>
+                <td>32</td>
+                       <td></td>
+                     <td>114</td><td>20</td><td>15</td> <td></td>
+                   <td>35</td>  
+            </tr>
+            <tr>
+                 
+<td>19</td>
+                <td>وهج</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>20</td>
+                <td>اسيا</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>21</td>
+                <td>زووم</td>
+                <td></td>
+                <td>1</td>
+                       <td></td>
+                     <td>1</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>22</td>
+                <td>النخبة</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>23</td>
+                <td>البشائر</td>
+                <td>4</td>
+                <td>12</td>
+                       <td></td>
+                     <td>16</td><td>2</td><td>3</td> <td></td>
+                   <td>5</td>  
+            </tr>
+            <tr>
+                 
+<td>24</td>
+                <td>الخواجا</td>
+                <td>11</td>
+                <td>31</td>
+                       <td></td>
+                     <td>42</td><td>6</td><td>6</td> <td></td>
+                   <td>12</td>  
+            </tr>
+            <tr>
+                 
+<td>25</td>
+                <td>العربية</td>
+                <td>8</td>
+                <td>20</td>
+                       <td></td>
+                     <td>28</td><td>5</td><td>4</td> <td></td>
+                   <td>9</td>  
+            </tr>
+            <tr>
+                 
+<td>26</td>
+                <td>اطلس</td>
+                <td>4</td>
+                <td>39</td>
+                       <td></td>
+                     <td>43</td><td>3</td><td>8</td> <td></td>
+                   <td>11</td>  
+            </tr>
+            <tr>
+                 
+<td>27</td>
+                <td>البركة</td>
+                <td>64</td>
+                <td>78</td>
+                       <td></td>
+                     <td>142</td><td>15</td><td>10</td> <td></td>
+                   <td>25</td>  
+            </tr>
+            <tr>
+                 
+<td>28</td>
+                <td>سولتير</td>
+                <td></td>
+                <td>35</td>
+                       <td></td>
+                     <td>35</td><td>1</td><td>5</td> <td></td>
+                   <td>6</td>  
+            </tr>
+            <tr>
+                 
+<td>29</td>
+                <td>يقين</td>
+                <td>33</td>
+                <td>99</td>
+                       <td>1</td>
+                     <td>133</td><td>11</td><td>14</td> <td></td>
+                   <td>25</td>  
+            </tr>
+            <tr>
+                 
+<td>30</td>
+                <td>غرناطة</td>
+                <td></td>
+                <td>18</td>
+                       <td></td>
+                     <td>18</td><td></td><td>5</td> <td></td>
+                   <td>5</td>  
+            </tr>
+            <tr>
+                 
+<td>31</td>
+                <td>سبايدر</td>
+                <td>21</td>
+                <td>67</td>
+                       <td></td>
+                     <td>88</td><td>8</td><td>10</td> <td></td>
+                   <td>18</td>  
+            </tr>
+            <tr>
+                 
+<td>32</td>
+                <td>دهب</td>
+                <td>65</td>
+                <td>605</td>
+                       <td></td>
+                     <td>670</td><td>20</td><td>94</td> <td></td>
+                   <td>114</td>  
+            </tr>
+            <tr>
+                 
+<td>33</td>
+                <td>فينيسيا</td>
+                <td>6</td>
+                <td>126</td>
+                       <td></td>
+                     <td>132</td><td>4</td><td>10</td> <td></td>
+                   <td>14</td>  
+            </tr>
+            <tr>
+                 
+<td>34</td>
+                <td>البنك الكويت الترك مؤرشف</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>35</td>
+                <td>بنك زراعات</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td>1</td><td>1</td> <td></td>
+                   <td>2</td>  
+            </tr>
+            <tr>
+                 
+<td>36</td>
+                <td>ابو باسل</td>
+                <td>1</td>
+                <td>4</td>
+                       <td></td>
+                     <td>5</td><td>1</td><td>5</td> <td></td>
+                   <td>6</td>  
+            </tr>
+            <tr>
+                 
+<td>37</td>
+                <td>انس الختيار</td>
+                <td></td>
+                <td>3</td>
+                       <td></td>
+                     <td>3</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>38</td>
+                <td>تبديل عملة </td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td>1</td><td>15</td> <td></td>
+                   <td>16</td>  
+            </tr>
+            <tr>
+                 
+<td>39</td>
+                <td>احمد دبس </td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>40</td>
+                <td>ممدوح عبارة</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>41</td>
+                <td>سليمان شحادة</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>42</td>
+                <td>سامر ادلبي</td>
+                <td></td>
+                <td>5</td>
+                       <td></td>
+                     <td>5</td><td></td><td>5</td> <td></td>
+                   <td>5</td>  
+            </tr>
+            <tr>
+                 
+<td>43</td>
+                <td>صهيب اسماعيل</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>44</td>
+                <td>ابو معروف اسماعيل</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>45</td>
+                <td>معتز مصر</td>
+                <td></td>
+                <td>3</td>
+                       <td></td>
+                     <td>3</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>46</td>
+                <td>اديب توامي</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>47</td>
+                <td>محمد روحي الشيخ رشيد</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>48</td>
+                <td>نائل</td>
+                <td>3</td>
+                <td></td>
+                       <td></td>
+                     <td>3</td><td>1</td><td></td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>49</td>
+                <td>ابو غازي</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>50</td>
+                <td>علاء ناصر</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>51</td>
+                <td>ابو تميم</td>
+                <td>14</td>
+                <td>6</td>
+                       <td></td>
+                     <td>20</td><td>2</td><td>1</td> <td></td>
+                   <td>3</td>  
+            </tr>
+            <tr>
+                 
+<td>52</td>
+                <td>محمد مصر</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>53</td>
+                <td>مصاريف الصرافة الثابتة</td>
+                <td></td>
+                <td>3</td>
+                       <td></td>
+                     <td>3</td><td>1</td><td></td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>54</td>
+                <td>محمد قدور</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>55</td>
+                <td>مؤسسة النقد</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>56</td>
+                <td>ابوعبدالرحمن الشامي</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>57</td>
+                <td>اكسسوارات كفردريان</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>58</td>
+                <td>اسامة اذري</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>59</td>
+                <td>رواتب موظفين</td>
+                <td></td>
+                <td>2</td>
+                       <td></td>
+                     <td>2</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>60</td>
+                <td>مصروف صرافة يومي</td>
+                <td>52</td>
+                <td>15</td>
+                       <td></td>
+                     <td>67</td><td>1</td><td>2</td> <td></td>
+                   <td>3</td>  
+            </tr>
+            <tr>
+                 
+<td>61</td>
+                <td>جمعية مرج دابق</td>
+                <td>5</td>
+                <td>1</td>
+                       <td></td>
+                     <td>6</td><td>2</td><td>2</td> <td></td>
+                   <td>4</td>  
+            </tr>
+            <tr>
+                 
+<td>62</td>
+                <td>عبدالله توامي</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>63</td>
+                <td>محمد كورج</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>64</td>
+                <td>مطعم طيبة</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td>3</td> <td></td>
+                   <td>3</td>  
+            </tr>
+            <tr>
+                 
+<td>65</td>
+                <td>ام جنى رأس مال </td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>66</td>
+                <td>حسن سفر</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>67</td>
+                <td>عماد محب الدين</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>68</td>
+                <td>اياد عرب</td>
+                <td></td>
+                <td>9</td>
+                       <td></td>
+                     <td>9</td><td></td><td>25</td> <td></td>
+                   <td>25</td>  
+            </tr>
+            <tr>
+                 
+<td>69</td>
+                <td>موازنة</td>
+                <td>14</td>
+                <td>28</td>
+                       <td></td>
+                     <td>42</td><td>6</td><td>16</td> <td></td>
+                   <td>22</td>  
+            </tr>
+            <tr>
+                 
+<td>70</td>
+                <td>ابو مجاهد غراس</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>71</td>
+                <td>تبرعات</td>
+                <td>1</td>
+                <td>6</td>
+                       <td></td>
+                     <td>7</td><td>1</td><td></td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>72</td>
+                <td>وائل الخالدي</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>73</td>
+                <td>حسين الحمود </td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>74</td>
+                <td>جاد</td>
+                <td>4</td>
+                <td>52</td>
+                       <td></td>
+                     <td>56</td><td>3</td><td>13</td> <td></td>
+                   <td>16</td>  
+            </tr>
+            <tr>
+                 
+<td>75</td>
+                <td>فادي نزهت</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>76</td>
+                <td>مطابقة يوزرات مؤقت</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>77</td>
+                <td>تكشيف تركي</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>78</td>
+                <td>محمد عبدالحميد مصطفى</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>79</td>
+                <td>عمر دوغرو</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>80</td>
+                <td>محمد بكار</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>81</td>
+                <td>عباس شمس الدين</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>82</td>
+                <td>مركز تكشيف يورو</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>83</td>
+                <td>عباد الرحمن</td>
+                <td></td>
+                <td>1</td>
+                       <td></td>
+                     <td>1</td><td>1</td><td></td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>84</td>
+                <td>كاش فلسطين</td>
+                <td>1</td>
+                <td>10</td>
+                       <td></td>
+                     <td>11</td><td></td><td>3</td> <td></td>
+                   <td>3</td>  
+            </tr>
+            <tr>
+                 
+<td>85</td>
+                <td>معهد ابن كثير</td>
+                <td></td>
+                <td>4</td>
+                       <td></td>
+                     <td>4</td><td>2</td><td>3</td> <td></td>
+                   <td>5</td>  
+            </tr>
+            <tr>
+                 
+<td>86</td>
+                <td>مسحوبات ارباح حسن</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>87</td>
+                <td>ابومحمد الشامي</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>88</td>
+                <td>محمد عبدالقادر قدور</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>89</td>
+                <td>محمد عامر</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>90</td>
+                <td>نقص وزيادة</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td>2</td><td></td> <td></td>
+                   <td>2</td>  
+            </tr>
+            <tr>
+                 
+<td>91</td>
+                <td>محمد مصر مصروف شخصي</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>92</td>
+                <td>اسامة جلاد</td>
+                <td>3</td>
+                <td>4</td>
+                       <td></td>
+                     <td>7</td><td>2</td><td>2</td> <td></td>
+                   <td>4</td>  
+            </tr>
+            <tr>
+                 
+<td>93</td>
+                <td>سحر الحايك</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>94</td>
+                <td>حسن شخصي</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>95</td>
+                <td>مسحوبات ارباح عايد</td>
+                <td></td>
+                <td>2</td>
+                       <td></td>
+                     <td>2</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>96</td>
+                <td>مسحوبات ارباح صلاح</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>97</td>
+                <td>ابو حسين درويش</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>98</td>
+                <td>عبدالخالق الكنج</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>99</td>
+                <td>الافضل</td>
+                <td>3</td>
+                <td>36</td>
+                       <td></td>
+                     <td>39</td><td>1</td><td>6</td> <td></td>
+                   <td>7</td>  
+            </tr>
+            <tr>
+                 
+<td>100</td>
+                <td>احمد عمار</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>101</td>
+                <td>مشهور خليف</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>102</td>
+                <td>مازن شحادة</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>103</td>
+                <td>مصاريف شهرية</td>
+                <td></td>
+                <td>10</td>
+                       <td></td>
+                     <td>10</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>104</td>
+                <td>محمد النذر</td>
+                <td></td>
+                <td>1</td>
+                       <td></td>
+                     <td>1</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>105</td>
+                <td>الاسطورة</td>
+                <td>23</td>
+                <td>110</td>
+                       <td>4</td>
+                     <td>137</td><td>12</td><td>24</td> <td>4</td>
+                   <td>40</td>  
+            </tr>
+            <tr>
+                 
+<td>106</td>
+                <td>ابو عبدو الرستن</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>107</td>
+                <td>ابو عدنان الرستن</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>108</td>
+                <td>الفتح سرمدا</td>
+                <td>1</td>
+                <td></td>
+                       <td></td>
+                     <td>1</td><td>2</td><td></td> <td></td>
+                   <td>2</td>  
+            </tr>
+            <tr>
+                 
+<td>109</td>
+                <td>احمد ابوالزين</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>110</td>
+                <td>اكسبريس الجسر</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>111</td>
+                <td>اديب المتحدة</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>112</td>
+                <td>بنك البركة</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>113</td>
+                <td>بنك فينانس</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td>1</td><td></td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>114</td>
+                <td>احمد سويد</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>115</td>
+                <td>ابو عمار حايك</td>
+                <td></td>
+                <td>10</td>
+                       <td></td>
+                     <td>10</td><td></td><td>2</td> <td></td>
+                   <td>2</td>  
+            </tr>
+            <tr>
+                 
+<td>116</td>
+                <td>مطبعة الدوحة</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>117</td>
+                <td>زيدان</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>118</td>
+                <td>شركة خليفة</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>119</td>
+                <td>مسحوبات ام جنى</td>
+                <td></td>
+                <td>1</td>
+                       <td></td>
+                     <td>1</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>120</td>
+                <td>ارباح بنك نماء</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>121</td>
+                <td>زبائن  مؤقتة</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>122</td>
+                <td>ابو حمزة</td>
+                <td>6</td>
+                <td>14</td>
+                       <td></td>
+                     <td>20</td><td>1</td><td>6</td> <td></td>
+                   <td>7</td>  
+            </tr>
+            <tr>
+                 
+<td>123</td>
+                <td>معتز  عمل</td>
+                <td></td>
+                <td>6</td>
+                       <td></td>
+                     <td>6</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>124</td>
+                <td>ادهم الحاج احمد</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>125</td>
+                <td>ابو ثابت</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>126</td>
+                <td>ابو عمار</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>127</td>
+                <td>عمار تركماني</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>128</td>
+                <td>ام جنى مصر عمل</td>
+                <td></td>
+                <td>1</td>
+                       <td></td>
+                     <td>1</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>129</td>
+                <td>احمد ادلبي</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>130</td>
+                <td>الوفاء سرمدا</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>131</td>
+                <td>دكتور بشير</td>
+                <td></td>
+                <td>9</td>
+                       <td></td>
+                     <td>9</td><td></td><td>7</td> <td></td>
+                   <td>7</td>  
+            </tr>
+            <tr>
+                 
+<td>132</td>
+                <td>السعد</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>133</td>
+                <td>سما M.T</td>
+                <td>65</td>
+                <td>98</td>
+                       <td></td>
+                     <td>163</td><td>15</td><td>16</td> <td></td>
+                   <td>31</td>  
+            </tr>
+            <tr>
+                 
+<td>134</td>
+                <td>الينابيع</td>
+                <td></td>
+                <td>1</td>
+                       <td></td>
+                     <td>1</td><td></td><td>3</td> <td></td>
+                   <td>3</td>  
+            </tr>
+            <tr>
+                 
+<td>135</td>
+                <td>الكرم</td>
+                <td>32</td>
+                <td>47</td>
+                       <td></td>
+                     <td>79</td><td>7</td><td>7</td> <td></td>
+                   <td>14</td>  
+            </tr>
+            <tr>
+                 
+<td>136</td>
+                <td>الضحى</td>
+                <td></td>
+                <td>1</td>
+                       <td></td>
+                     <td>1</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>137</td>
+                <td>ياقوت</td>
+                <td></td>
+                <td>1</td>
+                       <td></td>
+                     <td>1</td><td>1</td><td></td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>138</td>
+                <td>الفهود</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>139</td>
+                <td>الايهم</td>
+                <td></td>
+                <td>40</td>
+                       <td>2</td>
+                     <td>42</td><td></td><td>6</td> <td>1</td>
+                   <td>7</td>  
+            </tr>
+            <tr>
+                 
+<td>140</td>
+                <td>السنابل</td>
+                <td></td>
+                <td>1</td>
+                       <td></td>
+                     <td>1</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>141</td>
+                <td>نور الشام</td>
+                <td></td>
+                <td>1</td>
+                       <td></td>
+                     <td>1</td><td>1</td><td>1</td> <td></td>
+                   <td>2</td>  
+            </tr>
+            <tr>
+                 
+<td>142</td>
+                <td>عدنان محب الدين</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>143</td>
+                <td>انجاز</td>
+                <td>21</td>
+                <td>35</td>
+                       <td></td>
+                     <td>56</td><td>12</td><td>6</td> <td></td>
+                   <td>18</td>  
+            </tr>
+            <tr>
+                 
+<td>144</td>
+                <td>التاج</td>
+                <td>88</td>
+                <td>44</td>
+                       <td></td>
+                     <td>132</td><td>20</td><td>11</td> <td></td>
+                   <td>31</td>  
+            </tr>
+            <tr>
+                 
+<td>145</td>
+                <td>دريم</td>
+                <td>32</td>
+                <td>86</td>
+                       <td></td>
+                     <td>118</td><td>10</td><td>15</td> <td></td>
+                   <td>25</td>  
+            </tr>
+            <tr>
+                 
+<td>146</td>
+                <td>ابو يزن هولندا</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>147</td>
+                <td>دلتا</td>
+                <td>91</td>
+                <td>90</td>
+                       <td></td>
+                     <td>181</td><td>17</td><td>18</td> <td></td>
+                   <td>35</td>  
+            </tr>
+            <tr>
+                 
+<td>148</td>
+                <td>تواصل</td>
+                <td></td>
+                <td>190</td>
+                       <td>3</td>
+                     <td>193</td><td></td><td>104</td> <td>2</td>
+                   <td>106</td>  
+            </tr>
+            <tr>
+                 
+<td>149</td>
+                <td>المختار</td>
+                <td>1</td>
+                <td>20</td>
+                       <td></td>
+                     <td>21</td><td>1</td><td>3</td> <td></td>
+                   <td>4</td>  
+            </tr>
+            <tr>
+                 
+<td>150</td>
+                <td>مدى</td>
+                <td>4</td>
+                <td>10</td>
+                       <td></td>
+                     <td>14</td><td>2</td><td>3</td> <td></td>
+                   <td>5</td>  
+            </tr>
+            <tr>
+                 
+<td>151</td>
+                <td>ايمن السيد محمد</td>
+                <td>1</td>
+                <td>1</td>
+                       <td></td>
+                     <td>2</td><td>1</td><td></td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>152</td>
+                <td>علوان رأس مال</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>153</td>
+                <td>شمس</td>
+                <td>75</td>
+                <td>66</td>
+                       <td></td>
+                     <td>141</td><td>19</td><td>11</td> <td></td>
+                   <td>30</td>  
+            </tr>
+            <tr>
+                 
+<td>154</td>
+                <td>زكاة </td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>155</td>
+                <td>مسار</td>
+                <td></td>
+                <td>48</td>
+                       <td>1</td>
+                     <td>49</td><td></td><td>5</td> <td></td>
+                   <td>5</td>  
+            </tr>
+            <tr>
+                 
+<td>156</td>
+                <td>ابو فاضل </td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>157</td>
+                <td>بضاعة صلاح</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>158</td>
+                <td>سالم خولي</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>159</td>
+                <td>عمولات شحن</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>160</td>
+                <td>خزان البناء</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>161</td>
+                <td>مسحوبات علوان</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>162</td>
+                <td>المنطاد</td>
+                <td></td>
+                <td>2</td>
+                       <td></td>
+                     <td>2</td><td></td><td>2</td> <td></td>
+                   <td>2</td>  
+            </tr>
+            <tr>
+                 
+<td>163</td>
+                <td>ابو فاروق الشيخ</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>164</td>
+                <td>حوالة داخلية</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>165</td>
+                <td>مطبخ </td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>166</td>
+                <td>تكشييف جنيه </td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>167</td>
+                <td>مجبل اشبيليا</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>168</td>
+                <td>اديب توامي رأس مال </td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>169</td>
+                <td>ابو حمزة الضاهر</td>
+                <td></td>
+                <td>1</td>
+                       <td></td>
+                     <td>1</td><td>1</td><td>2</td> <td></td>
+                   <td>3</td>  
+            </tr>
+            <tr>
+                 
+<td>170</td>
+                <td>ايش بنك</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td>1</td><td></td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>171</td>
+                <td>بيت الفقير</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>172</td>
+                <td>ابو سلطان مكتب بابسقا</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>173</td>
+                <td>ابو محمد شمرا موبايلات</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>174</td>
+                <td>الشيخ خالد توامي</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>175</td>
+                <td>ماركت الكنج</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>176</td>
+                <td>ف كاش</td>
+                <td>4</td>
+                <td>89</td>
+                       <td></td>
+                     <td>93</td><td></td><td>126</td> <td></td>
+                   <td>126</td>  
+            </tr>
+            <tr>
+                 
+<td>177</td>
+                <td>المنشرة</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>178</td>
+                <td>احمد علاء محب الدين</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>179</td>
+                <td>هيثم تفتناز</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>180</td>
+                <td>موسى محمد الموسى رأس مال</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>181</td>
+                <td>لورنس</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>182</td>
+                <td>الملك غولدن</td>
+                <td>30</td>
+                <td>92</td>
+                       <td></td>
+                     <td>122</td><td>14</td><td>25</td> <td></td>
+                   <td>39</td>  
+            </tr>
+            <tr>
+                 
+<td>183</td>
+                <td>مسحوبات موسى محمد الموسى</td>
+                <td></td>
+                <td>1</td>
+                       <td></td>
+                     <td>1</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>184</td>
+                <td>حسن حسين محب الدين</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>185</td>
+                <td>يمان برغوث</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>186</td>
+                <td>اوربت</td>
+                <td></td>
+                <td>16</td>
+                       <td></td>
+                     <td>16</td><td></td><td>5</td> <td></td>
+                   <td>5</td>  
+            </tr>
+            <tr>
+                 
+<td>187</td>
+                <td>العالمية</td>
+                <td>14</td>
+                <td>46</td>
+                       <td></td>
+                     <td>60</td><td>5</td><td>6</td> <td></td>
+                   <td>11</td>  
+            </tr>
+            <tr>
+                 
+<td>188</td>
+                <td>الوزاز</td>
+                <td></td>
+                <td>5</td>
+                       <td></td>
+                     <td>5</td><td></td><td>7</td> <td></td>
+                   <td>7</td>  
+            </tr>
+            <tr>
+                 
+<td>189</td>
+                <td>كفر دريان ف كاش / 089 /</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>190</td>
+                <td>مسحوبات اديب توامي</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>191</td>
+                <td>الرسالة</td>
+                <td>6</td>
+                <td>8</td>
+                       <td></td>
+                     <td>14</td><td>2</td><td>5</td> <td></td>
+                   <td>7</td>  
+            </tr>
+            <tr>
+                 
+<td>192</td>
+                <td>عبدالقادر يحيى رأس مال</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>193</td>
+                <td>شامل</td>
+                <td></td>
+                <td>1</td>
+                       <td></td>
+                     <td>1</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>194</td>
+                <td>صباح العمر رأس مال</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>195</td>
+                <td>عدي الناصيف</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>196</td>
+                <td>حسن الاقرع</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>197</td>
+                <td>عبدالله بوظ</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>198</td>
+                <td>شامنا غولد</td>
+                <td></td>
+                <td>65</td>
+                       <td></td>
+                     <td>65</td><td></td><td>6</td> <td></td>
+                   <td>6</td>  
+            </tr>
+            <tr>
+                 
+<td>199</td>
+                <td>مهران مطر</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>200</td>
+                <td>السلطان</td>
+                <td>1</td>
+                <td>35</td>
+                       <td></td>
+                     <td>36</td><td></td><td>5</td> <td></td>
+                   <td>5</td>  
+            </tr>
+            <tr>
+                 
+<td>201</td>
+                <td>عبدالرحمن عنجاري </td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>202</td>
+                <td>مركز قطع ليرة سورية SYP</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>203</td>
+                <td>ابو عبيدة الطيب</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>204</td>
+                <td>مسحوبات صباح العمر</td>
+                <td></td>
+                <td>1</td>
+                       <td></td>
+                     <td>1</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>205</td>
+                <td>ابو جعفر جنديرس</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>206</td>
+                <td>عماد القاعود</td>
+                <td></td>
+                <td>9</td>
+                       <td></td>
+                     <td>9</td><td></td><td>8</td> <td></td>
+                   <td>8</td>  
+            </tr>
+            <tr>
+                 
+<td>207</td>
+                <td>انس الشريف</td>
+                <td></td>
+                <td>14</td>
+                       <td></td>
+                     <td>14</td><td></td><td>16</td> <td></td>
+                   <td>16</td>  
+            </tr>
+            <tr>
+                 
+<td>208</td>
+                <td>عبدالرزاق بكور رأس مال</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>209</td>
+                <td>مسحوبات عبدالرزاق بكور</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>210</td>
+                <td>مرهف علوش</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>211</td>
+                <td>مسحوبات عبدالفتاح رحال</td>
+                <td></td>
+                <td>1</td>
+                       <td></td>
+                     <td>1</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>212</td>
+                <td>حسن الخالدي</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>213</td>
+                <td>السقيط</td>
+                <td>20</td>
+                <td>27</td>
+                       <td></td>
+                     <td>47</td><td>6</td><td>5</td> <td></td>
+                   <td>11</td>  
+            </tr>
+            <tr>
+                 
+<td>214</td>
+                <td>الدرويش</td>
+                <td>1</td>
+                <td>33</td>
+                       <td>2</td>
+                     <td>36</td><td>1</td><td>5</td> <td>2</td>
+                   <td>8</td>  
+            </tr>
+            <tr>
+                 
+<td>215</td>
+                <td>معتصم امينو ابو دجانا</td>
+                <td></td>
+                <td>2</td>
+                       <td></td>
+                     <td>2</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>216</td>
+                <td>نديم السباعي</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>217</td>
+                <td>الوعد</td>
+                <td>25</td>
+                <td>62</td>
+                       <td>1</td>
+                     <td>88</td><td>8</td><td>9</td> <td>1</td>
+                   <td>18</td>  
+            </tr>
+            <tr>
+                 
+<td>218</td>
+                <td>ايوب اعزاز</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>219</td>
+                <td>زياد الزهوري ابو بهاء زمرد</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>220</td>
+                <td>شام كاش كفر دريان</td>
+                <td></td>
+                <td>857</td>
+                       <td></td>
+                     <td>857</td><td></td><td>517</td> <td></td>
+                   <td>517</td>  
+            </tr>
+            <tr>
+                 
+<td>221</td>
+                <td>بنك وقف كاتلم </td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>222</td>
+                <td>مسحوبات ابو يوسف الاشقر</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>223</td>
+                <td>اصلان مرسين</td>
+                <td></td>
+                <td>19</td>
+                       <td></td>
+                     <td>19</td><td></td><td>4</td> <td></td>
+                   <td>4</td>  
+            </tr>
+            <tr>
+                 
+<td>224</td>
+                <td>دعوى جابر علي برد</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>225</td>
+                <td>اللورد الاردن </td>
+                <td></td>
+                <td>8</td>
+                       <td></td>
+                     <td>8</td><td></td><td>2</td> <td></td>
+                   <td>2</td>  
+            </tr>
+            <tr>
+                 
+<td>226</td>
+                <td>مرسال</td>
+                <td>1</td>
+                <td>7</td>
+                       <td></td>
+                     <td>8</td><td>1</td><td>1</td> <td></td>
+                   <td>2</td>  
+            </tr>
+            <tr>
+                 
+<td>227</td>
+                <td>احمد طليمات</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>228</td>
+                <td>ابو ابراهيم منغ</td>
+                <td></td>
+                <td>4</td>
+                       <td></td>
+                     <td>4</td><td></td><td>5</td> <td></td>
+                   <td>5</td>  
+            </tr>
+            <tr>
+                 
+<td>229</td>
+                <td>مكتب الجاموس</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>230</td>
+                <td>محمود شانوردي</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>231</td>
+                <td>محمد اكرم حربا</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>232</td>
+                <td>مركز قطع ليرة سورية</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>233</td>
+                <td>القصير عمل</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>234</td>
+                <td>احمد محب الدين محب الدين</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>235</td>
+                <td>القصير حمدو</td>
+                <td></td>
+                <td>5</td>
+                       <td></td>
+                     <td>5</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>236</td>
+                <td>القصير شمال</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>237</td>
+                <td>فرع القصير</td>
+                <td>20</td>
+                <td>217</td>
+                       <td></td>
+                     <td>237</td><td>10</td><td>1356</td> <td></td>
+                   <td>1366</td>  
+            </tr>
+            <tr>
+                 
+<td>238</td>
+                <td>القصير رمزون</td>
+                <td></td>
+                <td>2</td>
+                       <td></td>
+                     <td>2</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>239</td>
+                <td>احمد محب الدين محب الدين رأس مال</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>240</td>
+                <td>فرع حمص</td>
+                <td>45</td>
+                <td>152</td>
+                       <td></td>
+                     <td>197</td><td>87</td><td>410</td> <td></td>
+                   <td>497</td>  
+            </tr>
+            <tr>
+                 
+<td>241</td>
+                <td>احمد برادعي</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>242</td>
+                <td>القصير توان</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>243</td>
+                <td>ابو محمد غره</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>244</td>
+                <td>زمرد</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>245</td>
+                <td>ابو رامز</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>246</td>
+                <td>القصير زيتون</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>247</td>
+                <td>حسن غانم</td>
+                <td></td>
+                <td>1</td>
+                       <td></td>
+                     <td>1</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>248</td>
+                <td>ذمم معدومة</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>249</td>
+                <td>امانة كارد</td>
+                <td></td>
+                <td>5</td>
+                       <td></td>
+                     <td>5</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>250</td>
+                <td>مصروف محل حمص</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>251</td>
+                <td>فرع حلب المدينة</td>
+                <td>49</td>
+                <td>128</td>
+                       <td></td>
+                     <td>177</td><td>84</td><td>388</td> <td></td>
+                   <td>472</td>  
+            </tr>
+            <tr>
+                 
+<td>252</td>
+                <td>الهول ابو باسل</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>253</td>
+                <td>خصم ارباح 2024</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>254</td>
+                <td>ابو سمير مصر</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>255</td>
+                <td>صرين</td>
+                <td>3</td>
+                <td>9</td>
+                       <td></td>
+                     <td>12</td><td>1</td><td>2</td> <td></td>
+                   <td>3</td>  
+            </tr>
+            <tr>
+                 
+<td>256</td>
+                <td>محل الساعة القصير</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>257</td>
+                <td>محمد عقاد محل حلب</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>258</td>
+                <td>نذير دملخي</td>
+                <td>1</td>
+                <td>2</td>
+                       <td></td>
+                     <td>3</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>259</td>
+                <td>وسام عنجاري رأس مال</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>260</td>
+                <td>مسحوبات وسام عنجاري </td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>261</td>
+                <td>مهدي اتاسي</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>262</td>
+                <td>محمد بوظ</td>
+                <td></td>
+                <td>3</td>
+                       <td></td>
+                     <td>3</td><td></td><td>3</td> <td></td>
+                   <td>3</td>  
+            </tr>
+            <tr>
+                 
+<td>263</td>
+                <td>عمر سالم</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>264</td>
+                <td>اديب زبيدة</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>265</td>
+                <td>اليسر </td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>266</td>
+                <td>امين صبوح</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td>2</td> <td></td>
+                   <td>2</td>  
+            </tr>
+            <tr>
+                 
+<td>267</td>
+                <td>علاء العثمان</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>268</td>
+                <td>صلاح رأس مال</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>269</td>
+                <td>عبدالرزاق نداف ابو عزيز</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>270</td>
+                <td>مسحوبات احمد محب الدين محب الدين</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>271</td>
+                <td>شركة خاروفة للتخلص الجمركي</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>272</td>
+                <td>شام كاش سرمدا</td>
+                <td></td>
+                <td>260</td>
+                       <td></td>
+                     <td>260</td><td></td><td>146</td> <td></td>
+                   <td>146</td>  
+            </tr>
+            <tr>
+                 
+<td>273</td>
+                <td>فادي العمر </td>
+                <td></td>
+                <td>1</td>
+                       <td></td>
+                     <td>1</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>274</td>
+                <td>نضال الرحيل</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>275</td>
+                <td>فادي منصور</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>276</td>
+                <td>محامية رنا العمر</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>277</td>
+                <td>محمد حصوة </td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>278</td>
+                <td>سعد الحاجي</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>279</td>
+                <td>عبدالحليم بري</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>280</td>
+                <td>براء العثمان</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>281</td>
+                <td>محمود الزين</td>
+                <td>1</td>
+                <td></td>
+                       <td></td>
+                     <td>1</td><td></td><td>4</td> <td></td>
+                   <td>4</td>  
+            </tr>
+            <tr>
+                 
+<td>282</td>
+                <td>مركز قطع ريال سعودي</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>283</td>
+                <td>علوش السعودية</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>284</td>
+                <td>تكشيف ريال</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>285</td>
+                <td>شام كاش حلب</td>
+                <td></td>
+                <td>250</td>
+                       <td></td>
+                     <td>250</td><td></td><td>43</td> <td></td>
+                   <td>43</td>  
+            </tr>
+            <tr>
+                 
+<td>286</td>
+                <td>حسين حمادي</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>287</td>
+                <td>حذيفة الفارس ابو اليمان</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>288</td>
+                <td>ثناء القاسم رأس مال</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>289</td>
+                <td>مسحوبات ثناء القاسم</td>
+                <td></td>
+                <td>1</td>
+                       <td></td>
+                     <td>1</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>290</td>
+                <td>مسحوبات عبدالله عودة</td>
+                <td></td>
+                <td>1</td>
+                       <td></td>
+                     <td>1</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>291</td>
+                <td>شام كاش حمص</td>
+                <td></td>
+                <td>32</td>
+                       <td></td>
+                     <td>32</td><td></td><td>23</td> <td></td>
+                   <td>23</td>  
+            </tr>
+            <tr>
+                 
+<td>292</td>
+                <td>حسين السلطان</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>293</td>
+                <td>مالك تميم</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>294</td>
+                <td>محسن الشريف</td>
+                <td></td>
+                <td>8</td>
+                       <td></td>
+                     <td>8</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>295</td>
+                <td>ابو حسن بريطانيا</td>
+                <td></td>
+                <td>4</td>
+                       <td></td>
+                     <td>4</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>296</td>
+                <td>وليد محب الدين</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>297</td>
+                <td>شام كاش نجدت</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>298</td>
+                <td>مسحوبات ماريمان قدور</td>
+                <td></td>
+                <td>1</td>
+                       <td></td>
+                     <td>1</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>299</td>
+                <td>ممدوح الاسعد</td>
+                <td>3</td>
+                <td></td>
+                       <td></td>
+                     <td>3</td><td>3</td><td></td> <td></td>
+                   <td>3</td>  
+            </tr>
+            <tr>
+                 
+<td>300</td>
+                <td> كفردريان</td>
+                <td>123</td>
+                <td>491</td>
+                       <td></td>
+                     <td>614</td><td>711</td><td>1184</td> <td></td>
+                   <td>1895</td>  
+            </tr>
+            <tr>
+                 
+<td>301</td>
+                <td>تكشيف سوري</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>302</td>
+                <td>طوني حموي</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>303</td>
+                <td>شام كاش القصير</td>
+                <td></td>
+                <td>112</td>
+                       <td></td>
+                     <td>112</td><td></td><td>98</td> <td></td>
+                   <td>98</td>  
+            </tr>
+            <tr>
+                 
+<td>304</td>
+                <td>المتين</td>
+                <td></td>
+                <td>27</td>
+                       <td>1</td>
+                     <td>28</td><td></td><td>4</td> <td>2</td>
+                   <td>6</td>  
+            </tr>
+            <tr>
+                 
+<td>305</td>
+                <td>النورس</td>
+                <td></td>
+                <td>18</td>
+                       <td></td>
+                     <td>18</td><td>1</td><td>3</td> <td></td>
+                   <td>4</td>  
+            </tr>
+            <tr>
+                 
+<td>306</td>
+                <td>عبدالله عودة عمل</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>307</td>
+                <td>ابو سمعو</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>308</td>
+                <td>محمد ابو رفيدة</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td>5</td> <td></td>
+                   <td>5</td>  
+            </tr>
+            <tr>
+                 
+<td>309</td>
+                <td>رواد كوريا</td>
+                <td></td>
+                <td>1</td>
+                       <td></td>
+                     <td>1</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>310</td>
+                <td>شام كاش ابو حمزة</td>
+                <td></td>
+                <td>7</td>
+                       <td></td>
+                     <td>7</td><td></td><td>5</td> <td></td>
+                   <td>5</td>  
+            </tr>
+            <tr>
+                 
+<td>311</td>
+                <td>بلال رعد</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>312</td>
+                <td>مركز البيان</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>313</td>
+                <td>مسحوبات محمود الزين</td>
+                <td></td>
+                <td>1</td>
+                       <td></td>
+                     <td>1</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>314</td>
+                <td>خالد قطاش</td>
+                <td></td>
+                <td>1</td>
+                       <td></td>
+                     <td>1</td><td></td><td>2</td> <td></td>
+                   <td>2</td>  
+            </tr>
+            <tr>
+                 
+<td>315</td>
+                <td>مصطفى العلو</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>316</td>
+                <td>عبدالله معصراني</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>317</td>
+                <td>قيد خاسر النخبة</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>318</td>
+                <td>محمد عبدالله محب الدين</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>319</td>
+                <td>محفظة USDT</td>
+                <td></td>
+                <td>32</td>
+                       <td></td>
+                     <td>32</td><td></td><td>68</td> <td></td>
+                   <td>68</td>  
+            </tr>
+            <tr>
+                 
+<td>320</td>
+                <td>ماركت طارق ومخلص</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>321</td>
+                <td>ابراهيم عبدالباري</td>
+                <td>31</td>
+                <td>8</td>
+                       <td></td>
+                     <td>39</td><td>10</td><td>7</td> <td></td>
+                   <td>17</td>  
+            </tr>
+            <tr>
+                 
+<td>322</td>
+                <td>محمد الجوجة</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>323</td>
+                <td>عبيد عبيد رأس مال</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>324</td>
+                <td>ذمة مؤقتة حلب</td>
+                <td></td>
+                <td>3</td>
+                       <td></td>
+                     <td>3</td><td></td><td>4</td> <td></td>
+                   <td>4</td>  
+            </tr>
+            <tr>
+                 
+<td>325</td>
+                <td>ذمة مؤقتة بردقلي</td>
+                <td>1</td>
+                <td>2</td>
+                       <td></td>
+                     <td>3</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>326</td>
+                <td>ذمة مؤقتة كفردريان</td>
+                <td></td>
+                <td>6</td>
+                       <td></td>
+                     <td>6</td><td></td><td>8</td> <td></td>
+                   <td>8</td>  
+            </tr>
+            <tr>
+                 
+<td>327</td>
+                <td>ذمة مؤقتة حمص</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>328</td>
+                <td>ذمة مؤقتة القصير</td>
+                <td></td>
+                <td>2</td>
+                       <td></td>
+                     <td>2</td><td></td><td>3</td> <td></td>
+                   <td>3</td>  
+            </tr>
+            <tr>
+                 
+<td>329</td>
+                <td>ذمة مؤقتة سرمدا</td>
+                <td></td>
+                <td>19</td>
+                       <td>1</td>
+                     <td>20</td><td></td><td>26</td> <td>2</td>
+                   <td>28</td>  
+            </tr>
+            <tr>
+                 
+<td>330</td>
+                <td>دوفيز بابسقا</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>331</td>
+                <td>دوفيز بردقلي</td>
+                <td></td>
+                <td>1</td>
+                       <td></td>
+                     <td>1</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>332</td>
+                <td>الدولي الإسلامي سوريا</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>333</td>
+                <td>البركة سوريا</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>334</td>
+                <td>دوفيز سرمدا</td>
+                <td></td>
+                <td>189</td>
+                       <td></td>
+                     <td>189</td><td></td><td>61</td> <td></td>
+                   <td>61</td>  
+            </tr>
+            <tr>
+                 
+<td>335</td>
+                <td>دوفيز القصير</td>
+                <td></td>
+                <td>13</td>
+                       <td></td>
+                     <td>13</td><td></td><td>21</td> <td></td>
+                   <td>21</td>  
+            </tr>
+            <tr>
+                 
+<td>336</td>
+                <td>دوفيز حمص</td>
+                <td></td>
+                <td>3</td>
+                       <td></td>
+                     <td>3</td><td></td><td>4</td> <td></td>
+                   <td>4</td>  
+            </tr>
+            <tr>
+                 
+<td>337</td>
+                <td>دوفيز حلب</td>
+                <td></td>
+                <td>15</td>
+                       <td></td>
+                     <td>15</td><td></td><td>11</td> <td></td>
+                   <td>11</td>  
+            </tr>
+            <tr>
+                 
+<td>338</td>
+                <td>دوفيز كفردريان</td>
+                <td></td>
+                <td>4</td>
+                       <td></td>
+                     <td>4</td><td></td><td>7</td> <td></td>
+                   <td>7</td>  
+            </tr>
+            <tr>
+                 
+<td>339</td>
+                <td>فاطمة محب الدين</td>
+                <td></td>
+                <td>1</td>
+                       <td></td>
+                     <td>1</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>340</td>
+                <td>القصير رمزون جديد</td>
+                <td></td>
+                <td>1</td>
+                       <td></td>
+                     <td>1</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>341</td>
+                <td>محمد يعقوب المحمد</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>342</td>
+                <td>ذمة مؤقة للبنوك</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>343</td>
+                <td>رهف الجع</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>344</td>
+                <td>خالد محمد بريكع/ رأس مال</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>345</td>
+                <td>عبيدة العثمان</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>346</td>
+                <td>عبدالرحمن عبدالقادر قدور</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>347</td>
+                <td>سمير عبدالقادر قدور</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>348</td>
+                <td>زكريا انيس</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>349</td>
+                <td>عماد عبدالرزاق جربان رأس مال</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>350</td>
+                <td>مسحوبات عبيد عبيد</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>351</td>
+                <td>مسحوبات خالد بريكع</td>
+                <td></td>
+                <td>1</td>
+                       <td></td>
+                     <td>1</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>352</td>
+                <td>مسحوبات عماد جربان</td>
+                <td></td>
+                <td>1</td>
+                       <td></td>
+                     <td>1</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>353</td>
+                <td>حسين الحمود رأس مال</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>354</td>
+                <td>مسحوبات حسين الحمود</td>
+                <td></td>
+                <td>2</td>
+                       <td></td>
+                     <td>2</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>355</td>
+                <td>كويت ترك </td>
+                <td>22</td>
+                <td>6</td>
+                       <td></td>
+                     <td>28</td><td>15</td><td>2</td> <td></td>
+                   <td>17</td>  
+            </tr>
+            <tr>
+                 
+<td>356</td>
+                <td>ادارة المنطقة</td>
+                <td></td>
+                <td>1</td>
+                       <td></td>
+                     <td>1</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>357</td>
+                <td>اسامة ازرق</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>358</td>
+                <td>احمد نوري ياسين محل كفردريان</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>359</td>
+                <td>خالد الشريف</td>
+                <td></td>
+                <td>1</td>
+                       <td></td>
+                     <td>1</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>360</td>
+                <td>امانات انس الشريف</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>361</td>
+                <td>محمود المحمد</td>
+                <td></td>
+                <td>1</td>
+                       <td></td>
+                     <td>1</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>362</td>
+                <td>محمد العبود</td>
+                <td></td>
+                <td>17</td>
+                       <td></td>
+                     <td>17</td><td></td><td>3</td> <td></td>
+                   <td>3</td>  
+            </tr>
+            <tr>
+                 
+<td>363</td>
+                <td>اسامة نداف</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>364</td>
+                <td>احمد محمد خالد عباس</td>
+                <td></td>
+                <td></td>
+                       <td></td>
+                     <td>0</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>365</td>
+                <td>زكريا عنتر</td>
+                <td></td>
+                <td>1</td>
+                       <td></td>
+                     <td>1</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>366</td>
+                <td>مكتب الامن حلب</td>
+                <td></td>
+                <td>1</td>
+                       <td></td>
+                     <td>1</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>367</td>
+                <td>تاج الدين</td>
+                <td></td>
+                <td>1</td>
+                       <td>1</td>
+                     <td>2</td><td></td><td>2</td> <td>1</td>
+                   <td>3</td>  
+            </tr>
+            <tr>
+                 
+<td>368</td>
+                <td>مصعب العراقي</td>
+                <td></td>
+                <td>1</td>
+                       <td></td>
+                     <td>1</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+            <tr>
+                 
+<td>369</td>
+                <td>حكمت بري</td>
+                <td></td>
+                <td>2</td>
+                       <td></td>
+                     <td>2</td><td></td><td></td> <td></td>
+                   <td>0</td>  
+            </tr>
+            <tr>
+                 
+<td>370</td>
+                <td>عمر دوغرو اقامة 12 شهر</td>
+                <td></td>
+                <td>1</td>
+                       <td></td>
+                     <td>1</td><td></td><td>1</td> <td></td>
+                   <td>1</td>  
+            </tr>
+                        
+            
+        </tbody>
+      
+    </table>
+ 
+                </div>
+<script type="text/javascript">
+window.onload = function () {
+     document.getElementById("tablecon").style.display = "block";
+     document.getElementById("outtl").innerHTML="1360";
+     document.getElementById("outusd").innerHTML="6192";
+      document.getElementById("outeur").innerHTML="20";
+       document.getElementById("outtotal").innerHTML="7572";
+      
+    
+    
+     document.getElementById("intl").innerHTML="1505";
+     document.getElementById("inusd").innerHTML="6012";
+      document.getElementById("ineur").innerHTML="23";
+       document.getElementById("intotal").innerHTML="7540";
+      
+     
+     
+     
+}; 
+</script>  
+   
+  </form>
+  
+      </div>
+          </section>
+      </section>
+ <script> 
+     
+     
+function myFunction1() { 
+    var rates = document.getElementsByName('select');
+var index;
+for(var i = 0; i < rates.length; i++){
+    if(rates[i].checked){
+         select =rates[i].value;
+         index=i;
+    }
+}
+
+    document.getElementById("select1").value = select;
+     document.getElementById("select2").value = select;
+     document.getElementById("select3").value = select;
+     document.getElementById("select4").value = select;
+document.getElementById("select5").value = select;
+     document.getElementById("select6").value = select;    
+    document.getElementById("acc").disabled = false;
+    document.getElementById("packet").disabled =false;
+    document.getElementById("in").disabled =false;
+    document.getElementById("out").disabled =false;
+    document.getElementById("ver").disabled =false;
+    document.getElementById("all").disabled =false;
+    document.getElementById("update").disabled =false;
+    document.getElementById("delete").disabled =false;
+    
+}
+ 
+</script>
+
+      <!--main content end-->
+      <!--footer start-->
+       <footer class="site-footer">
+          <div class="text-center">
+             2022 - شركة أميســا 
+              <a href="#" class="go-top">
+                  <i class="fa fa-angle-up"></i>
+              </a>
+          </div>
+      </footer>
+      <!--footer end-->
+  </section>
+<script src="../../../assets/js/jquery.js"></script>   
+    <script src="../../../assets/js/jquery-1.8.3.min.js"></script>   
+    <script src="../../../assets/js/bootstrap.min.js"></script>   
+    <script class="include" type="text/javascript" src="../../../assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    
+
+
+    <!--common script for all pages-->
+    <script src="../../../assets/js/common-scripts.js"></script>
+    
+    <script type="text/javascript" src="../../../assets/js/gritter/js/jquery.gritter.js"></script>
+    <script type="text/javascript" src="../../../assets/js/gritter-conf.js"></script>
+
+    <!--script for this page-->
+    <script src="../../../assets/js/sparkline-chart.js"></script>    
+	<script src="../../../assets/js/zabuto_calendar.js"></script>	
+         
+        <script src="../../../js/jquery.dataTables.min.js"></script>	
+        <script src="../../../js/dataTables.bootstrap.min.js"></script>	
+	<script type="application/javascript">
+	 $(document).ready(function() {
+    $('#example').DataTable();
+} );
+	</script>
+	<script type="application/javascript">
+        $(document).ready(function () {
+            $("#date-popover").popover({html: true, trigger: "manual"});
+            $("#date-popover").hide();
+            $("#date-popover").click(function (e) {
+                $(this).hide();
+            });
+        
+            $("#my-calendar").zabuto_calendar({
+                action: function () {
+                    return myDateFunction(this.id, false);
+                },
+                action_nav: function () {
+                    return myNavFunction(this.id);
+                },
+                ajax: {
+                    url: "show_data.php?action=1",
+                    modal: true
+                },
+                legend: [
+                    {type: "text", label: "Special event", badge: "00"},
+                    {type: "block", label: "Regular event", }
+                ]
+            });
+        });
+        
+        
+        function myNavFunction(id) {
+            $("#date-popover").hide();
+            var nav = $("#" + id).data("navigation");
+            var to = $("#" + id).data("to");
+            console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
+        }
+    </script>
+  
+
+    
+  
+<script src="../../../vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"79ee079ebc8144109c7ea4ca979dd72f","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+  
+</html>
+
+
+
+
+
