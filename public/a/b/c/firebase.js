@@ -1,12 +1,11 @@
  const firebaseConfig = {
-  apiKey: "AIzaSyC0esGNBo2_2w4JucRans9zBZulhgTAbb0",
-  authDomain: "sy-iyad.firebaseapp.com",
-  databaseURL: "https://sy-iyad-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "sy-iyad",
-  storageBucket: "sy-iyad.firebasestorage.app",
-  messagingSenderId: "873740808897",
-  appId: "1:873740808897:web:f1c636369a510256e41a40",
-  measurementId: "G-7VLX9WHL3H"
+  apiKey: "AIzaSyA5zQZnQsZsPxGRosGIDncS47xIDz_w7cw",
+  authDomain: "alix-ad710.firebaseapp.com",
+  databaseURL: "https://alix-ad710.firebaseio.com",
+  projectId: "alix-ad710",
+  storageBucket: "alix-ad710.appspot.com",
+  messagingSenderId: "341389404751",
+  appId: "1:341389404751:web:f1d9ec493179747885983a"
 };
 
 
